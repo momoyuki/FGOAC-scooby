@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.EventsPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <StackPanel Margin="40,28,40,0">
+      <TextBlock Text="Events" Style="{StaticResource PageTitleStyle}" />
+      <TextBlock Style="{StaticResource HelpTextStyle}" Margin="0,8,0,0" Text="These act on the server on this PC. Online does not use them." />
+    </StackPanel>
+    <ContentControl Name="Switches" Grid.Row="1" Margin="12,0,0,0" />
+  </Grid>
+</UserControl>

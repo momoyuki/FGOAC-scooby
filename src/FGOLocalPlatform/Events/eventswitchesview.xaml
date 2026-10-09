@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.EventSwitchesView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Loaded="View_OnLoaded">
+  <UserControl.Resources>
+    <!-- A group heading: its title on the page surface, a lighter surface under the pointer. -->
+    <Style x:Key="HeadingToggleStyle" TargetType="{x:Type ToggleButton}">
+      <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+      <Setter Property="Cursor" Value="Hand" />
+      <Setter Property="FocusVisualStyle" Value="{StaticResource IceFocusVisual}" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ToggleButton}">
+            <Border Name="Surface" Background="Transparent" CornerRadius="6" Padding="10,8">
+              <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Surface" Property="Background" Value="{StaticResource PlateBrush}" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+  <DockPanel Margin="28,16,28,28" MaxWidth="900" HorizontalAlignment="Left">
+    <StackPanel DockPanel.Dock="Top">
+      <TextBlock Style="{StaticResource HelpTextStyle}" Margin="0,0,0,16" Text="Ticked events are open on the Terminal. An event switched off closes its entry, missions, drops and bonuses on the server; items and progress already earned stay, and a battle already started ends as it began. Each change is saved at once." />
+      <WrapPanel Margin="0,0,0,8">
+        <Button Content="All on" Margin="0,0,8,8" Click="AllOn_OnClick" />
+        <Button Content="All off" Margin="0,0,8,8" Click="AllOff_OnClick" />
+        <Button Name="ReleaseOrderButton" Content="Release order" Margin="0,0,24,8" ToolTip="Put every kind back in the order the events first opened" Click="ReleaseOrder_OnClick" />
+        <Button Content="Top" Tag="top" Margin="0,0,8,8" ToolTip="Move the selected event to the top of its kind" Click="Move_OnClick" />
+        <Button Content="Up" Tag="up" Margin="0,0,8,8" Click="Move_OnClick" />
+        <Button Content="Down" Tag="down" Margin="0,0,8,8" Click="Move_OnClick" />
+        <Button Content="Bottom" Tag="bottom" Margin="0,0,8,8" ToolTip="Move the selected event to the bottom of its kind" Click="Move_OnClick" />
+      </WrapPanel>
+      <TextBlock Name="StatusText" Style="{StaticResource HelpTextStyle}" Margin="0,0,0,12" />
+    </StackPanel>
+    <ListBox Name="EventList" Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" AutomationProperties.Name="Events" />
+  </DockPanel>
+</UserControl>

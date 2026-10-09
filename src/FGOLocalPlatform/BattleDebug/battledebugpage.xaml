@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.BattleDebugPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:FGOLocalPlatform">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <TextBlock Text="Battle Debug" Style="{StaticResource PageTitleStyle}" Margin="40,28,40,0" />
+    <local:DebugSettingsView x:Name="Switches" Grid.Row="1" Margin="12,0,0,0" />
+  </Grid>
+</UserControl>

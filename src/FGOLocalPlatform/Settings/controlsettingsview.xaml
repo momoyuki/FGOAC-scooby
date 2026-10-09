@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.ControlSettingsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:FGOLocalPlatform">
+  <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel Margin="28" MaxWidth="900" HorizontalAlignment="Left">
+      <WrapPanel>
+        <TextBlock Text="Input Method" VerticalAlignment="Center" Margin="0,0,12,0" Foreground="{StaticResource TextSoftBrush}" />
+        <ComboBox Name="InputModeSelector" AutomationProperties.Name="Input method" Width="320" SelectedIndex="0" SelectionChanged="InputMode_OnChanged">
+          <ComboBoxItem Content="Keyboard and Mouse" Tag="keyboard" />
+          <ComboBoxItem Content="Xbox or other controller (XInput)" Tag="xinput" />
+          <ComboBoxItem Content="PlayStation 5 controller (DualSense)" Tag="xinput" />
+        </ComboBox>
+      </WrapPanel>
+      <TextBlock Text="The left mouse button acts as the touch screen. The shared keyboard buttons work with every input method. With Cloud23333's latest update, the controller methods hide the mouse pointer in battle, story scenes inside a quest included: choose Keyboard and Mouse to use the mouse there. Saved settings take effect the next time the game starts." Style="{StaticResource HelpTextStyle}" Margin="3,8,0,16" />
+      <TextBlock Name="HisPadMissingText" Text="Cloud23333's update adds a keyboard battle mode with a mouse camera, a controller camera, a controller mouse and controller card selection here." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,16" />
+      <StackPanel Name="KeyboardPanel">
+        <TextBlock Text="Keyboard and Mouse Mapping" Style="{StaticResource SectionTitleStyle}" Margin="0,0,0,8" />
+        <ItemsControl Name="KeyboardMappings" HorizontalAlignment="Left" />
+        <TextBlock Text="Skill Target 1, 2 and 3 pick the Servants from left to right in a skill's target menu. While that menu is open, only these keys and Cancel act on it; release the key that opened it before pressing it again." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,8" />
+        <StackPanel Name="BattleKeyboardPanel" Visibility="Collapsed" Margin="0,16,0,0">
+          <TextBlock Text="Keyboard Battle Mode" Style="{StaticResource SectionTitleStyle}" Margin="0,0,0,8" />
+          <ToggleButton Name="BattleKeyboardSwitch" Style="{StaticResource SwitchToggleStyle}" Content="Battles in free camera" AutomationProperties.Name="Battles in free camera" HorizontalAlignment="Left" MinWidth="210" Margin="0,0,0,4" Checked="BattleKeyboard_OnChanged" Unchecked="BattleKeyboard_OnChanged" />
+          <TextBlock Text="Works with keyboard and mouse in battles you control: the mouse turns the camera, WASD moves and Q and E pick a card. Victory, defeat and leaving the battle bring touch back, and Photo Mode keeps its own controls." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,8" />
+          <StackPanel Name="BattleKeyboardRows" Visibility="Collapsed">
+            <TextBlock Text="By default mouse button 4 confirms a card, the right button undoes it and the left button attacks; the middle button locks on and off, X unlocks and F moves to the next locked target. Tab steps out of the mode so the menus can be tapped, and Tab again goes back. The touch mapping above is not changed." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,8" />
+            <WrapPanel Margin="0,4,0,12">
+              <TextBlock Text="Mouse Sensitivity" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{StaticResource TextSoftBrush}" />
+              <Slider Name="BattleMouseSensitivity" Minimum="20" Maximum="300" Value="100" TickFrequency="5" IsSnapToTickEnabled="True" Width="220" VerticalAlignment="Center" AutomationProperties.Name="Mouse sensitivity in keyboard battle mode" />
+              <TextBlock Width="55" Margin="10,0" VerticalAlignment="Center" Text="{Binding ElementName=BattleMouseSensitivity, Path=Value, StringFormat={}{0:0}%}" />
+              <CheckBox Name="BattleInvertY" Content="Invert vertical" VerticalAlignment="Center" />
+            </WrapPanel>
+            <ItemsControl Name="BattleTouchMappings" HorizontalAlignment="Left" />
+            <TextBlock Text="Touch Click is kept apart for the menus outside battle and while the mode steps out; it can be held and dragged." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,8" />
+            <ItemsControl Name="BattleKeyboardMappings" HorizontalAlignment="Left" />
+          </StackPanel>
+        </StackPanel>
+      </StackPanel>
+      <StackPanel Name="ControllerPanel" Visibility="Collapsed">
+        <TextBlock Name="ControllerMappingTitle" Text="Controller Mapping (XInput)" Style="{StaticResource SectionTitleStyle}" Margin="0,0,0,8" />
+        <TextBlock Name="DualSenseHelp" Visibility="Collapsed" Text="Plug in a DualSense or DualSense Edge over USB or Bluetooth, save PS5 mode, then click Detect Controller. If DS4Windows or Steam Input already turns the pad into an Xbox controller, pick Xbox or other controller (XInput) instead so every press is not counted twice." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,12" />
+        <ItemsControl Name="ControllerMappings" HorizontalAlignment="Left" />
+        <WrapPanel Margin="0,8">
+          <TextBlock Text="Movement" VerticalAlignment="Center" Margin="0,0,8,0" Foreground="{StaticResource TextSoftBrush}" />
+          <ComboBox Name="MovementSelector" AutomationProperties.Name="Movement" Width="130" SelectedIndex="0">
+            <ComboBoxItem Content="Left Stick" />
+            <ComboBoxItem Content="Right Stick" />
+            <ComboBoxItem Content="D-Pad" />
+          </ComboBox>
+          <TextBlock Text="Controller Number" VerticalAlignment="Center" Margin="12,0,8,0" Foreground="{StaticResource TextSoftBrush}" />
+          <ComboBox Name="ControllerSelector" AutomationProperties.Name="Controller number" Width="65" SelectedIndex="0">
+            <ComboBoxItem Content="1" />
+            <ComboBoxItem Content="2" />
+            <ComboBoxItem Content="3" />
+            <ComboBoxItem Content="4" />
+          </ComboBox>
+          <TextBlock Text="Stick Deadzone" VerticalAlignment="Center" Margin="12,0,8,0" Foreground="{StaticResource TextSoftBrush}" />
+          <TextBox Name="DeadzoneInput" AutomationProperties.Name="Stick deadzone" Width="90" Text="7849" TextAlignment="Center" VerticalContentAlignment="Center" />
+        </WrapPanel>
+        <TextBlock Name="ControllerDeadzoneHelp" Text="Deadzone range is 0-32766, default 7849. LT / RT press threshold is 64; menus still use the mouse or touch screen." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,12" />
+        <StackPanel Name="HisPadPanel" Visibility="Collapsed">
+          <TextBlock Text="Card Selection" Style="{StaticResource SectionTitleStyle}" Margin="0,8,0,8" />
+          <ToggleButton Name="CardNavigationEnabled" Style="{StaticResource SwitchToggleStyle}" Content="Pick cards with the controller" AutomationProperties.Name="Pick cards with the controller" HorizontalAlignment="Left" MinWidth="210" Margin="0,0,0,4" />
+          <TextBlock Text="The highlight moves left and right through the cards, confirm adds the card to the attack and undo takes back the last one. Touch still picks cards. While cards are picked, these buttons pick cards instead of their battle actions." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,8" />
+          <ItemsControl Name="CardSelectionMappings" HorizontalAlignment="Left" />
+          <TextBlock Text="Controller Camera and Lock-on" Style="{StaticResource SectionTitleStyle}" Margin="0,8,0,8" />
+          <ToggleButton Name="ModernCameraEnabled" Style="{StaticResource SwitchToggleStyle}" Content="Controller camera" AutomationProperties.Name="Controller camera" HorizontalAlignment="Left" MinWidth="210" Margin="0,0,0,4" />
+          <WrapPanel Margin="0,4,0,8">
+            <TextBlock Text="Camera Sensitivity" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{StaticResource TextSoftBrush}" />
+            <Slider Name="CameraSensitivity" Minimum="20" Maximum="300" Value="100" TickFrequency="5" IsSnapToTickEnabled="True" Width="220" VerticalAlignment="Center" AutomationProperties.Name="Controller camera sensitivity" />
+            <TextBlock Width="55" Margin="10,0" VerticalAlignment="Center" Text="{Binding ElementName=CameraSensitivity, Path=Value, StringFormat={}{0:0}%}" />
+            <CheckBox Name="CameraInvertY" Content="Invert vertical" VerticalAlignment="Center" />
+          </WrapPanel>
+          <ItemsControl Name="CameraLockMappings" HorizontalAlignment="Left" />
+          <TextBlock Text="Unlocked, the right stick turns the camera. The lock button locks on and off; locked, push the right stick toward another target to switch to it. When on, the controller camera takes over lock-on, switching targets and centring the camera, and the right stick no longer moves the Servant." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,8" />
+          <TextBlock Text="Controller Mouse" Style="{StaticResource SectionTitleStyle}" Margin="0,8,0,8" />
+          <ItemsControl Name="MouseMappings" HorizontalAlignment="Left" />
+          <TextBlock Name="MouseBindingNotice" TextWrapping="Wrap" Margin="3,0,0,8" Foreground="{StaticResource WarnBrush}" Visibility="Collapsed" />
+          <TextBlock Text="The toggle turns the controller mouse on and off; the click button clicks, holds and drags. The other stick drags across the screen like a finger, and the pointer stops at the screen's edge. While the controller mouse is on, the controller's battle input is paused. Pick Disabled for the toggle to turn it off." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,12" />
+        </StackPanel>
+        <CheckBox Name="RumbleEnabled" Content="Enable controller rumble (attacking, landing hits, taking hits)" Margin="3,8" />
+        <WrapPanel Margin="3,4,0,8">
+          <TextBlock Text="Rumble Strength" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{StaticResource TextSoftBrush}" />
+          <Slider Name="RumbleStrength" AutomationProperties.Name="Rumble strength" Minimum="0" Maximum="100" Value="70" TickFrequency="1" IsSnapToTickEnabled="True" Width="220" VerticalAlignment="Center" />
+          <TextBlock Width="55" Margin="10,0" VerticalAlignment="Center" Text="{Binding ElementName=RumbleStrength, Path=Value, StringFormat={}{0:0}%}" />
+          <Button Name="RumbleTestButton" Content="Test Rumble" Click="RumbleTest_OnClick" />
+          <Button Content="Detect Controller" Click="DetectController_OnClick" />
+        </WrapPanel>
+        <TextBlock Text="Attack Strength (multiplied by the overall strength above)" Style="{StaticResource SectionTitleStyle}" Margin="0,8" />
+        <ItemsControl Name="CardRumbleSettings" />
+        <TextBlock Text="Attack rumble follows the attack animation and stops when the attack ends or is interrupted; hits landed and taken add a short extra pulse. It uses the controller selected above, and stops when you switch away from the game or enter photo mode." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,12" />
+        <Expander Name="DualSenseCalibrationPanel" Header="DualSense Button Calibration" Visibility="Collapsed" Margin="3,12,0,8">
+          <StackPanel Margin="0,8,0,0">
+            <TextBlock Text="You only need this if a button is read as the wrong one. Click the button beside a standard name, release everything on the controller, then press the physical button you want; it cancels after 10 seconds with no input. Calibration does not change the game actions assigned above." Style="{StaticResource HelpTextStyle}" Margin="0,0,0,8" />
+            <ItemsControl Name="DualSenseCalibrationMappings" />
+            <Button Content="Reset to Default Buttons" HorizontalAlignment="Left" Margin="0,8,0,0" Click="ResetCalibration_OnClick" />
+          </StackPanel>
+        </Expander>
+      </StackPanel>
+      <Separator Margin="0,16" />
+      <TextBlock Text="Shared Buttons" Style="{StaticResource SectionTitleStyle}" Margin="0,0,0,8" />
+      <TextBlock Text="Keyboard binding: click a button box, then press the single key or mouse button you want. Esc cancels, and the right-click menu clears a binding." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,8" />
+      <ItemsControl Name="CommonMappings" />
+      <ToggleButton Name="OperatorMenuKeysSwitch" Style="{StaticResource SwitchToggleStyle}" Content="Operator menu keys (F1, F2)" AutomationProperties.Name="Operator menu keys (F1, F2)" HorizontalAlignment="Left" MinWidth="210" Margin="0,8,0,8" />
+      <TextBlock Text="Off, these two keys do nothing in the game. Turn on only if the game shows ERROR 8404. Takes effect the next time you press Play." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,8" />
+      <ToggleButton Name="CursorLockSwitch" Style="{StaticResource SwitchToggleStyle}" Content="Keep the mouse inside the game window" AutomationProperties.Name="Keep the mouse inside the game window" HorizontalAlignment="Left" MinWidth="210" Margin="0,8,0,8" />
+      <TextBlock Text="Holds only while the game is in front: bring another window forward and the mouse is free. Takes effect the next time you press Play." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,8" />
+      <WrapPanel Margin="0,16,0,8">
+        <Button Content="Restore Defaults" Click="Defaults_OnClick" />
+        <Button Content="Save" Click="Save_OnClick" />
+      </WrapPanel>
+      <TextBlock Name="StatusText" TextWrapping="Wrap" Foreground="{StaticResource IceBrush}" />
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

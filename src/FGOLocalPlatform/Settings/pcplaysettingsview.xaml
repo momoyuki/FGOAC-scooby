@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.PcPlaySettingsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StackPanel Margin="28" MaxWidth="900" HorizontalAlignment="Left">
+    <ToggleButton Name="NoContinueTimerSwitch" Style="{StaticResource SwitchToggleStyle}" Content="No continue countdown" AutomationProperties.Name="No continue countdown" HorizontalAlignment="Left" MinWidth="210" Margin="0,0,0,4" Checked="Switch_OnChanged" Unchecked="Switch_OnChanged" />
+    <TextBlock Text="After a lost quest, Continue and Withdraw wait for you, with no countdown and no GP line." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,16" />
+    <ToggleButton Name="NoPopupTimersSwitch" Style="{StaticResource SwitchToggleStyle}" Content="No popup countdowns" AutomationProperties.Name="No popup countdowns" HorizontalAlignment="Left" MinWidth="210" Margin="0,0,0,4" Checked="Switch_OnChanged" Unchecked="Switch_OnChanged" />
+    <TextBlock Text="Popups stay open until you answer them." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,16" />
+    <ToggleButton Name="NoGpPurchaseSwitch" Style="{StaticResource SwitchToggleStyle}" Content="No GP purchase screen" AutomationProperties.Name="No GP purchase screen" HorizontalAlignment="Left" MinWidth="210" Margin="0,0,0,4" Checked="Switch_OnChanged" Unchecked="Switch_OnChanged" />
+    <TextBlock Text="Each play starts without the GP purchase screen. Experimental; off by default." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,16" />
+    <ToggleButton Name="NoStoryTimerSwitch" Style="{StaticResource SwitchToggleStyle}" Content="Story pages wait for you" AutomationProperties.Name="Story pages wait for you" HorizontalAlignment="Left" MinWidth="210" Margin="0,0,0,4" Checked="Switch_OnChanged" Unchecked="Switch_OnChanged" />
+    <TextBlock Text="A timed story page waits for a click, Space or pad A. Experimental; off by default." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,16" />
+    <ToggleButton Name="NoMenuTimerSwitch" Style="{StaticResource SwitchToggleStyle}" Content="No menu countdown" AutomationProperties.Name="No menu countdown" HorizontalAlignment="Left" MinWidth="210" Margin="0,0,0,4" Checked="Switch_OnChanged" Unchecked="Switch_OnChanged" />
+    <TextBlock Text="The Time Remaining countdown in the menus stops, so the game never returns to the title on its own. Experimental; off by default." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,16" />
+    <TextBlock Text="A change takes effect the next time you press Play." Style="{StaticResource HelpTextStyle}" Margin="3,0,0,0" />
+  </StackPanel>
+</UserControl>

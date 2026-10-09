@@ -6,3 +6,5 @@ packages/
 .vs/
 *.user
 patch/manifest.json
+devroot/
+fgoacaddon.dll

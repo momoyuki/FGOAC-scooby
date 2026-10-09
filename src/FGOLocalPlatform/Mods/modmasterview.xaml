@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.ModMasterView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <UserControl.Resources>
+    <Style x:Key="MasterItem" TargetType="{x:Type ListBoxItem}">
+      <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+      <Setter Property="Padding" Value="10,8" />
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListBoxItem}">
+            <Border Name="Row" Background="Transparent" BorderBrush="Transparent" BorderThickness="3,0,0,0" CornerRadius="4" Padding="{TemplateBinding Padding}">
+              <ContentPresenter />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Row" Property="Background" Value="{StaticResource PlateHoverBrush}" />
+              </Trigger>
+              <Trigger Property="IsSelected" Value="True">
+                <Setter TargetName="Row" Property="Background" Value="{StaticResource PlateHighBrush}" />
+                <Setter TargetName="Row" Property="BorderBrush" Value="{StaticResource IceBrush}" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+  <Grid Margin="0,12,0,0">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="310" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+      <StackPanel Margin="0,0,16,0">
+        <CheckBox Name="Enabled" Content="Use my Master portraits" />
+        <TextBlock Style="{StaticResource HelpTextStyle}" Margin="0,8,0,8" Text="Only your own Master shows them; other characters keep the game's portraits, and players without these files see the game's own." />
+        <ListBox Name="Slots" Height="285" ItemContainerStyle="{StaticResource MasterItem}" Background="{StaticResource PlateLowBrush}" BorderBrush="{StaticResource LineBrush}" Foreground="{StaticResource TextBrush}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" AutomationProperties.Name="Images" SelectionChanged="SelectSlot">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock TextWrapping="Wrap" Text="{Binding}" />
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </StackPanel>
+    </ScrollViewer>
+    <Grid Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <WrapPanel>
+        <Button Content="Export the game's images" Margin="0,0,8,6" Click="ExportTemplates" />
+        <Button Content="Replace with a PNG" Margin="0,0,8,6" Click="Import" />
+        <Button Content="Replace several" Margin="0,0,8,6" Click="ImportBatch" />
+        <Button Content="Back to the game's image" Margin="0,0,0,6" Click="Restore" />
+      </WrapPanel>
+      <Grid Grid.Row="1" Margin="0,12">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <DockPanel Margin="0,0,8,0">
+          <TextBlock DockPanel.Dock="Top" Text="The game's image" Style="{StaticResource HelpTextStyle}" Margin="0,0,0,8" />
+          <Image Name="Original" Stretch="Uniform" />
+        </DockPanel>
+        <DockPanel Grid.Column="1" Margin="8,0,0,0">
+          <TextBlock DockPanel.Dock="Top" Text="Yours" Style="{StaticResource HelpTextStyle}" Margin="0,0,0,8" />
+          <Image Name="Replacement" Stretch="Uniform" />
+        </DockPanel>
+      </Grid>
+      <TextBlock Grid.Row="2" Style="{StaticResource HelpTextStyle}" Margin="0,0,0,8" Text="Export the game's images as transparent PNGs to draw over. A replacement must have the same size; it is never stretched or cropped. To replace several at once, keep the exported file names." />
+      <StackPanel Grid.Row="3">
+        <Button Content="Save Master portraits" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Left" Click="Save" />
+        <TextBlock Name="Status" Style="{StaticResource HelpTextStyle}" Margin="0,8,0,0" />
+      </StackPanel>
+    </Grid>
+  </Grid>
+</UserControl>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.ModsPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid Margin="40,28,40,28">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <TextBlock Text="Mods" Style="{StaticResource PageTitleStyle}" Margin="0,0,0,8" />
+    <TextBlock Name="StatusText" Grid.Row="1" Style="{StaticResource HelpTextStyle}" />
+    <ContentControl Name="Workbench" Grid.Row="2" />
+  </Grid>
+</UserControl>

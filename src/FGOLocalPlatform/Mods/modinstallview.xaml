@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.ModInstallView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+    <StackPanel Margin="0,12,0,0" MaxWidth="760" HorizontalAlignment="Left">
+      <WrapPanel>
+        <Button Name="ImportButton" Content="Import a package" VerticalAlignment="Center" Margin="0,0,12,0" Click="Install" />
+        <TextBlock Name="ImportNotice" Style="{StaticResource HelpTextStyle}" VerticalAlignment="Center" Text="Package import has a known problem, and Cloud23333 advises against using it." />
+      </WrapPanel>
+      <CheckBox Name="LoadOnInstall" Content="Use it once imported" IsChecked="True" HorizontalAlignment="Left" Margin="0,12,0,0" />
+      <TextBlock Style="{StaticResource HelpTextStyle}" Margin="0,12,0,0" Text="A package is kept apart from your own edits and never writes over them. While a package is used for music, dialogue or Master portraits, it plays instead of your own; untick Use to go back. A change applies the next time the game starts." />
+      <Border Style="{StaticResource CardStyle}" Padding="14,12" Margin="0,16,0,16">
+        <StackPanel>
+          <TextBlock Text="In use" FontWeight="SemiBold" />
+          <TextBlock Name="Sources" TextWrapping="Wrap" Margin="0,8,0,0" />
+        </StackPanel>
+      </Border>
+      <TextBlock Name="Empty" Style="{StaticResource HelpTextStyle}" Text="No packages imported yet." />
+      <TabControl Name="Packages" MinHeight="180" />
+      <TextBlock Name="Status" Style="{StaticResource HelpTextStyle}" Margin="0,12,0,0" />
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

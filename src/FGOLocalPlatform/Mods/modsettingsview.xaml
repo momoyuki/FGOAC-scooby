@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.ModSettingsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:FGOLocalPlatform">
+  <UserControl.Resources>
+    <Style x:Key="DialogueToolButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+      <Setter Property="Margin" Value="0,0,8,0" />
+    </Style>
+    <Style x:Key="ModHint" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource HelpTextStyle}">
+      <Setter Property="Margin" Value="0,6,0,6" />
+    </Style>
+    <Style x:Key="ModLabel" TargetType="{x:Type TextBlock}">
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="Margin" Value="0,12,0,6" />
+    </Style>
+    <Style x:Key="UserText" TargetType="{x:Type TextBlock}">
+      <Setter Property="TextWrapping" Value="Wrap" />
+      <Setter Property="Margin" Value="6" />
+    </Style>
+    <Style TargetType="{x:Type WrapPanel}">
+      <Setter Property="Margin" Value="0,4,0,4" />
+    </Style>
+    <Style x:Key="EventItem" TargetType="{x:Type ListBoxItem}">
+      <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+      <Setter Property="Padding" Value="10,8" />
+      <Setter Property="Margin" Value="0,0,0,2" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListBoxItem}">
+            <Border Name="ItemBorder" Background="Transparent" BorderBrush="Transparent" BorderThickness="3,0,0,0" CornerRadius="4" Padding="{TemplateBinding Padding}">
+              <ContentPresenter />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ItemBorder" Property="Background" Value="{StaticResource PlateHoverBrush}" />
+              </Trigger>
+              <Trigger Property="IsSelected" Value="True">
+                <Setter TargetName="ItemBorder" Property="Background" Value="{StaticResource PlateHighBrush}" />
+                <Setter TargetName="ItemBorder" Property="BorderBrush" Value="{StaticResource IceBrush}" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="ModList" TargetType="{x:Type ListBox}">
+      <Setter Property="Background" Value="{StaticResource PlateLowBrush}" />
+      <Setter Property="BorderBrush" Value="{StaticResource LineBrush}" />
+      <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+      <Setter Property="ItemContainerStyle" Value="{StaticResource EventItem}" />
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    </Style>
+  </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <TextBlock Style="{StaticResource HelpTextStyle}" Margin="0,0,0,12" Text="Music changes reach a running game when saved. Dialogue, Master portraits and loading images take effect the next time the game starts." />
+    <TabControl Name="Tabs" Grid.Row="1">
+      <TabItem Name="ImportedTab" Header="Packages">
+        <local:ModInstallView x:Name="Installer" />
+      </TabItem>
+      <TabItem Header="Music">
+        <Grid Margin="0,12,0,0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <StackPanel>
+            <CheckBox Name="Bgm" Content="Play my music" />
+            <TextBlock Text="Tracks of a shared pool and of a scene's pool are drawn together. The pool for every battle comes before the pool of a replaced game track." Style="{StaticResource ModHint}" />
+          </StackPanel>
+          <StackPanel Grid.Row="1">
+            <ComboBox Name="Pool" MaxDropDownHeight="360" Margin="0,6,0,0" AutomationProperties.Name="Pool" SelectionChanged="PoolChanged" />
+            <WrapPanel>
+              <Button Content="Where the game plays it" Margin="0,0,8,0" Click="ShowBgmUsage" />
+              <Button Content="Export the usage list" Click="ExportBgmUsage" />
+            </WrapPanel>
+          </StackPanel>
+          <DataGrid Name="Tracks" Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectionMode="Single" Margin="0,10" HeadersVisibility="Column" MinHeight="120" MouseDoubleClick="OpenLoopEditor">
+            <DataGrid.Columns>
+              <DataGridTemplateColumn Header="Track" Width="*" MinWidth="220">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                    <TextBlock Style="{StaticResource UserText}" Text="{Binding Title}" />
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTextColumn Header="Loop start (s)" Width="120" Binding="{Binding LoopBegin}" />
+              <DataGridTextColumn Header="Loop end (s)" Width="120" Binding="{Binding LoopEnd}" />
+              <DataGridTextColumn Header="Gain (dB)" Width="100" Binding="{Binding GainDb, StringFormat=F2}" />
+            </DataGrid.Columns>
+          </DataGrid>
+          <StackPanel Grid.Row="3">
+            <CheckBox Name="AutoLoudness" Content="Match the loudness of the game's own tracks in this pool" IsChecked="True" />
+            <TextBlock Name="ConverterNote" Style="{StaticResource ModHint}" Visibility="Collapsed" />
+            <WrapPanel>
+              <Button Name="ImportMusicButton" Content="Add music" Style="{StaticResource AccentButtonStyle}" Margin="0,0,8,0" Click="ImportMusic" />
+              <Button Content="Waveform and loop" Margin="0,0,8,0" Click="OpenLoopEditor" />
+              <Button Content="Match loudness" Margin="0,0,8,0" IsEnabled="{Binding IsChecked, ElementName=AutoLoudness}" Click="UpdateLoudness" />
+              <Button Content="Remove track" Margin="0,0,8,0" Click="RemoveTrack" />
+              <Button Content="Save music" Click="SaveAudioLive" />
+            </WrapPanel>
+            <TextBlock Text="Double-click a track to open its waveform, drag a loop and listen to it. Loop points found on import are a first guess; points you set come first." Style="{StaticResource ModHint}" />
+          </StackPanel>
+        </Grid>
+      </TabItem>
+      <TabItem Name="DialogueTab" Header="Dialogue">
+        <Grid Margin="0,12,0,0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <CheckBox Name="Dialogue" Content="Play my dialogue" HorizontalAlignment="Left" />
+          <WrapPanel Grid.Row="1" Margin="0,8,0,10">
+            <ComboBox Name="TargetKind" Width="140" Margin="0,0,8,6" AutomationProperties.Name="Where" SelectionChanged="TargetKindChanged">
+              <ComboBoxItem Content="Quest" />
+              <ComboBoxItem Content="Event banner" />
+            </ComboBox>
+            <Grid Width="140" Margin="0,0,8,6">
+              <TextBox Name="QuestSearch" ToolTip="Search by name or number" AutomationProperties.Name="Search" TextChanged="FilterTargets" />
+              <TextBlock Name="QuestSearchHint" Text="Search" Margin="12,0,0,0" Foreground="{StaticResource TextFaintBrush}" VerticalAlignment="Center" IsHitTestVisible="False" />
+            </Grid>
+            <ComboBox Name="Quest" Width="300" Margin="0,0,8,6" MaxDropDownHeight="360" AutomationProperties.Name="Quest or banner" SelectionChanged="QuestChanged" />
+            <ComboBox Name="Trigger" Width="200" Margin="0,0,8,6" SelectedValuePath="Tag" AutomationProperties.Name="When" />
+            <ComboBox Name="Repeat" Width="170" Margin="0,0,8,6" AutomationProperties.Name="How often">
+              <ComboBoxItem Content="Every time" />
+              <ComboBoxItem Content="First time per account" />
+            </ComboBox>
+            <Button Content="Add trigger" Margin="0,0,8,6" Click="AddEvent" />
+            <Button Content="Update trigger" Margin="0,0,0,6" Click="UpdateEvent" />
+          </WrapPanel>
+          <Expander Grid.Row="2" Header="After the dialogue" Margin="0,0,0,10" HorizontalContentAlignment="Stretch">
+            <StackPanel>
+              <WrapPanel>
+                <CheckBox Name="ContinueScreen" Content="Tap to continue" Margin="0,0,12,0" Click="ContinueOptionsChanged" />
+                <CheckBox Name="ContinueCustomImage" Content="Show my own image" Margin="0,0,12,0" Click="ContinueOptionsChanged" />
+                <Button Content="Choose image" Margin="0,0,8,0" Click="ImportContinueImage" />
+                <Button Content="Preview" Click="PreviewContinueImage" />
+              </WrapPanel>
+              <TextBlock Name="ContinueImageInfo" Style="{StaticResource ModHint}" Text="Set for the trigger selected on the left. Without an image of your own the screen is black." />
+            </StackPanel>
+          </Expander>
+          <Border Grid.Row="3" Style="{StaticResource CardStyle}" Padding="14,10" Margin="0,0,0,12">
+            <StackPanel>
+              <WrapPanel HorizontalAlignment="Left" Margin="0">
+                <CheckBox Name="LoadingEnabled" Content="My loading image" VerticalAlignment="Center" Margin="0,0,12,0" Click="LoadingChanged" />
+                <Button Content="Choose image" Style="{StaticResource DialogueToolButton}" Click="ImportLoadingImage" />
+                <Button Content="Preview" Style="{StaticResource DialogueToolButton}" Click="PreviewLoadingImage" />
+                <Button Content="Save loading images" Style="{StaticResource DialogueToolButton}" Margin="0" Click="SaveLoadingImages" />
+                <Image Name="LoadingPreview" Width="64" Height="36" Stretch="Uniform" Margin="12,0,0,0">
+                  <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                      <Style.Triggers>
+                        <Trigger Property="Source" Value="{x:Null}">
+                          <Setter Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                      </Style.Triggers>
+                    </Style>
+                  </Image.Style>
+                </Image>
+              </WrapPanel>
+              <TextBlock Name="LoadingInfo" Style="{StaticResource ModHint}" Margin="0,6,0,0" />
+            </StackPanel>
+          </Border>
+          <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="210" MinWidth="150" />
+              <ColumnDefinition Width="8" />
+              <ColumnDefinition Width="*" MinWidth="300" />
+              <ColumnDefinition Width="8" />
+              <ColumnDefinition Width="240" MinWidth="160" />
+            </Grid.ColumnDefinitions>
+            <DockPanel>
+              <TextBlock DockPanel.Dock="Top" Text="Triggers" Style="{StaticResource ModLabel}" Margin="0,0,0,6" />
+              <Button DockPanel.Dock="Bottom" Content="Remove trigger" Margin="0,8,0,0" Click="RemoveEvent" />
+              <ListBox Name="Events" Style="{StaticResource ModList}" AutomationProperties.Name="Triggers" SelectionChanged="EventChanged">
+                <ListBox.ItemTemplate>
+                  <DataTemplate>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding}" />
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+            </DockPanel>
+            <GridSplitter Grid.Column="1" Width="4" HorizontalAlignment="Center" Background="{StaticResource LineBrush}" />
+            <Grid Grid.Column="2">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" MinHeight="100" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <StackPanel Margin="0,0,0,8">
+                <TextBlock Text="Lines in order" Style="{StaticResource ModLabel}" Margin="0,0,0,6" />
+                <ScrollViewer Background="Transparent" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                  <StackPanel Orientation="Horizontal">
+                    <Button Content="Add line" Style="{StaticResource DialogueToolButton}" Click="AddLine" />
+                    <Button Content="Copy line" Style="{StaticResource DialogueToolButton}" Click="DuplicateLine" />
+                    <Button Content="Up" Style="{StaticResource DialogueToolButton}" Click="MoveUp" />
+                    <Button Content="Down" Style="{StaticResource DialogueToolButton}" Click="MoveDown" />
+                    <Button Content="Delete line" Style="{StaticResource DialogueToolButton}" Margin="0" Click="RemoveLine" />
+                  </StackPanel>
+                </ScrollViewer>
+              </StackPanel>
+              <DataGrid Name="Lines" Grid.Row="1" CanUserResizeColumns="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" AutoGenerateColumns="False" IsReadOnly="False" CanUserAddRows="False" SelectionMode="Single" HeadersVisibility="All" RowHeaderWidth="38" AllowDrop="True" Loaded="StyleDialogueCorner" SizeChanged="FitDialogueColumns" SelectionChanged="LineChanged" LoadingRow="NumberRow" PreviewMouseLeftButtonDown="StartDrag" PreviewMouseMove="DragLine" Drop="DropLine" PreviewDragOver="ScrollDrag" PreviewDragLeave="LeaveDrag">
+                <DataGrid.RowHeaderStyle>
+                  <Style TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="Foreground" Value="{StaticResource TextSoftBrush}" />
+                    <Setter Property="Template">
+                      <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type DataGridRowHeader}">
+                          <Border Background="{StaticResource PlateBrush}" BorderBrush="{StaticResource LineBrush}" BorderThickness="0,0,1,1" Padding="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                          </Border>
+                        </ControlTemplate>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </DataGrid.RowHeaderStyle>
+                <DataGrid.Columns>
+                  <DataGridTemplateColumn Header="Name" Width="110">
+                    <DataGridTemplateColumn.CellTemplate>
+                      <DataTemplate>
+                        <TextBlock Style="{StaticResource UserText}" Text="{Binding Name}" />
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                      <DataTemplate>
+                        <TextBox AcceptsReturn="False" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                  </DataGridTemplateColumn>
+                  <DataGridTemplateColumn Header="Line" Width="*" MinWidth="160">
+                    <DataGridTemplateColumn.CellTemplate>
+                      <DataTemplate>
+                        <TextBlock Style="{StaticResource UserText}" Text="{Binding Text}" />
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                      <DataTemplate>
+                        <TextBox AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                  </DataGridTemplateColumn>
+                </DataGrid.Columns>
+              </DataGrid>
+              <TextBlock Grid.Row="2" Text="Drag a line by its number to move it; the list scrolls near its edges." Style="{StaticResource ModHint}" />
+            </Grid>
+            <GridSplitter Grid.Column="3" Width="4" HorizontalAlignment="Center" Background="{StaticResource LineBrush}" />
+            <Grid Grid.Column="4" Margin="10,0,0,0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Image Name="PortraitPreview" Stretch="Uniform" />
+              <TextBlock Name="PortraitInfo" Grid.Row="1" Style="{StaticResource ModHint}" HorizontalAlignment="Center" />
+            </Grid>
+          </Grid>
+        </Grid>
+      </TabItem>
+      <TabItem Name="PortraitLibraryTab" Header="Portraits">
+        <Grid Margin="0,12,0,0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <StackPanel>
+            <TextBlock Text="Portrait folder" Style="{StaticResource ModLabel}" Margin="0,0,0,6" />
+            <Grid>
+              <TextBox Name="LibraryPath" ToolTip="A folder of your own; empty uses the one in App\1_MOD." AutomationProperties.Name="Portrait folder" TextChanged="LibraryPathChanged" />
+              <TextBlock Name="LibraryPathHint" Text="Empty uses App\1_MOD" Margin="12,0,0,0" Foreground="{StaticResource TextFaintBrush}" VerticalAlignment="Center" IsHitTestVisible="False" />
+            </Grid>
+            <WrapPanel>
+              <Button Content="Use this folder" Margin="0,0,8,0" Click="UseLibrary" />
+              <Button Content="Open the folder" Click="OpenLibrary" />
+            </WrapPanel>
+            <TextBlock Text="A folder of your own can serve several mods. An export carries the portraits its lines use." Style="{StaticResource ModHint}" />
+          </StackPanel>
+          <TextBlock Grid.Row="1" Text="Pick a portrait to rename it. A line's portrait is chosen in the window that opens from the Dialogue tab." Style="{StaticResource ModHint}" />
+          <Grid Grid.Row="2" Margin="0,8,0,0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" MinWidth="210" />
+              <ColumnDefinition Width="330" />
+            </Grid.ColumnDefinitions>
+            <ListBox Name="LibraryItems" Style="{StaticResource ModList}" AutomationProperties.Name="Portraits" SelectionChanged="LibraryChanged">
+              <ListBox.ItemTemplate>
+                <DataTemplate>
+                  <TextBlock TextWrapping="Wrap" Margin="4" Text="{Binding}" />
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+              <StackPanel Margin="16,0,0,0">
+                <TextBlock Text="Portrait name" Style="{StaticResource ModLabel}" Margin="0,0,0,6" />
+                <TextBox Name="PortraitName" AutomationProperties.Name="Portrait name" />
+                <TextBlock Name="LibraryReference" Style="{StaticResource ModHint}" />
+                <WrapPanel>
+                  <Button Content="Rename" Margin="0,0,8,6" Click="RenamePortrait" />
+                  <Button Content="Add portraits" Margin="0,0,8,6" Click="ImportPortrait" />
+                  <Button Content="Delete" Style="{StaticResource DestructiveButtonStyle}" Margin="0,0,0,6" Click="RemovePortrait" />
+                </WrapPanel>
+                <Image Name="LibraryPreview" Width="160" Height="180" Stretch="Uniform" Margin="0,12" />
+                <TextBlock Text="A PNG becomes a portrait of its own beside the game's portraits. It is fitted to the dialogue frame, keeping its proportions and transparency." Style="{StaticResource ModHint}" />
+              </StackPanel>
+            </ScrollViewer>
+          </Grid>
+        </Grid>
+      </TabItem>
+      <TabItem Name="MasterTab" Header="Master">
+        <local:ModMasterView x:Name="MasterEditor" />
+      </TabItem>
+      <TabItem Header="Export">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+          <StackPanel Margin="0,12,0,0" MaxWidth="760" HorizontalAlignment="Left">
+            <TextBlock Text="Music, dialogue and Master portraits are exported as separate packages." Style="{StaticResource ModHint}" Margin="0,0,0,6" />
+            <TextBlock Text="Name" Style="{StaticResource ModLabel}" />
+            <TextBox Name="PackageTitle" MinWidth="500" AutomationProperties.Name="Name" />
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <StackPanel Margin="0,0,16,0">
+                <TextBlock Text="Author" Style="{StaticResource ModLabel}" />
+                <TextBox Name="PackageAuthor" AutomationProperties.Name="Author" />
+              </StackPanel>
+              <StackPanel Grid.Column="1">
+                <TextBlock Text="Version" Style="{StaticResource ModLabel}" />
+                <TextBox Name="PackageVersion" AutomationProperties.Name="Version" />
+              </StackPanel>
+            </Grid>
+            <TextBlock Text="Description" Style="{StaticResource ModLabel}" />
+            <TextBox Name="PackageDescription" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="100" VerticalContentAlignment="Top" AutomationProperties.Name="Description" />
+            <WrapPanel Margin="0,20,0,8">
+              <Button Content="Export music" Margin="0,0,12,8" ToolTip="The pools, their loops and the music files only" Click="ExportAudio" />
+              <Button Content="Export dialogue" Margin="0,0,12,8" ToolTip="The triggers, their lines, the portraits they use and the built files only" Click="ExportDialogue" />
+              <Button Content="Export Master portraits" Margin="0,0,0,8" Click="ExportMaster" />
+            </WrapPanel>
+            <Button Content="Open the mod folder" HorizontalAlignment="Left" Click="OpenFolder" />
+          </StackPanel>
+        </ScrollViewer>
+      </TabItem>
+    </TabControl>
+    <DockPanel Grid.Row="2" Margin="0,12,0,0">
+      <Button DockPanel.Dock="Right" Content="Save and build" Click="Save">
+        <Button.Style>
+          <Style BasedOn="{StaticResource AccentButtonStyle}" TargetType="{x:Type Button}">
+            <Style.Triggers>
+              <DataTrigger Value="True" Binding="{Binding IsSelected, ElementName=ImportedTab}">
+                <Setter Property="Visibility" Value="Collapsed" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Button.Style>
+      </Button>
+      <TextBlock Name="Status" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{StaticResource TextSoftBrush}" Margin="0,0,16,0" />
+    </DockPanel>
+  </Grid>
+</UserControl>

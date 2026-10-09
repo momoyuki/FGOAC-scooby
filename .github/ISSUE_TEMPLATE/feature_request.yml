@@ -5,8 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Two things this project will not do: add online play, which does not exist to connect to,
-        and distribute game files. Anything else is fair to ask for.
+        One thing this project will not do: distribute game files. Anything else is fair to ask for.
   - type: textarea
     id: problem
     attributes:

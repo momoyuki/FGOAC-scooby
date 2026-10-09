@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.CommunityServerView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Loaded="View_OnLoaded" PreviewKeyDown="View_OnPreviewKeyDown">
+  <StackPanel HorizontalAlignment="Left" MaxWidth="900">
+    <FrameworkElement.Resources>
+      <ResourceDictionary>
+        <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+          <Setter Property="Margin" Value="0,5" />
+          <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="LabelStyle" TargetType="{x:Type TextBlock}">
+          <Setter Property="VerticalAlignment" Value="Center" />
+          <Setter Property="TextWrapping" Value="Wrap" />
+          <Setter Property="Foreground" Value="{StaticResource TextSoftBrush}" />
+        </Style>
+      </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="260" />
+        <ColumnDefinition Width="440" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="44" />
+        <RowDefinition Height="44" />
+        <RowDefinition Height="Auto" MinHeight="44" />
+      </Grid.RowDefinitions>
+      <TextBlock Text="Address" Style="{StaticResource LabelStyle}" />
+      <TextBox Name="CommunityHostBox" Grid.Column="1" AutomationProperties.Name="Community server address" />
+      <TextBlock Text="Secure port" Grid.Row="1" Style="{StaticResource LabelStyle}" />
+      <TextBox Name="CommunityTlsPortBox" Grid.Row="1" Grid.Column="1" Width="120" HorizontalAlignment="Left" FontFamily="{StaticResource DigitFont}" AutomationProperties.Name="Secure port" />
+      <TextBlock Text="Certificate fingerprint (the code the operator gives, if any)" Grid.Row="2" Margin="0,0,16,0" Style="{StaticResource LabelStyle}" />
+      <TextBox Name="CommunityPinBox" Grid.Row="2" Grid.Column="1" FontFamily="{StaticResource DigitFont}" AutomationProperties.Name="Certificate fingerprint" />
+    </Grid>
+    <Expander Header="Ports: keep them unless the operator says otherwise" Margin="0,12,0,0">
+      <Grid Margin="0,8,0,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="260" />
+          <ColumnDefinition Width="120" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="44" />
+          <RowDefinition Height="44" />
+          <RowDefinition Height="44" />
+          <RowDefinition Height="44" />
+          <RowDefinition Height="44" />
+          <RowDefinition Height="44" />
+        </Grid.RowDefinitions>
+        <FrameworkElement.Resources>
+          <ResourceDictionary>
+            <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+              <Setter Property="Margin" Value="0,5" />
+              <Setter Property="VerticalContentAlignment" Value="Center" />
+              <Setter Property="TextAlignment" Value="Center" />
+              <Setter Property="FontFamily" Value="{StaticResource DigitFont}" />
+            </Style>
+          </ResourceDictionary>
+        </FrameworkElement.Resources>
+        <TextBlock Text="Ping UDP port on the server" Style="{StaticResource LabelStyle}" />
+        <TextBox Name="CommunityUdpPingBox" Grid.Column="1" AutomationProperties.Name="Ping UDP port on the server" />
+        <TextBlock Text="Battle UDP port on the server" Grid.Row="1" Style="{StaticResource LabelStyle}" />
+        <TextBox Name="CommunityUdpDistBox" Grid.Row="1" Grid.Column="1" AutomationProperties.Name="Battle UDP port on the server" />
+        <TextBlock Text="Ports the game uses on this PC" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="0,0,0,6" Style="{StaticResource HelpTextStyle}" />
+        <TextBlock Text="Title port (game sign-in)" Grid.Row="3" Style="{StaticResource LabelStyle}" />
+        <TextBox Name="CommunityHttpBox" Grid.Row="3" Grid.Column="1" AutomationProperties.Name="Title port" />
+        <TextBlock Text="Billing port (secure)" Grid.Row="4" Style="{StaticResource LabelStyle}" />
+        <TextBox Name="CommunityBillingBox" Grid.Row="4" Grid.Column="1" AutomationProperties.Name="Billing port" />
+        <TextBlock Text="Card reader port" Grid.Row="5" Style="{StaticResource LabelStyle}" />
+        <TextBox Name="CommunityAimeBox" Grid.Row="5" Grid.Column="1" AutomationProperties.Name="Card reader port" />
+      </Grid>
+    </Expander>
+    <DockPanel Margin="0,16,0,0">
+      <Button Content="Save" MinWidth="120" Margin="0,0,16,0" ToolTip="Saves the address and ports; Enter in any box does the same" Click="Save_OnClick" />
+      <TextBlock Name="SaveNote" VerticalAlignment="Center" Style="{StaticResource HelpTextStyle}" />
+    </DockPanel>
+  </StackPanel>
+</UserControl>

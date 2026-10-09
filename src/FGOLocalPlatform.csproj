@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>FGOLocalPlatform</AssemblyName>
     <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
@@ -26,7 +26,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>platform.ico</ApplicationIcon>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationManifest Condition="'$(ShellDev)' != 'true'">app.manifest</ApplicationManifest>
+    <!-- ShellDev=true: no elevation, so the window can be opened and captured by a normal process. -->
+    <ApplicationManifest Condition="'$(ShellDev)' == 'true'">app.dev.manifest</ApplicationManifest>
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
@@ -38,34 +40,62 @@
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="app.xaml" />
-    <Page Include="audiosettingsview.xaml" />
-    <Page Include="bannersettingsview.xaml" />
-    <Page Include="cardquantitywindow.xaml" />
-    <Page Include="cardvariantswindow.xaml" />
-    <Page Include="controlsettingsview.xaml" />
-    <Page Include="cursorsettingsview.xaml" />
-    <Page Include="debugsettingsview.xaml" />
-    <Page Include="diagnosticsview.xaml" />
+    <Page Include="FGOLocalPlatform\Settings\audiosettingsview.xaml" />
+    <Page Include="FGOLocalPlatform\Events\bannersettingsview.xaml" />
+    <Page Include="FGOLocalPlatform\Events\eventspage.xaml" />
+    <Page Include="FGOLocalPlatform\Events\eventswitchesview.xaml" />
+    <Page Include="FGOLocalPlatform\Account\accountspage.xaml" />
+    <Page Include="FGOLocalPlatform\BattleDebug\battledebugpage.xaml" />
+    <Page Include="FGOLocalPlatform\Mods\modspage.xaml" />
+    <Page Include="FGOLocalPlatform\Mods\modinstallview.xaml" />
+    <Page Include="FGOLocalPlatform\Mods\modloopeditor.xaml" />
+    <Page Include="FGOLocalPlatform\Mods\modmasterview.xaml" />
+    <Page Include="FGOLocalPlatform\Mods\modportraitpicker.xaml" />
+    <Page Include="FGOLocalPlatform\Mods\modsettingsview.xaml" />
+    <Page Include="FGOLocalPlatform\PhotoMode\photomodepage.xaml" />
+    <Page Include="FGOLocalPlatform\Settings\battleeffectsview.xaml" />
+    <Page Include="FGOLocalPlatform\Settings\bindingssettingsview.xaml" />
+    <Page Include="FGOLocalPlatform\Account\communityaccountdialog.xaml" />
+    <Page Include="FGOLocalPlatform\Online\communityserverview.xaml" />
+    <Page Include="FGOLocalPlatform\Cards\cardquantitywindow.xaml" />
+    <Page Include="FGOLocalPlatform\Cards\cardvariantswindow.xaml" />
+    <Page Include="FGOLocalPlatform\Settings\controlsettingsview.xaml" />
+    <Page Include="FGOLocalPlatform\Settings\cursorsettingsview.xaml" />
+    <Page Include="FGOLocalPlatform\BattleDebug\debugsettingsview.xaml" />
+    <Page Include="FGOLocalPlatform\Settings\pcplaysettingsview.xaml" />
+    <Page Include="FGOLocalPlatform\Settings\diagnosticsview.xaml" />
     <Page Include="mainwindow.xaml" />
-    <Page Include="nameprompt.xaml" />
-    <Page Include="newaccountdialog.xaml" />
+    <Page Include="FGOLocalPlatform\Cards\nameprompt.xaml" />
+    <Page Include="FGOLocalPlatform\Account\newaccountdialog.xaml" />
     <Page Include="photocontrols.xaml" />
-    <Page Include="serversettingsview.xaml" />
-    <Page Include="summonsettingswindow.xaml" />
-    <Page Include="whatsnewdialog.xaml" />
+    <Page Include="FGOLocalPlatform\Account\recoveraccountdialog.xaml" />
+    <Page Include="FGOLocalPlatform\Account\recoverykeydialog.xaml" />
+    <Page Include="FGOLocalPlatform\Settings\serversettingsview.xaml" />
+    <Page Include="FGOLocalPlatform\Cards\summonsettingswindow.xaml" />
+    <Page Include="FGOLocalPlatform\Startup\whatsnewdialog.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="platform.ico" />
+    <!-- Static faces: WPF does not load the variable Geist files. -->
+    <Resource Include="Fonts\Geist-Regular.ttf" />
+    <Resource Include="Fonts\Geist-Medium.ttf" />
+    <Resource Include="Fonts\Geist-SemiBold.ttf" />
+    <Resource Include="Fonts\Geist-Bold.ttf" />
+    <Resource Include="Fonts\GeistMono-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FGOLocalPlatform.CardNames.json" LogicalName="FGOLocalPlatform.CardNames.json" />
     <EmbeddedResource Include="FGOLocalPlatform.CraftEffects.json" LogicalName="FGOLocalPlatform.CraftEffects.json" />
     <EmbeddedResource Include="FGOLocalPlatform.EventTogglePatch.json" LogicalName="FGOLocalPlatform.EventTogglePatch.json" />
+    <EmbeddedResource Include="FGOLocalPlatform.EventNames.json" LogicalName="FGOLocalPlatform.EventNames.json" />
+    <EmbeddedResource Include="FGOLocalPlatform.NativeBgmLoudness.json" LogicalName="FGOLocalPlatform.NativeBgmLoudness.json" />
   </ItemGroup>
   <ItemGroup>
     <!-- The author's build references a copy of this assembly beside the game. The package is
          the same library at the same assembly identity (0.8.8.0), restored from nuget.org, so
          the project builds on a machine that has no game install. -->
     <PackageReference Include="ZstdSharp.Port" Version="0.8.8" />
+    <!-- BC7 encoding of the MOD sprites, the library Cloud23333's launcher uses. -->
+    <PackageReference Include="BCnEncoder.Net" Version="2.3.0" />
   </ItemGroup>
 </Project>

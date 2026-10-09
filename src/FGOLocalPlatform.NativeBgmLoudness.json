@@ -1,0 +1,878 @@
+{
+  "arms_bgm01.ogg": {
+    "Sha256": "932B2CCDDB6A13D32C8EF231FD4FDFAF4BBFC66E340EB828F42562A7BE045C7D",
+    "Integrated": -15.16,
+    "TruePeak": -1.9,
+    "Range": 4.1
+  },
+  "arms_bgm02.ogg": {
+    "Sha256": "7D378095D51D618C0DB140BF69A6BA8559E9BC2C198177D713358C24F5CFE9CE",
+    "Integrated": -15.26,
+    "TruePeak": -4.16,
+    "Range": 5.4
+  },
+  "arms_bgm03.ogg": {
+    "Sha256": "CBCDC700962CC06303B98E3F1305FBDB231A176245D4043CB5016D37582E22C2",
+    "Integrated": -15.36,
+    "TruePeak": -4.54,
+    "Range": 3.1
+  },
+  "arms_bgm04.ogg": {
+    "Sha256": "5A12D19EBFDB6A2384E239741EDAFAC44A4E498A4D93B35B924F9D4E45E8708E",
+    "Integrated": -16.72,
+    "TruePeak": -3.67,
+    "Range": 4.4
+  },
+  "arms_bgm05.ogg": {
+    "Sha256": "AE8F94590170DB6FF841B92542706719D81D3CB439CE5535F34E05D1EE2C7FDC",
+    "Integrated": -19.05,
+    "TruePeak": -3.95,
+    "Range": 3.6
+  },
+  "arms_bgm06.ogg": {
+    "Sha256": "04872122E224560FB67E906A8C25E6846A91259FE36F52A8D8F08E4D0A39F982",
+    "Integrated": -18.91,
+    "TruePeak": -6.3,
+    "Range": 4.9
+  },
+  "arms_bgm07.ogg": {
+    "Sha256": "1C745B5C726F4A9F3CD38D998455E6056CE2788714F36E664DE725436E59DA66",
+    "Integrated": -16.21,
+    "TruePeak": -3.91,
+    "Range": 3.3
+  },
+  "arms_bgm08.ogg": {
+    "Sha256": "A85E69AA502A6A3059296DA174DCD621D1D3DEF131729593210C0314E156FD19",
+    "Integrated": -15.86,
+    "TruePeak": -2.85,
+    "Range": 5.1
+  },
+  "arms_bgm09.ogg": {
+    "Sha256": "B9865517C6A1634A6DD52A3EB3B68DBBD5D7D9EEC54E9CD9B760895489F283ED",
+    "Integrated": -18.36,
+    "TruePeak": -7.27,
+    "Range": 1.7
+  },
+  "arms_bgm100.ogg": {
+    "Sha256": "B33C9ED6089D72AB0D1837C6EAB5C95D363D3712EE2FE961DFB78D4F5D6F118D",
+    "Integrated": -16.41,
+    "TruePeak": -1.58,
+    "Range": 5.6
+  },
+  "arms_bgm101.ogg": {
+    "Sha256": "13F17762DF7914E7163250BA2083321CD588FBAAB13142F178CAE259EE25E586",
+    "Integrated": -14.09,
+    "TruePeak": -4.27,
+    "Range": 1.6
+  },
+  "arms_bgm102.ogg": {
+    "Sha256": "10A98AC893A55D72C3A14F6AA1F07EF4B5BDD6CD437B5E3A7D7A4196ACD25CDD",
+    "Integrated": -12.66,
+    "TruePeak": -3.49,
+    "Range": 2.3
+  },
+  "arms_bgm103.ogg": {
+    "Sha256": "4A7B9846103A3E1D6A957DAB6328F13E681E281B917D4CBCE9798A1EFD21BD8A",
+    "Integrated": -13.05,
+    "TruePeak": -2.38,
+    "Range": 6.2
+  },
+  "arms_bgm104.ogg": {
+    "Sha256": "2C1124EE92A009648EA070E98A2A66C16FAE7B724A892BE963ECD938598221BA",
+    "Integrated": -18.34,
+    "TruePeak": -6.35,
+    "Range": 6.5
+  },
+  "arms_bgm105.ogg": {
+    "Sha256": "CD1E982FB54F3F3B1315800F16E9F203FC1F44370709B80DFDDE08402E48DC1B",
+    "Integrated": -14.56,
+    "TruePeak": -0.94,
+    "Range": 9.3
+  },
+  "arms_bgm106.ogg": {
+    "Sha256": "3AFF45ABA93F3D642316AE39B63C66C6FAD3F2F4243F1D764CC6D3165090D4BC",
+    "Integrated": -15.51,
+    "TruePeak": -1.29,
+    "Range": 6.1
+  },
+  "arms_bgm107.ogg": {
+    "Sha256": "98E13E9D97D46632298DE89252F7F49C94EAAE0230C4C1575FC86A002143859E",
+    "Integrated": -12.09,
+    "TruePeak": -4.32,
+    "Range": 2.1
+  },
+  "arms_bgm108.ogg": {
+    "Sha256": "ACB0774583B617F256CEB247A8286B0C09DB60F2DE52B403A4FB38D40D75D1EE",
+    "Integrated": -18.11,
+    "TruePeak": 0.1,
+    "Range": 7.3
+  },
+  "arms_bgm109.ogg": {
+    "Sha256": "B3E21C8CD7433C47BEFB19AD9956D3C8C153ED303C1F3F38C273DE2E108977FB",
+    "Integrated": -13.87,
+    "TruePeak": -1.17,
+    "Range": 2.6
+  },
+  "arms_bgm11.ogg": {
+    "Sha256": "4A26BCE1AD6E1F7FEC2E261B609E9CF3B1FB2EC28BAE0DCB760E390227F5CE0A",
+    "Integrated": -17.97,
+    "TruePeak": -4.54,
+    "Range": 7.0
+  },
+  "arms_bgm110.ogg": {
+    "Sha256": "9A859617134D7D80C4AD563FD551C3617F817DB93F674B43D6DB291C4F264C56",
+    "Integrated": -15.85,
+    "TruePeak": -2.12,
+    "Range": 3.0
+  },
+  "arms_bgm111.ogg": {
+    "Sha256": "F954C27A359BDF2D97B6448230CC657832BB7377F552D0469499D0FE55A89E7B",
+    "Integrated": -11.55,
+    "TruePeak": -0.11,
+    "Range": 1.0
+  },
+  "arms_bgm112.ogg": {
+    "Sha256": "25726C8207E836084A25AC080E360C5235799FD7165279B871091B9A3EE7051C",
+    "Integrated": -17.0,
+    "TruePeak": -5.97,
+    "Range": 2.5
+  },
+  "arms_bgm113.ogg": {
+    "Sha256": "408CD3BF165990B142E2159D5232E9D8F9CFBB8349C482563D8CD445AEAD55A6",
+    "Integrated": -14.38,
+    "TruePeak": -2.48,
+    "Range": 4.4
+  },
+  "arms_bgm114.ogg": {
+    "Sha256": "FF3AC14F97433BB1003C3422332774AADD1EA51D2A0F7F9E286C1A2B77AA3922",
+    "Integrated": -12.83,
+    "TruePeak": -2.1,
+    "Range": 1.7
+  },
+  "arms_bgm115.ogg": {
+    "Sha256": "224A6FBFBF13A8BA73DD5A52188C4931E9B98531BE266E01EC2C46E8C20C3473",
+    "Integrated": -12.85,
+    "TruePeak": -1.31,
+    "Range": 3.9
+  },
+  "arms_bgm116.ogg": {
+    "Sha256": "DBEA936FFC6D28A0571906EE419EA75306BDC86BFEDA7113FB1795C9EC98CEF4",
+    "Integrated": -12.02,
+    "TruePeak": -0.61,
+    "Range": 2.3
+  },
+  "arms_bgm117.ogg": {
+    "Sha256": "ABA67D994BEB55E27D0D3CF5E2C5E408F37350696ED2675010A74A0FDF5787BA",
+    "Integrated": -13.7,
+    "TruePeak": -4.81,
+    "Range": 3.3
+  },
+  "arms_bgm118.ogg": {
+    "Sha256": "D90FFD5524CEE0E0995D311F37049FB87DB232DA86F0CB026BC9EE63D6AAE9C4",
+    "Integrated": -13.23,
+    "TruePeak": -3.47,
+    "Range": 2.8
+  },
+  "arms_bgm119.ogg": {
+    "Sha256": "8C7656A586219065F5B15D4C8DCAD69FCDD4ECB90DDF0942B20E11282AF81D07",
+    "Integrated": -11.86,
+    "TruePeak": -2.5,
+    "Range": 3.4
+  },
+  "arms_bgm11_sht.ogg": {
+    "Sha256": "17AB414FF728006A61D053CECF7A9E1C34ED1648C7E6F5E63264EC97C9EDBC35",
+    "Integrated": -17.64,
+    "TruePeak": -4.54,
+    "Range": 6.3
+  },
+  "arms_bgm12.ogg": {
+    "Sha256": "355446CDC0220DCD5E648DA4CB89C80E2490A7E80211E1F6097D48FC8881C8EB",
+    "Integrated": -17.76,
+    "TruePeak": -5.11,
+    "Range": 3.7
+  },
+  "arms_bgm120.ogg": {
+    "Sha256": "3437B744A3EFA64AB0E2AD44DAD0CC4C337D18A0B9CEC6DE18E4432631404246",
+    "Integrated": -18.25,
+    "TruePeak": -6.11,
+    "Range": 2.4
+  },
+  "arms_bgm121.ogg": {
+    "Sha256": "C0E0EB36F702A24AB55830E931C8C29A3614A965AEF3251845FDFF7AD9B8EFAD",
+    "Integrated": -18.58,
+    "TruePeak": -6.44,
+    "Range": 4.3
+  },
+  "arms_bgm122.ogg": {
+    "Sha256": "ACAA446D69100658F2D9535969AF08D25A93F0D856980016FA44ABC7434D22B9",
+    "Integrated": -16.05,
+    "TruePeak": -3.72,
+    "Range": 1.5
+  },
+  "arms_bgm123.ogg": {
+    "Sha256": "538ECCA2D0411E72A2A403B746A2DEB842353E27B1A401C2FD646B1B3FBB4813",
+    "Integrated": -18.05,
+    "TruePeak": -9.34,
+    "Range": 3.4
+  },
+  "arms_bgm124.ogg": {
+    "Sha256": "4230CEB6B57902F2D3983CD8349DFCF49C417C38E84B443336CC98665E196EC0",
+    "Integrated": -14.15,
+    "TruePeak": -1.45,
+    "Range": 4.3
+  },
+  "arms_bgm125.ogg": {
+    "Sha256": "F334812E61C74A16F170946E026725574746E9289906B8DD29206422555300B0",
+    "Integrated": -13.91,
+    "TruePeak": -0.73,
+    "Range": 5.5
+  },
+  "arms_bgm126.ogg": {
+    "Sha256": "CF47D60B96EB29A4DCDC0E80CC86BA6EC13A3E94DF8E13C98D130ECB811C4F18",
+    "Integrated": -15.48,
+    "TruePeak": -4.02,
+    "Range": 5.2
+  },
+  "arms_bgm127.ogg": {
+    "Sha256": "5088BA74BA56454A12D30EB6730EA58FBCDE168E0F7F200ADC7329DFEA84E398",
+    "Integrated": -17.49,
+    "TruePeak": -5.32,
+    "Range": 4.7
+  },
+  "arms_bgm128.ogg": {
+    "Sha256": "E70BC7AECA1FF4322138FCB4975762C07C46750599F7C3CA0F0FF514444A83E1",
+    "Integrated": -15.01,
+    "TruePeak": -3.28,
+    "Range": 4.7
+  },
+  "arms_bgm129.ogg": {
+    "Sha256": "2E6C81B9CD1724649754A61575DA59B173DD4FE9EA2F4BF8B84028F03AD87046",
+    "Integrated": -14.0,
+    "TruePeak": -3.73,
+    "Range": 1.7
+  },
+  "arms_bgm13.ogg": {
+    "Sha256": "0B3459938E01C1A1B382824E88B55BC20A8962589DEA81E5BCADAC5A1B1D26AE",
+    "Integrated": -15.65,
+    "TruePeak": -0.8,
+    "Range": 4.3
+  },
+  "arms_bgm130.ogg": {
+    "Sha256": "11FCB634444F308CB8076CD072D2E7429C44D74FEB80AB1711027917B700CD00",
+    "Integrated": -14.72,
+    "TruePeak": -4.27,
+    "Range": 4.6
+  },
+  "arms_bgm131.ogg": {
+    "Sha256": "B70C14C6DF634385D985099100E90DC99164DD74244DC2BCCCBDE7B2FE209097",
+    "Integrated": -14.75,
+    "TruePeak": -4.88,
+    "Range": 4.6
+  },
+  "arms_bgm132.ogg": {
+    "Sha256": "BADF7CBD1CF335048DBCE684081565B521F0FC920FBB81784147E4D798D5393D",
+    "Integrated": -19.51,
+    "TruePeak": -6.64,
+    "Range": 8.8
+  },
+  "arms_bgm133.ogg": {
+    "Sha256": "0F18F13C9EE3CAEEA363B17085E057786E9F0742CC8BCDFEC08ADF29C2C0279D",
+    "Integrated": -13.04,
+    "TruePeak": 0.09,
+    "Range": 3.4
+  },
+  "arms_bgm134.ogg": {
+    "Sha256": "305673E3851EE45324532EE21D37DF2935B6D8148866A2819B37A020CB38C647",
+    "Integrated": -17.91,
+    "TruePeak": -1.77,
+    "Range": 2.2
+  },
+  "arms_bgm135.ogg": {
+    "Sha256": "597E52FB62A5439B42F492366454FB9B11A104C6ADC4AC2F3E50E2E17E669063",
+    "Integrated": -15.09,
+    "TruePeak": -0.73,
+    "Range": 3.7
+  },
+  "arms_bgm136.ogg": {
+    "Sha256": "37196B82FDD0C821018B985881BA1BE1E8675D23C789B505E6BF05EC5EBB76F9",
+    "Integrated": -12.65,
+    "TruePeak": -0.01,
+    "Range": 1.4
+  },
+  "arms_bgm137.ogg": {
+    "Sha256": "E9315B880CAED496BAF339B05817F23ECF7B92FC8EBBD1138A12864E1C978339",
+    "Integrated": -12.04,
+    "TruePeak": 0.55,
+    "Range": 3.6
+  },
+  "arms_bgm138.ogg": {
+    "Sha256": "B3DB38854A77CB69D34FD683FB3B3A76FE777821F1F45FF07BDD857D7AE9B6A8",
+    "Integrated": -12.59,
+    "TruePeak": -0.95,
+    "Range": 3.3
+  },
+  "arms_bgm139.ogg": {
+    "Sha256": "6395D13E04021F00AFE73AA0498B7D14E817661AF2117756112F6D21D9B0DA4C",
+    "Integrated": -13.58,
+    "TruePeak": -0.49,
+    "Range": 2.2
+  },
+  "arms_bgm14.ogg": {
+    "Sha256": "BF5A0B7ED9DD260C2E7D0D1954787A10B7C094ABF2EB02D67777A3EA79DEC323",
+    "Integrated": -17.79,
+    "TruePeak": -3.82,
+    "Range": 4.4
+  },
+  "arms_bgm140.ogg": {
+    "Sha256": "B2B6D638D1E2DF95B41A3F9B5E050009EE5E148D61C92E3BFE02DE324CFC2D10",
+    "Integrated": -15.55,
+    "TruePeak": -2.67,
+    "Range": 1.3
+  },
+  "arms_bgm141.ogg": {
+    "Sha256": "C8541BCD424142437675DEEFDC412A04BBDCB28C63F5F6B33A6630132E185460",
+    "Integrated": -14.05,
+    "TruePeak": -4.83,
+    "Range": 1.5
+  },
+  "arms_bgm142.ogg": {
+    "Sha256": "F5ECD6FF171D2B95C1998F834E5E88F44BEF32CDC201DA1277A2928418D7754C",
+    "Integrated": -11.62,
+    "TruePeak": 0.06,
+    "Range": 2.5
+  },
+  "arms_bgm143.ogg": {
+    "Sha256": "563A2B82C25966334C26F7B59BD9B03F4A3AA8DCBBE4BF4F698734697DDBE961",
+    "Integrated": -12.12,
+    "TruePeak": 0.25,
+    "Range": 2.4
+  },
+  "arms_bgm144.ogg": {
+    "Sha256": "D08F7F06E9E17312F0BED9EEA86F4E64DF35C37581BC71E6CD911AC959655F65",
+    "Integrated": -14.73,
+    "TruePeak": -1.84,
+    "Range": 6.1
+  },
+  "arms_bgm145.ogg": {
+    "Sha256": "AD558A6D2EA69DA22736CC3CFF206D0E26CF54ECAC15F8306FAE6F96074F2406",
+    "Integrated": -13.77,
+    "TruePeak": -2.31,
+    "Range": 2.3
+  },
+  "arms_bgm146.ogg": {
+    "Sha256": "77439B14B0E2B54137139584AA5ACC305E22FBBAFDAE57D5D5D99B73A34CCDBB",
+    "Integrated": -13.6,
+    "TruePeak": -1.19,
+    "Range": 2.3
+  },
+  "arms_bgm15.ogg": {
+    "Sha256": "F66D844CD742343BE1610EEE1970876C1FD717FE5D9BC0F30C0F67FD46A6E6DB",
+    "Integrated": -14.81,
+    "TruePeak": -2.42,
+    "Range": 2.9
+  },
+  "arms_bgm16.ogg": {
+    "Sha256": "EB2ECE7D93ED8F78EEFD01199178A7F92DDE63F101A337080B57D06AA078B778",
+    "Integrated": -16.6,
+    "TruePeak": -2.93,
+    "Range": 4.2
+  },
+  "arms_bgm17_sht.ogg": {
+    "Sha256": "034169CD91CF5B256D31EB5CAB38DA1D836AF62C6ABAEDD79E498E2535490D24",
+    "Integrated": -13.73,
+    "TruePeak": -2.35,
+    "Range": 6.8
+  },
+  "arms_bgm18_sht.ogg": {
+    "Sha256": "43DCC3C2481EFDB67E0C5E4578EB61405D23162E72CCC93289F5898992489282",
+    "Integrated": -13.85,
+    "TruePeak": -0.54,
+    "Range": 6.1
+  },
+  "arms_bgm19_sht.ogg": {
+    "Sha256": "4E948B4B79C2BAD719EB129536F4DAF1EC76F25A31849D35432F6CFA503B460D",
+    "Integrated": -15.58,
+    "TruePeak": -3.28,
+    "Range": 7.2
+  },
+  "arms_bgm20_long.ogg": {
+    "Sha256": "D7654A79EFE9FB6B5249D552C4C40861BD26ABD6DEE545F360018060222D2AC2",
+    "Integrated": -14.66,
+    "TruePeak": -2.12,
+    "Range": 7.7
+  },
+  "arms_bgm21.ogg": {
+    "Sha256": "FC68DB6D36835D59833BFB179F4909F6BA6B74460386E5433EA2AEFB3172F491",
+    "Integrated": -14.72,
+    "TruePeak": -2.69,
+    "Range": 5.5
+  },
+  "arms_bgm22.ogg": {
+    "Sha256": "C248AA59AD0CB901B61EBF5F0F09D052B409913BD8BDF6BF9B9E0499D1A770A1",
+    "Integrated": -12.42,
+    "TruePeak": -2.52,
+    "Range": 1.8
+  },
+  "arms_bgm23.ogg": {
+    "Sha256": "2BBC9CCC059EEAA5E7A342844474B97377379CC3B6D402F53E2892090A8E376D",
+    "Integrated": -15.75,
+    "TruePeak": -5.47,
+    "Range": 6.3
+  },
+  "arms_bgm24.ogg": {
+    "Sha256": "87E5AC224008B672C3C46E93DD73C825E7533CD0494811FD1EFBA933B59D7F09",
+    "Integrated": -17.82,
+    "TruePeak": -6.45,
+    "Range": 1.2
+  },
+  "arms_bgm25.ogg": {
+    "Sha256": "5E40C08C1DEB273FBD54CE7CA7DF730B19E8B3DFC8BFA4B6257A18AA8CCB2A3B",
+    "Integrated": -17.02,
+    "TruePeak": -4.44,
+    "Range": 16.8
+  },
+  "arms_bgm26.ogg": {
+    "Sha256": "4D24669DCFE6C5591B17FB35A4D3628F08A6D3B79DF75ED79A8F69460B6E7B34",
+    "Integrated": -15.67,
+    "TruePeak": -1.54,
+    "Range": 3.3
+  },
+  "arms_bgm27.ogg": {
+    "Sha256": "B7F8B5E32FBB2DF38E3DF4A565F40D7F1EF5908D5A3A80A1C01CDF140F1DF96F",
+    "Integrated": -11.59,
+    "TruePeak": -1.52,
+    "Range": 3.2
+  },
+  "arms_bgm28.ogg": {
+    "Sha256": "E27C5E41969EB65E51B4EEC81EEE34B6A5A503951D872541DA1B9E10276CA602",
+    "Integrated": -14.24,
+    "TruePeak": -2.5,
+    "Range": 5.8
+  },
+  "arms_bgm28_sht.ogg": {
+    "Sha256": "8BD4F9D9F999078BFD9654D04CD9C0D00BB01400C52666B1BFC66F1517747E18",
+    "Integrated": -13.35,
+    "TruePeak": -1.88,
+    "Range": 11.0
+  },
+  "arms_bgm29.ogg": {
+    "Sha256": "B0206DA8872F93A688D48B3A511726F0BAF7CCF29662896A295CA0496C248220",
+    "Integrated": -14.84,
+    "TruePeak": -1.18,
+    "Range": 4.7
+  },
+  "arms_bgm30.ogg": {
+    "Sha256": "E39E121D876FFA5DCB0F7EB78B390FC2D6865E2207D101A88097E2D59513B048",
+    "Integrated": -13.08,
+    "TruePeak": -1.67,
+    "Range": 2.3
+  },
+  "arms_bgm31.ogg": {
+    "Sha256": "E2C57134F496A979905C5A2F798D1377D8E33066CCEAED107139883BF6332766",
+    "Integrated": -17.01,
+    "TruePeak": -3.38,
+    "Range": 4.6
+  },
+  "arms_bgm32.ogg": {
+    "Sha256": "38425556FC15F278375C7F7E57B67F423DCBD0069B0B3C8DF533ACED2153EFA0",
+    "Integrated": -14.33,
+    "TruePeak": -4.67,
+    "Range": 2.3
+  },
+  "arms_bgm33.ogg": {
+    "Sha256": "EAA02309E35A4668C821FC4F22CB59BB7FEDEF79E3E0557B8575EEAAE2DC0E8D",
+    "Integrated": -14.59,
+    "TruePeak": -3.4,
+    "Range": 1.6
+  },
+  "arms_bgm34.ogg": {
+    "Sha256": "0CA717BBA87A2EC7EF8941DE45E141B30CC3E0CE5B434245E9ABEE569E8D97C0",
+    "Integrated": -12.6,
+    "TruePeak": -1.6,
+    "Range": 2.8
+  },
+  "arms_bgm35_sht.ogg": {
+    "Sha256": "4E0CC698FA246CB1AD03DE97F414ED6DA0DD0190425561D480219EDC0285E43F",
+    "Integrated": -14.63,
+    "TruePeak": -1.07,
+    "Range": 1.3
+  },
+  "arms_bgm36_sht.ogg": {
+    "Sha256": "3D49DAA8457204B125263DE3187A0792751D4EC4979A3CEF78B2793DCD3A64C0",
+    "Integrated": -14.05,
+    "TruePeak": -2.56,
+    "Range": 8.7
+  },
+  "arms_bgm37_sht.ogg": {
+    "Sha256": "578E0931286B07490FC9CF14070A82619938072F95DD2531892A9F4A6C9F860D",
+    "Integrated": -12.93,
+    "TruePeak": -0.62,
+    "Range": 5.3
+  },
+  "arms_bgm38.ogg": {
+    "Sha256": "E85C7688D2B20D4CBF8E6E2FDC828D839ED077CA0350E0FBB8086CBB357F089C",
+    "Integrated": -15.59,
+    "TruePeak": -4.36,
+    "Range": 5.1
+  },
+  "arms_bgm39.ogg": {
+    "Sha256": "85E53AD33F251CEFB450EF0A66BF72ADD3B56E92F23575B046850B4D76D75D42",
+    "Integrated": -13.45,
+    "TruePeak": -1.71,
+    "Range": 3.8
+  },
+  "arms_bgm40.ogg": {
+    "Sha256": "D6FF1EF326A3A001D11A0F2E11229DEDBF65EB8189DD4E5988B0DC7D96ED6AE9",
+    "Integrated": -19.16,
+    "TruePeak": -5.23,
+    "Range": 13.5
+  },
+  "arms_bgm41.ogg": {
+    "Sha256": "39E2BE00EFA437CEF89C00B7F5865CDB6466B3C43D72D88BBCE908E2898A20F8",
+    "Integrated": -17.73,
+    "TruePeak": -4.74,
+    "Range": 8.2
+  },
+  "arms_bgm42.ogg": {
+    "Sha256": "6CA6C27EAED1E4A3F907A9D78A872F48CBF62F13D893929FEDA6C2332E96CCE1",
+    "Integrated": -16.05,
+    "TruePeak": -4.35,
+    "Range": 9.4
+  },
+  "arms_bgm43.ogg": {
+    "Sha256": "B9EB367AF18F40A10C094F208BBB173528C74282B38CD252689F9E0C6A6BB28C",
+    "Integrated": -13.75,
+    "TruePeak": -3.42,
+    "Range": 2.3
+  },
+  "arms_bgm44.ogg": {
+    "Sha256": "88561707EA96EBC5613B6CD8063FA7E9D6F660CA54F6E79C4ECFC4C5E5321EE5",
+    "Integrated": -12.19,
+    "TruePeak": -1.92,
+    "Range": 2.4
+  },
+  "arms_bgm45.ogg": {
+    "Sha256": "0A5E5B6BE9372775920313BB31006F9948452DF4FBB482988A93E22FFEBC2613",
+    "Integrated": -12.05,
+    "TruePeak": -1.3,
+    "Range": 5.8
+  },
+  "arms_bgm46.ogg": {
+    "Sha256": "E04CDC6FD05262CE8C318D5A6EED647DCB78A65DE4CC877B95256FB2D24BF5EA",
+    "Integrated": -12.79,
+    "TruePeak": -2.49,
+    "Range": 13.8
+  },
+  "arms_bgm47.ogg": {
+    "Sha256": "AE6E1E18BC557454DE5D231837EE10DFE0F67C2BD895CC206BC0D299667E1864",
+    "Integrated": -12.65,
+    "TruePeak": 0.66,
+    "Range": 9.1
+  },
+  "arms_bgm48.ogg": {
+    "Sha256": "BD8E0D6B1EFFA1451A18E39CB6245135BAE6935F91BFCBF209CF3D2DD3BF73C9",
+    "Integrated": -14.86,
+    "TruePeak": -2.1,
+    "Range": 3.9
+  },
+  "arms_bgm49.ogg": {
+    "Sha256": "8CFB6A6C2691AF46108DDA1ED7B434EC713AD07244BF31CA65551372AC8E2CEB",
+    "Integrated": -13.43,
+    "TruePeak": -0.62,
+    "Range": 3.2
+  },
+  "arms_bgm50.ogg": {
+    "Sha256": "C4B9DBB4238E474D8B311EF7B40C34F5076C5759A65BAD14579274C23A385ED3",
+    "Integrated": -14.37,
+    "TruePeak": -2.01,
+    "Range": 3.4
+  },
+  "arms_bgm51.ogg": {
+    "Sha256": "6648426652204AF4392E77F9950A1386C1D0B1B24760DF6CFEC1A03EE4F0923F",
+    "Integrated": -15.17,
+    "TruePeak": -2.9,
+    "Range": 1.5
+  },
+  "arms_bgm52.ogg": {
+    "Sha256": "CC296999E7288EB02E0D406DAFA19D208EFD897FF4C3217F39215E17E7A08293",
+    "Integrated": -15.42,
+    "TruePeak": -3.38,
+    "Range": 2.8
+  },
+  "arms_bgm53.ogg": {
+    "Sha256": "32E958EA23869463E1FA053FB3BDDB4FF123948797CE40E33A6329FA29D1E402",
+    "Integrated": -12.66,
+    "TruePeak": -1.09,
+    "Range": 2.1
+  },
+  "arms_bgm54.ogg": {
+    "Sha256": "E77D36EA4F03B5311FCDE7438A786C799BFFB479A512F6E7E94014EF5BFAA94D",
+    "Integrated": -14.16,
+    "TruePeak": -3.08,
+    "Range": 1.2
+  },
+  "arms_bgm55.ogg": {
+    "Sha256": "6BD690D1FBDDB82D131AFC70E40404C24F6151E7A1AE908284E2370E5B55AA89",
+    "Integrated": -17.61,
+    "TruePeak": -2.65,
+    "Range": 4.1
+  },
+  "arms_bgm57.ogg": {
+    "Sha256": "4F3C2EA75092AB60860B9B40E280E87F3FEB4ED8B613802299D6715D184F7386",
+    "Integrated": -13.21,
+    "TruePeak": -1.36,
+    "Range": 2.5
+  },
+  "arms_bgm58.ogg": {
+    "Sha256": "BECEDD61B648D0ED667C0F2855E0BCE0232919166B42D905BFD9D8BEBCDF313D",
+    "Integrated": -16.82,
+    "TruePeak": -4.11,
+    "Range": 3.9
+  },
+  "arms_bgm59.ogg": {
+    "Sha256": "D44E0702DC44B89390A29D272E175248D6CC0285DD84F6D3772EDDAEE4D3087B",
+    "Integrated": -14.35,
+    "TruePeak": -3.43,
+    "Range": 1.7
+  },
+  "arms_bgm60.ogg": {
+    "Sha256": "12D8EB15B7735D947FEF8974256A34D2DC7568CEC3198FB0F442E52200CEAFDB",
+    "Integrated": -12.29,
+    "TruePeak": -0.85,
+    "Range": 2.2
+  },
+  "arms_bgm61.ogg": {
+    "Sha256": "81E45E1CBF0225137E754F09ADE88960D0D3A06EBDE762FEE34FB001071D4FB0",
+    "Integrated": -16.7,
+    "TruePeak": -5.45,
+    "Range": 2.2
+  },
+  "arms_bgm62.ogg": {
+    "Sha256": "21B3161A180D8E5A97AF501DA493F660E033AE37D59A991CE6765E7D67051823",
+    "Integrated": -16.53,
+    "TruePeak": -4.33,
+    "Range": 2.3
+  },
+  "arms_bgm63.ogg": {
+    "Sha256": "067171D0C06522C8E1DF06CAF773FD86C67CD0A1CB9043EF9AC11DF6D5B2C56C",
+    "Integrated": -13.65,
+    "TruePeak": -4.1,
+    "Range": 4.5
+  },
+  "arms_bgm64.ogg": {
+    "Sha256": "CFB74051D9CC59232A423FBEC91A980D2957D23A2BD098E4D0498C7363801C40",
+    "Integrated": -15.52,
+    "TruePeak": -3.08,
+    "Range": 2.6
+  },
+  "arms_bgm65_sht.ogg": {
+    "Sha256": "F1EFB77D687BC735A8D16F628AC3AA934037B692E2D2CDAC4E92317184409A7E",
+    "Integrated": -13.48,
+    "TruePeak": -2.31,
+    "Range": 4.9
+  },
+  "arms_bgm66.ogg": {
+    "Sha256": "C4F81FFA7E468A8C9DFF0B141BFF05E7E3E0551A5A1F18DBBA01E31E8D7ACBBF",
+    "Integrated": -16.67,
+    "TruePeak": -4.36,
+    "Range": 4.9
+  },
+  "arms_bgm67.ogg": {
+    "Sha256": "748AB713BE7AE46D6BFED37BD2048C4876DBFBF04F9D0322983B1162730222FF",
+    "Integrated": -12.39,
+    "TruePeak": -2.65,
+    "Range": 3.7
+  },
+  "arms_bgm68.ogg": {
+    "Sha256": "744F62F7AF7C08374F2780C56C6F1D3D4C3FD97232939392B3DC9C65D875AC47",
+    "Integrated": -13.95,
+    "TruePeak": -4.95,
+    "Range": 2.7
+  },
+  "arms_bgm69.ogg": {
+    "Sha256": "777615750B86C5665A474DC99DC4ED6BB46ADADB44CD9EE34822F2CA7337E241",
+    "Integrated": -12.1,
+    "TruePeak": -5.37,
+    "Range": 2.2
+  },
+  "arms_bgm70.ogg": {
+    "Sha256": "BC8E658C3CC244604523CE3D8C1E485C18CFF99906A7150E87A0B290CC8C85AA",
+    "Integrated": -15.18,
+    "TruePeak": -2.6,
+    "Range": 3.3
+  },
+  "arms_bgm71.ogg": {
+    "Sha256": "20B6238DD83DF43526AD35F8960BF42AFAAAF205E425569A7103615DB3BAA773",
+    "Integrated": -13.44,
+    "TruePeak": -1.8,
+    "Range": 5.9
+  },
+  "arms_bgm72.ogg": {
+    "Sha256": "31854CF1FDB96046999FF234D74B5D5FF9E7389FC46AD72C513B2C1B4EC4FF4F",
+    "Integrated": -15.47,
+    "TruePeak": -2.73,
+    "Range": 3.4
+  },
+  "arms_bgm73.ogg": {
+    "Sha256": "94AE40E6CCA100DC521C869E19FB0E6C1D74C72193469BBBE8FFB8640DEC2AFB",
+    "Integrated": -13.56,
+    "TruePeak": -1.81,
+    "Range": 2.2
+  },
+  "arms_bgm74.ogg": {
+    "Sha256": "0531ADC6EED8889CC6C8EABEAF7B02366A61273E78C6C45B62DACF00D42D1D6B",
+    "Integrated": -16.66,
+    "TruePeak": -4.29,
+    "Range": 2.1
+  },
+  "arms_bgm75.ogg": {
+    "Sha256": "9B45887DA73F20336E6EF8BC3BB12FF121BE252CCEC448914E6A9B128CCAEDDA",
+    "Integrated": -17.41,
+    "TruePeak": -4.65,
+    "Range": 1.5
+  },
+  "arms_bgm76.ogg": {
+    "Sha256": "1E8BFB7D673472129A50B4611BF468E522B2DB1B0361EF6026D5A40B76A87109",
+    "Integrated": -14.1,
+    "TruePeak": -3.09,
+    "Range": 2.9
+  },
+  "arms_bgm77.ogg": {
+    "Sha256": "646DE0D0678FDA0D93322218360F1C215FBBACFF5D4DD9833BD5883961CEA20E",
+    "Integrated": -14.65,
+    "TruePeak": -3.06,
+    "Range": 3.9
+  },
+  "arms_bgm78.ogg": {
+    "Sha256": "E81984A30C5F6ED59861714CD74D7B89C8732E527E9C6C353D7EC742E70B8810",
+    "Integrated": -13.74,
+    "TruePeak": -4.3,
+    "Range": 6.1
+  },
+  "arms_bgm79.ogg": {
+    "Sha256": "B720FE8E7932412E630C14EFC807CB760095A0018EB19BDA90CE703205D9EAAA",
+    "Integrated": -13.29,
+    "TruePeak": -1.59,
+    "Range": 6.2
+  },
+  "arms_bgm80.ogg": {
+    "Sha256": "5B80263BECB47688A26C3DF51D4E4EEA2D07EB6C0E684FB50290619CBC0655EA",
+    "Integrated": -17.59,
+    "TruePeak": -6.7,
+    "Range": 7.1
+  },
+  "arms_bgm81.ogg": {
+    "Sha256": "4EF78AD2D623302D310ADFC34A594294A5467E6F018EA3ABCAE2618F7ADE4EAA",
+    "Integrated": -17.79,
+    "TruePeak": -5.86,
+    "Range": 5.4
+  },
+  "arms_bgm82.ogg": {
+    "Sha256": "DB7BC4F3E73527BB19EE0662257D1E9AE2B26CDD6F6995AD19E2048B39E7F3F9",
+    "Integrated": -11.56,
+    "TruePeak": -4.13,
+    "Range": 8.6
+  },
+  "arms_bgm83.ogg": {
+    "Sha256": "4ECA21F2FA0F18EC5B151BCACAEADAB9DA4BE2B3D0F02B52414CEFAFE60A4506",
+    "Integrated": -15.01,
+    "TruePeak": -2.52,
+    "Range": 1.6
+  },
+  "arms_bgm84.ogg": {
+    "Sha256": "E8A01A4C0ABC2B0025392CBCA72D845C25C5DC3A5C7B6C68BD2063DDAA550C4C",
+    "Integrated": -14.58,
+    "TruePeak": -1.67,
+    "Range": 2.6
+  },
+  "arms_bgm85.ogg": {
+    "Sha256": "82D0DA28615501778968AB01E927B6AEAF8745923DDC0805F1A412140933C226",
+    "Integrated": -13.86,
+    "TruePeak": -3.3,
+    "Range": 2.5
+  },
+  "arms_bgm86.ogg": {
+    "Sha256": "7026DD03543F79635D10259D40166A4E7EFB9AF01055721CB0C03C385B43E33A",
+    "Integrated": -14.68,
+    "TruePeak": -4.26,
+    "Range": 1.9
+  },
+  "arms_bgm87.ogg": {
+    "Sha256": "FB0A741A47B9DFA4D765D02353F2BECE0627538081EFEBECF9CD78F65E670C30",
+    "Integrated": -13.2,
+    "TruePeak": -1.15,
+    "Range": 1.7
+  },
+  "arms_bgm88.ogg": {
+    "Sha256": "43927B72A627BD52C57B6561B4E69BEAFC465C0FADAFC4143BC45BAC21C4AD83",
+    "Integrated": -12.54,
+    "TruePeak": -0.7,
+    "Range": 3.6
+  },
+  "arms_bgm89.ogg": {
+    "Sha256": "52848F78A2CE75812F0A102FFA3FB151F0A5D98C90D94716AC620436735E25FC",
+    "Integrated": -11.48,
+    "TruePeak": 0.01,
+    "Range": 9.1
+  },
+  "arms_bgm90.ogg": {
+    "Sha256": "4C06CB51FE4E964348CDE2B87836C8046C176E2B501DBEC937B8D961105F809C",
+    "Integrated": -13.39,
+    "TruePeak": -2.03,
+    "Range": 6.7
+  },
+  "arms_bgm91.ogg": {
+    "Sha256": "1326F761225D5460D3DBC1675A73C2C1DA8986BB0E5B59EED488427397C5D43A",
+    "Integrated": -11.32,
+    "TruePeak": 0.33,
+    "Range": 9.6
+  },
+  "arms_bgm92.ogg": {
+    "Sha256": "0235732F25ABD5472067FEEE4E4822D5BD8565DB1269BB9D05A5300736FF2115",
+    "Integrated": -16.28,
+    "TruePeak": -2.86,
+    "Range": 4.5
+  },
+  "arms_bgm93.ogg": {
+    "Sha256": "68F7162A532B10AE0DE3446ECC19A9CF642079DA8D2FCDFE7CB11D1319E2C52E",
+    "Integrated": -15.15,
+    "TruePeak": -0.65,
+    "Range": 1.1
+  },
+  "arms_bgm94.ogg": {
+    "Sha256": "288364DA7E315D8D45D91D7CE27C052ECBB417E098944088735121027805AA4B",
+    "Integrated": -14.62,
+    "TruePeak": -1.13,
+    "Range": 2.5
+  },
+  "arms_bgm95.ogg": {
+    "Sha256": "08FC43BCD2BAC943DE7CFC903E7BF66646FA0FAE6562CC7846C6A36E294E40E4",
+    "Integrated": -12.64,
+    "TruePeak": -2.86,
+    "Range": 3.4
+  },
+  "arms_bgm96.ogg": {
+    "Sha256": "A29DBF6B24EEFAA33C92356CC8A7F185E09FEDE563DAD3C3CF2324EFD02E9443",
+    "Integrated": -15.07,
+    "TruePeak": -3.09,
+    "Range": 2.4
+  },
+  "arms_bgm97.ogg": {
+    "Sha256": "F26AF65D20E0BE431749F4FBC817929FB35B68B1DBE78D1E8CCD950CD6C41EE7",
+    "Integrated": -13.58,
+    "TruePeak": -2.59,
+    "Range": 1.8
+  },
+  "arms_bgm98.ogg": {
+    "Sha256": "40BFA7C18A8655C2E37E00D680406ABDA024EC8EE087CC99135005867BDC1315",
+    "Integrated": -17.06,
+    "TruePeak": -5.81,
+    "Range": 1.3
+  },
+  "arms_bgm99.ogg": {
+    "Sha256": "D9CA2DEB166C73A0092E6044B2FE49427B405D679846A687888B9B0B18764E5A",
+    "Integrated": -13.97,
+    "TruePeak": -2.37,
+    "Range": 3.1
+  }
+}

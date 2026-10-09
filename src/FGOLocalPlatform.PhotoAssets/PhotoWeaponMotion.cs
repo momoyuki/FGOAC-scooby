@@ -9,7 +9,9 @@ namespace FGOLocalPlatform.PhotoAssets;
 
 public static class PhotoWeaponMotion
 {
-	public const int MappingSize = 273576;
+	public const int MappingSize = 273640;
+
+	public const int ModelNameOffset = 273576;
 
 	public const int Start = 77896;
 

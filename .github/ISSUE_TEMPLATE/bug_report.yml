@@ -5,13 +5,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        Check **Advanced > Diagnostics and Help** in the launcher first. It lists the game's error
+        Check **Settings > Diagnostics and Help** in the launcher first. It lists the game's error
         codes with the fix for each one, and the answer is usually there.
   - type: input
     id: version
     attributes:
       label: Launcher version
-      description: Advanced > About, or the version of the release zip you installed.
+      description: About, or the version of the release zip you installed.
       placeholder: "1.1.0"
     validations:
       required: true
@@ -51,15 +51,10 @@ body:
     attributes:
       label: Logs
       description: >
-        Attach what you have from the `logs` folder next to `App`. Drag the files onto this box.
-        `environment-check.txt` is written by Advanced > Diagnostics and Help.
+        Open the Status menu on Play and choose Save a report; it saves one zip with your card
+        number and recovery key taken out. Drag it onto this box.
       options:
-        - label: "fgo-last-launch.log - the launch script, from start to exit code"
-        - label: "fgozh.log - the English file hook: which files the game actually loaded"
-        - label: "server-control.log - the local server"
-        - label: "artemis-stderr.log - the game server process"
-        - label: "mariadb.log - the database"
-        - label: "environment-check.txt - the environment check"
+        - label: "Attached the Save a report zip"
   - type: textarea
     id: system
     attributes:

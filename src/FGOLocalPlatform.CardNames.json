@@ -1657,7 +1657,7 @@
   },
   "CE01275": {
     "Japanese": "英霊彩像：ソドムズビースト／ドラコー",
-    "Chinese": "Heroic Painted Statue: Sodom's Beast/Draco"
+    "Chinese": "Heroic Spirit Exhibition Attire: Sodom's Beast/Draco"
   },
   "CE00174": {
     "Japanese": "おき太",
@@ -5021,7 +5021,7 @@
   },
   "CE01125": {
     "Japanese": "英霊彩像：ネモ／ノア",
-    "Chinese": "Heroic Painted Statue: Nemo / Noah"
+    "Chinese": "Heroic Spirit Exhibition Attire: Nemo/Noah"
   },
   "CE01126": {
     "Japanese": "ノアの箱船",
@@ -5481,7 +5481,7 @@
   },
   "CE01276": {
     "Japanese": "英霊彩像：千子村正",
-    "Chinese": "Heroic Painted Statue: Senji Muramasa"
+    "Chinese": "Heroic Spirit Exhibition Attire: Senji Muramasa"
   },
   "CE01277": {
     "Japanese": "無元の剣製",
@@ -5534,5 +5534,797 @@
   "CE01284": {
     "Japanese": "プレジャー・ハント",
     "Chinese": "Pleasure Hunt"
+  },
+  "CE01033": {
+    "Japanese": "栄華貪る黄金の都",
+    "Chinese": "The Golden City, Greedy for Splendor"
+  },
+  "CE01285": {
+    "Japanese": "英霊華像：玉藻の前",
+    "Chinese": "Heroic Statue: Tamamo-no-Mae"
+  },
+  "CE01286": {
+    "Japanese": "英霊華像：玉藻の前",
+    "Chinese": "Heroic Statue: Tamamo-no-Mae"
+  },
+  "CE01287": {
+    "Japanese": "英霊華像：玉藻の前",
+    "Chinese": "Heroic Statue: Tamamo-no-Mae"
+  },
+  "CE01288": {
+    "Japanese": "英霊華像：刑部姫",
+    "Chinese": "Heroic Statue: Osakabehime"
+  },
+  "CE01289": {
+    "Japanese": "英霊華像：刑部姫",
+    "Chinese": "Heroic Statue: Osakabehime"
+  },
+  "CE01290": {
+    "Japanese": "英霊華像：刑部姫",
+    "Chinese": "Heroic Statue: Osakabehime"
+  },
+  "CE01291": {
+    "Japanese": "英霊華像：マーリン",
+    "Chinese": "Heroic Statue: Merlin"
+  },
+  "CE01292": {
+    "Japanese": "英霊華像：マーリン",
+    "Chinese": "Heroic Statue: Merlin"
+  },
+  "CE01293": {
+    "Japanese": "英霊華像：マーリン",
+    "Chinese": "Heroic Statue: Merlin"
+  },
+  "CE01294": {
+    "Japanese": "英霊華像：ブラダマンテ",
+    "Chinese": "Heroic Statue: Bradamante"
+  },
+  "CE01295": {
+    "Japanese": "英霊華像：ブラダマンテ",
+    "Chinese": "Heroic Statue: Bradamante"
+  },
+  "CE01296": {
+    "Japanese": "英霊華像：ブラダマンテ",
+    "Chinese": "Heroic Statue: Bradamante"
+  },
+  "CE01297": {
+    "Japanese": "英霊華像：ギルガメッシュ",
+    "Chinese": "Heroic Statue: Gilgamesh"
+  },
+  "CE01298": {
+    "Japanese": "英霊華像：ギルガメッシュ",
+    "Chinese": "Heroic Statue: Gilgamesh"
+  },
+  "CE01299": {
+    "Japanese": "英霊華像：ギルガメッシュ",
+    "Chinese": "Heroic Statue: Gilgamesh"
+  },
+  "CE01300": {
+    "Japanese": "英霊華像：エルキドゥ",
+    "Chinese": "Heroic Statue: Enkidu"
+  },
+  "CE01301": {
+    "Japanese": "英霊華像：エルキドゥ",
+    "Chinese": "Heroic Statue: Enkidu"
+  },
+  "CE01302": {
+    "Japanese": "英霊華像：エルキドゥ",
+    "Chinese": "Heroic Statue: Enkidu"
+  },
+  "CE01303": {
+    "Japanese": "英霊華像：メルトリリス",
+    "Chinese": "Heroic Statue: Meltryllis"
+  },
+  "CE01304": {
+    "Japanese": "英霊華像：メルトリリス",
+    "Chinese": "Heroic Statue: Meltryllis"
+  },
+  "CE01305": {
+    "Japanese": "英霊華像：メルトリリス",
+    "Chinese": "Heroic Statue: Meltryllis"
+  },
+  "CE01306": {
+    "Japanese": "英霊華像：パッションリップ",
+    "Chinese": "Heroic Statue: Passionlip"
+  },
+  "CE01307": {
+    "Japanese": "英霊華像：パッションリップ",
+    "Chinese": "Heroic Statue: Passionlip"
+  },
+  "CE01308": {
+    "Japanese": "英霊華像：パッションリップ",
+    "Chinese": "Heroic Statue: Passionlip"
+  },
+  "CE01309": {
+    "Japanese": "英霊華像：イスカンダル",
+    "Chinese": "Heroic Statue: Iskandar"
+  },
+  "CE01310": {
+    "Japanese": "英霊華像：イスカンダル",
+    "Chinese": "Heroic Statue: Iskandar"
+  },
+  "CE01311": {
+    "Japanese": "英霊華像：イスカンダル",
+    "Chinese": "Heroic Statue: Iskandar"
+  },
+  "CE01312": {
+    "Japanese": "英霊華像：ラーヴァ／ティアマト",
+    "Chinese": "Heroic Statue: Larva/Tiamat"
+  },
+  "CE01313": {
+    "Japanese": "英霊華像：ラーヴァ／ティアマト",
+    "Chinese": "Heroic Statue: Larva/Tiamat"
+  },
+  "CE01314": {
+    "Japanese": "英霊華像：ラーヴァ／ティアマト",
+    "Chinese": "Heroic Statue: Larva/Tiamat"
+  },
+  "CE01315": {
+    "Japanese": "英霊華像：ソドムズビースト／ドラコー",
+    "Chinese": "Heroic Statue: Sodom's Beast/Draco"
+  },
+  "CE01316": {
+    "Japanese": "英霊華像：BB",
+    "Chinese": "Heroic Statue: BB"
+  },
+  "CE01317": {
+    "Japanese": "英霊華像：ジャンヌ・ダルク",
+    "Chinese": "Heroic Statue: Jeanne d'Arc"
+  },
+  "CE01318": {
+    "Japanese": "英霊華像：ジャンヌ・ダルク",
+    "Chinese": "Heroic Statue: Jeanne d'Arc"
+  },
+  "CE01319": {
+    "Japanese": "英霊華像：ジャンヌ・ダルク",
+    "Chinese": "Heroic Statue: Jeanne d'Arc"
+  },
+  "CE01320": {
+    "Japanese": "英霊華像：アビゲイル・ウィリアムズ",
+    "Chinese": "Heroic Statue: Abigail Williams"
+  },
+  "CE01321": {
+    "Japanese": "英霊華像：アビゲイル・ウィリアムズ",
+    "Chinese": "Heroic Statue: Abigail Williams"
+  },
+  "CE01322": {
+    "Japanese": "英霊華像：アビゲイル・ウィリアムズ",
+    "Chinese": "Heroic Statue: Abigail Williams"
+  },
+  "CE01323": {
+    "Japanese": "英霊華像：虞美人",
+    "Chinese": "Heroic Statue: Yu Mei-ren"
+  },
+  "CE01324": {
+    "Japanese": "英霊華像：フランケンシュタイン",
+    "Chinese": "Heroic Statue: Frankenstein"
+  },
+  "CE01325": {
+    "Japanese": "英霊華像：\"山の翁\"",
+    "Chinese": "Heroic Statue: \"First Hassan\""
+  },
+  "CE01326": {
+    "Japanese": "英霊華像：\"山の翁\"",
+    "Chinese": "Heroic Statue: \"First Hassan\""
+  },
+  "CE01327": {
+    "Japanese": "英霊華像：\"山の翁\"",
+    "Chinese": "Heroic Statue: \"First Hassan\""
+  },
+  "CE01328": {
+    "Japanese": "英霊華像：ジェームズ・モリアーティ",
+    "Chinese": "Heroic Statue: James Moriarty"
+  },
+  "CE01329": {
+    "Japanese": "英霊華像：ジェームズ・モリアーティ",
+    "Chinese": "Heroic Statue: James Moriarty"
+  },
+  "CE01330": {
+    "Japanese": "英霊華像：ジェームズ・モリアーティ",
+    "Chinese": "Heroic Statue: James Moriarty"
+  },
+  "CE01331": {
+    "Japanese": "英霊華像：宮本武蔵",
+    "Chinese": "Heroic Statue: Miyamoto Musashi"
+  },
+  "CE01332": {
+    "Japanese": "英霊華像：宮本武蔵",
+    "Chinese": "Heroic Statue: Miyamoto Musashi"
+  },
+  "CE01333": {
+    "Japanese": "英霊華像：宮本武蔵",
+    "Chinese": "Heroic Statue: Miyamoto Musashi"
+  },
+  "CE01334": {
+    "Japanese": "英霊華像：清少納言",
+    "Chinese": "Heroic Statue: Sei Shounagon"
+  },
+  "CE01335": {
+    "Japanese": "英霊華像：清少納言",
+    "Chinese": "Heroic Statue: Sei Shounagon"
+  },
+  "CE01336": {
+    "Japanese": "英霊華像：清少納言",
+    "Chinese": "Heroic Statue: Sei Shounagon"
+  },
+  "CE01337": {
+    "Japanese": "英霊華像：アルトリア・ペンドラゴン",
+    "Chinese": "Heroic Statue: Altria Pendragon"
+  },
+  "CE01338": {
+    "Japanese": "英霊華像：アルトリア・ペンドラゴン",
+    "Chinese": "Heroic Statue: Altria Pendragon"
+  },
+  "CE01339": {
+    "Japanese": "英霊華像：アルトリア・ペンドラゴン",
+    "Chinese": "Heroic Statue: Altria Pendragon"
+  },
+  "CE01340": {
+    "Japanese": "英霊華像：スカサハ＝スカディ",
+    "Chinese": "Heroic Statue: Scáthach-Skadi"
+  },
+  "CE01341": {
+    "Japanese": "英霊華像：スカサハ＝スカディ",
+    "Chinese": "Heroic Statue: Scáthach-Skadi"
+  },
+  "CE01342": {
+    "Japanese": "英霊華像：スカサハ＝スカディ",
+    "Chinese": "Heroic Statue: Scáthach-Skadi"
+  },
+  "CE01343": {
+    "Japanese": "英霊華像：千子村正",
+    "Chinese": "Heroic Statue: Senji Muramasa"
+  },
+  "CE01344": {
+    "Japanese": "英霊華像：千子村正",
+    "Chinese": "Heroic Statue: Senji Muramasa"
+  },
+  "CE01345": {
+    "Japanese": "英霊華像：千子村正",
+    "Chinese": "Heroic Statue: Senji Muramasa"
+  },
+  "CE01346": {
+    "Japanese": "英霊華像：ネモ",
+    "Chinese": "Heroic Statue: Nemo"
+  },
+  "CE01347": {
+    "Japanese": "英霊華像：ネモ",
+    "Chinese": "Heroic Statue: Nemo"
+  },
+  "CE01348": {
+    "Japanese": "英霊華像：ネモ／ノア",
+    "Chinese": "Heroic Statue: Nemo/Noah"
+  },
+  "CE01349": {
+    "Japanese": "英霊華像：光のコヤンスカヤ",
+    "Chinese": "Heroic Statue: Koyanskaya of Light"
+  },
+  "CE01350": {
+    "Japanese": "英霊華像：光のコヤンスカヤ",
+    "Chinese": "Heroic Statue: Koyanskaya of Light"
+  },
+  "CE01351": {
+    "Japanese": "英霊華像：光のコヤンスカヤ",
+    "Chinese": "Heroic Statue: Koyanskaya of Light"
+  },
+  "CE01352": {
+    "Japanese": "英霊華像：カーマ",
+    "Chinese": "Heroic Statue: Kama"
+  },
+  "CE01353": {
+    "Japanese": "英霊華像：カーマ",
+    "Chinese": "Heroic Statue: Kama"
+  },
+  "CE01354": {
+    "Japanese": "英霊華像：カーマ",
+    "Chinese": "Heroic Statue: Kama"
+  },
+  "CE01355": {
+    "Japanese": "英霊華像：モルガン",
+    "Chinese": "Heroic Statue: Morgan"
+  },
+  "CE01356": {
+    "Japanese": "英霊華像：モルガン",
+    "Chinese": "Heroic Statue: Morgan"
+  },
+  "CE01357": {
+    "Japanese": "英霊華像：モルガン",
+    "Chinese": "Heroic Statue: Morgan"
+  },
+  "CE01358": {
+    "Japanese": "カウント・ストレッチ",
+    "Chinese": "Count and Stretch"
+  },
+  "CE01359": {
+    "Japanese": "芙蓉に舞う",
+    "Chinese": "Dancing on Lotus Blossoms"
+  },
+  "CE01360": {
+    "Japanese": "ハートブレイカー",
+    "Chinese": "Heartbreaker"
+  },
+  "CE01361": {
+    "Japanese": "ツイン・テイル",
+    "Chinese": "Twin Tails"
+  },
+  "CE01362": {
+    "Japanese": "クルージング・デート",
+    "Chinese": "Cruising Date"
+  },
+  "CE01363": {
+    "Japanese": "ウォーターガンバトル",
+    "Chinese": "Water Gun Battle"
+  },
+  "CE01364": {
+    "Japanese": "演劇的魔人のメランコリー",
+    "Chinese": "The Melancholy of a Dramatic Demon"
+  },
+  "CE01365": {
+    "Japanese": "Little little bullet",
+    "Chinese": "Little little bullet"
+  },
+  "CE01366": {
+    "Japanese": "ウチの円卓",
+    "Chinese": "Our Round Table"
+  },
+  "CE01367": {
+    "Japanese": "カレー×ライス",
+    "Chinese": "Curry × Rice"
+  },
+  "CE01368": {
+    "Japanese": "ビルドアッパーマルタ",
+    "Chinese": "Martha's Built Upper"
+  },
+  "CE01369": {
+    "Japanese": "ジャイアントバベッジ",
+    "Chinese": "Giant Babbage"
+  },
+  "CE01370": {
+    "Japanese": "ままのみみ",
+    "Chinese": "Mama's Ears"
+  },
+  "CE01371": {
+    "Japanese": "ボクたちは召喚ができない！",
+    "Chinese": "We Never Summon: Bokushou"
+  },
+  "CE01372": {
+    "Japanese": "拉麺好き好きアナスタシアさん",
+    "Chinese": "Ms. Anastasia Loves Ramen Noodles"
+  },
+  "CE01373": {
+    "Japanese": "悪役令嬢は悪女をぶち抜きたい！",
+    "Chinese": "The Villainess Wants to Take Down the Wicked!"
+  },
+  "CE01374": {
+    "Japanese": "詠天流受法用心集",
+    "Chinese": "A Collection of Eiten-Style Teachings"
+  },
+  "CE01375": {
+    "Japanese": "クロスビッキの魔法姫と怪物",
+    "Chinese": "The Magical Princess and the Monster of Krossvikki"
+  },
+  "CE01376": {
+    "Japanese": "英霊彩像：シータ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Sita"
+  },
+  "CE01377": {
+    "Japanese": "英霊彩像：レオナルド・ダ・ヴィンチ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Leonardo da Vinci"
+  },
+  "CE01378": {
+    "Japanese": "英霊彩像：エレナ・ブラヴァツキー",
+    "Chinese": "Heroic Spirit Exhibition Attire: Helena Blavatsky"
+  },
+  "CE01379": {
+    "Japanese": "英霊彩像：マーリン",
+    "Chinese": "Heroic Spirit Exhibition Attire: Merlin"
+  },
+  "CE01380": {
+    "Japanese": "英霊彩像：セタンタ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Sétanta"
+  },
+  "CE01381": {
+    "Japanese": "英霊彩像：鈴鹿御前",
+    "Chinese": "Heroic Spirit Exhibition Attire: Suzuka Gozen"
+  },
+  "CE01382": {
+    "Japanese": "英霊彩像：ジャック・ド・モレー",
+    "Chinese": "Heroic Spirit Exhibition Attire: Jacques de Molay"
+  },
+  "CE01383": {
+    "Japanese": "英霊彩像：カーマ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Kama"
+  },
+  "CE01384": {
+    "Japanese": "英霊彩像：フランケンシュタイン",
+    "Chinese": "Heroic Spirit Exhibition Attire: Frankenstein"
+  },
+  "CE01385": {
+    "Japanese": "英霊彩像：ラーヴァ／ティアマト",
+    "Chinese": "Heroic Spirit Exhibition Attire: Larva/Tiamat"
+  },
+  "CE01386": {
+    "Japanese": "ウィンズ・オブ・スプリング",
+    "Chinese": "Winds of Spring"
+  },
+  "CE01387": {
+    "Japanese": "夢の生まれる街",
+    "Chinese": "City of Dreams"
+  },
+  "CE01388": {
+    "Japanese": "黄泉より出づる讐い",
+    "Chinese": "Vengeance from the Underworld"
+  },
+  "CE01389": {
+    "Japanese": "英霊彩像：ラーヴァ／ティアマト",
+    "Chinese": "Heroic Spirit Exhibition Attire: Larva/Tiamat"
+  },
+  "CE01390": {
+    "Japanese": "英霊彩像：ネモ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Nemo"
+  },
+  "CE01391": {
+    "Japanese": "プレシャス・メモリーズ",
+    "Chinese": "Precious Memories"
+  },
+  "CE01392": {
+    "Japanese": "英霊彩像：モルガン",
+    "Chinese": "Heroic Spirit Exhibition Attire: Morgan"
+  },
+  "CE01393": {
+    "Japanese": "英霊彩像：宮本武蔵",
+    "Chinese": "Heroic Spirit Exhibition Attire: Miyamoto Musashi"
+  },
+  "CE01394": {
+    "Japanese": "英霊彩像：アビゲイル・ウィリアムズ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Abigail Williams"
+  },
+  "CE01395": {
+    "Japanese": "英霊彩像：ＢＢ",
+    "Chinese": "Heroic Spirit Exhibition Attire: BB"
+  },
+  "CE01396": {
+    "Japanese": "英霊彩像：メルトリリス",
+    "Chinese": "Heroic Spirit Exhibition Attire: Meltryllis"
+  },
+  "CE01397": {
+    "Japanese": "英霊彩像：パッションリップ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Passionlip"
+  },
+  "CE01398": {
+    "Japanese": "チーム限定対戦チャレンジ",
+    "Chinese": "Team-Only Match Challenge"
+  },
+  "CE01399": {
+    "Japanese": "グレート・マザー",
+    "Chinese": "Great Mother"
+  },
+  "CE01400": {
+    "Japanese": "マッシュルーミング",
+    "Chinese": "Mushrooming"
+  },
+  "CE01401": {
+    "Japanese": "サービス・ゲームス",
+    "Chinese": "Service Games"
+  },
+  "CE01402": {
+    "Japanese": "揺籃の歌",
+    "Chinese": "Cradle Song"
+  },
+  "CE01403": {
+    "Japanese": "英国流のティータイム",
+    "Chinese": "British Tea Time"
+  },
+  "CE01404": {
+    "Japanese": "アニバーサリー・ホワイト",
+    "Chinese": "Anniversary White"
+  },
+  "CE01405": {
+    "Japanese": "エンジェル・ブレス",
+    "Chinese": "Angel's Breath"
+  },
+  "CE01406": {
+    "Japanese": "刺し穿つバニー",
+    "Chinese": "Piercing Bunny"
+  },
+  "CE01407": {
+    "Japanese": "箱入り娘のお披露目服",
+    "Chinese": "Sheltered Girl's Debut Dress"
+  },
+  "CE01408": {
+    "Japanese": "施しの執事",
+    "Chinese": "Butler of Charity"
+  },
+  "CE01409": {
+    "Japanese": "優雅なる炎神の射手",
+    "Chinese": "Elegant Archer of the Fire God"
+  },
+  "CE01410": {
+    "Japanese": "社交界の女神",
+    "Chinese": "Goddess of High Society"
+  },
+  "CE01411": {
+    "Japanese": "バトルインニューヨーク",
+    "Chinese": "Battle in New York"
+  },
+  "CE01412": {
+    "Japanese": "何ですこれは演劇の衣装ですか？",
+    "Chinese": "What Is This, a Theater Costume?"
+  },
+  "CE01413": {
+    "Japanese": "ヴィヨレットヴァンジェール",
+    "Chinese": "Violette Vengeur"
+  },
+  "CE01414": {
+    "Japanese": "万能天使系後輩☆",
+    "Chinese": "All-Around Angel Junior☆"
+  },
+  "CE01415": {
+    "Japanese": "華麗なるサーカス団員",
+    "Chinese": "Magnificent Circus Performer"
+  },
+  "CE01416": {
+    "Japanese": "リトル・レッド・レディ",
+    "Chinese": "Little Red Lady"
+  },
+  "CE01417": {
+    "Japanese": "おでかけローザチェレステ",
+    "Chinese": "Outing Rosa Celeste"
+  },
+  "CE01418": {
+    "Japanese": "ベスティア・デル・ソル",
+    "Chinese": "Bestia del Sol"
+  },
+  "CE01419": {
+    "Japanese": "ファッショナブルモッズコート",
+    "Chinese": "Fashionable Mod Coat"
+  },
+  "CE01420": {
+    "Japanese": "蘇りし王の基板",
+    "Chinese": "Circuitry of the Reborn King"
+  },
+  "CE01421": {
+    "Japanese": "メモリー・オブ・クオリア",
+    "Chinese": "Memory of Qualia"
+  },
+  "CE01422": {
+    "Japanese": "スイートトラップ・メイデン",
+    "Chinese": "Sweet Trap Maiden"
+  },
+  "CE01423": {
+    "Japanese": "ノワールピース",
+    "Chinese": "Noir Piece"
+  },
+  "CE01424": {
+    "Japanese": "カルデアバトルトーナメントFESTIVAL",
+    "Chinese": "Chaldea Battle Tournament FESTIVAL"
+  },
+  "CE01425": {
+    "Japanese": "英霊彩像：ネモ／ノア",
+    "Chinese": "Heroic Spirit Exhibition Attire: Nemo/Noah"
+  },
+  "CE01426": {
+    "Japanese": "英霊彩像：アルトリア・ペンドラゴン",
+    "Chinese": "Heroic Spirit Exhibition Attire: Altria Pendragon"
+  },
+  "CE01427": {
+    "Japanese": "英霊彩像：クー・フーリン",
+    "Chinese": "Heroic Spirit Exhibition Attire: Cú Chulainn"
+  },
+  "CE01428": {
+    "Japanese": "英霊彩像：マシュ・キリエライト",
+    "Chinese": "Heroic Spirit Exhibition Attire: Mash Kyrielight"
+  },
+  "CE01429": {
+    "Japanese": "英霊彩像：ジャンヌ・ダルク",
+    "Chinese": "Heroic Spirit Exhibition Attire: Jeanne d'Arc"
+  },
+  "CE01430": {
+    "Japanese": "英霊彩像：ジャンヌ・ダルク",
+    "Chinese": "Heroic Spirit Exhibition Attire: Jeanne d'Arc"
+  },
+  "CE01431": {
+    "Japanese": "英霊彩像：ギルガメッシュ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Gilgamesh"
+  },
+  "CE01432": {
+    "Japanese": "英霊彩像：スカサハ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Scáthach"
+  },
+  "CE01433": {
+    "Japanese": "英霊彩像：レオナルド・ダ・ヴィンチ",
+    "Chinese": "Heroic Spirit Exhibition Attire: Leonardo da Vinci"
+  },
+  "CE01434": {
+    "Japanese": "英霊彩像：イシュタル",
+    "Chinese": "Heroic Spirit Exhibition Attire: Ishtar"
+  },
+  "CE08000": {
+    "Japanese": "ロンドン魔神柱用礼装＠上級",
+    "Chinese": "Craft Essence for the London Demon God Pillar (Advanced)"
+  },
+  "CE08001": {
+    "Japanese": "ロンドン魔神柱用礼装＠中級",
+    "Chinese": "Craft Essence for the London Demon God Pillar (Intermediate)"
+  },
+  "CE08002": {
+    "Japanese": "ロンドン魔神柱用礼装＠初級",
+    "Chinese": "Craft Essence for the London Demon God Pillar (Beginner)"
+  },
+  "CE08003": {
+    "Japanese": "ロンドン魔神柱用礼装：防御力ダウン",
+    "Chinese": "Craft Essence for the London Demon God Pillar: DEF Down"
+  },
+  "CE08004": {
+    "Japanese": "Quickカード耐性ダウン＠プリズマコーズ",
+    "Chinese": "Quick Card Resist Down @ Prisma Cause"
+  },
+  "CE08005": {
+    "Japanese": "Artsカード耐性ダウン＠プリズマコーズ",
+    "Chinese": "Arts Card Resist Down @ Prisma Cause"
+  },
+  "CE08006": {
+    "Japanese": "Busterカード耐性ダウン＠プリズマコーズ",
+    "Chinese": "Buster Card Resist Down @ Prisma Cause"
+  },
+  "CE08007": {
+    "Japanese": "北米魔神柱用礼装＠上級",
+    "Chinese": "North American Demon God Pillar CE: Advanced"
+  },
+  "CE08008": {
+    "Japanese": "北米魔神柱用礼装＠中級",
+    "Chinese": "North American Demon God Pillar CE: Intermediate"
+  },
+  "CE08009": {
+    "Japanese": "北米魔神柱用礼装＠初級",
+    "Chinese": "North American Demon God Pillar CE: Beginner"
+  },
+  "CE08010": {
+    "Japanese": "クー・フーリン・オルタ用礼装＠上級",
+    "Chinese": "Cú Chulainn (Alter) CE: Advanced"
+  },
+  "CE08011": {
+    "Japanese": "クー・フーリン・オルタ用礼装＠中級",
+    "Chinese": "Cú Chulainn (Alter) CE: Intermediate"
+  },
+  "CE08012": {
+    "Japanese": "クー・フーリン・オルタ用礼装＠初級",
+    "Chinese": "Cú Chulainn (Alter) CE: Beginner"
+  },
+  "CE08013": {
+    "Japanese": "スノーマン用礼装＠2020クリスマス",
+    "Chinese": "Snowman CE: 2020 Christmas"
+  },
+  "CE08014": {
+    "Japanese": "行動不能＆強化解除耐性礼装＠2020クリスマス",
+    "Chinese": "Stun & Buff Removal Resist CE: 2020 Christmas"
+  },
+  "CE08015": {
+    "Japanese": "Virgo用礼装",
+    "Chinese": "CE for Virgo"
+  },
+  "CE08016": {
+    "Japanese": "Leoイベントエネミー用礼装＠2021Leoイベント",
+    "Chinese": "Leo Event Enemy CE: 2021 Leo Event"
+  },
+  "CE08017": {
+    "Japanese": "死亡時Quick性能アップ＠事件簿コラボ",
+    "Chinese": "On-Death Quick Performance Up: Case Files Collab"
+  },
+  "CE08018": {
+    "Japanese": "死亡時Arts性能アップ＠事件簿コラボ",
+    "Chinese": "On-Death Arts Performance Up: Case Files Collab"
+  },
+  "CE08019": {
+    "Japanese": "死亡時Buster性能アップ＠事件簿コラボ",
+    "Chinese": "On-Death Buster Performance Up: Case Files Collab"
+  },
+  "CE08020": {
+    "Japanese": "強化解除耐性礼装＠事件簿コラボ",
+    "Chinese": "Buff Removal Resist CE @ Case Files Collab"
+  },
+  "CE08021": {
+    "Japanese": "防御力ダウン＠初級＠Capricorn",
+    "Chinese": "DEF Down@Beginner@Capricorn"
+  },
+  "CE08022": {
+    "Japanese": "防御力ダウン＠上級＠Capricorn",
+    "Chinese": "DEF Down@Advanced@Capricorn"
+  },
+  "CE08023": {
+    "Japanese": "防御力ダウン＠超級＠Capricorn",
+    "Chinese": "DEF Down@Expert@Capricorn"
+  },
+  "CE08024": {
+    "Japanese": "防御力ダウン＠7章魔獣赫",
+    "Chinese": "DEF Down@Crimson Demon Beast Chapter 7"
+  },
+  "CE08025": {
+    "Japanese": "ガッツ＠初級＠Aquarius",
+    "Chinese": "Guts@Beginner@Aquarius"
+  },
+  "CE08026": {
+    "Japanese": "ガッツ＠上級＠Aquarius",
+    "Chinese": "Guts@Advanced@Aquarius"
+  },
+  "CE08027": {
+    "Japanese": "ガッツ＠超級＠Aquarius",
+    "Chinese": "Guts@Expert@Aquarius"
+  },
+  "CE08028": {
+    "Japanese": "死亡時強化解除＠2022イスカンダルイベ",
+    "Chinese": "On-Death Buff Removal@Iskandar Event 2022"
+  },
+  "CE08029": {
+    "Japanese": "AB耐性アップ＆Q耐性ダウン＠水着アビゲイルイベント2022",
+    "Chinese": "Arts & Buster Resist Up & Quick Resist Down@Swimsuit Abigail Event 2022"
+  },
+  "CE08030": {
+    "Japanese": "QB耐性アップ＆A耐性ダウン＠水着アビゲイルイベント2022",
+    "Chinese": "Quick & Buster Resist Up & Arts Resist Down@Swimsuit Abigail Event 2022"
+  },
+  "CE08031": {
+    "Japanese": "QA耐性アップ＆B耐性ダウン＠水着アビゲイルイベント2022",
+    "Chinese": "Quick & Arts Resist Up & Buster Resist Down@Swimsuit Abigail Event 2022"
+  },
+  "CE08032": {
+    "Japanese": "Q性能アップ + AB耐性アップ＆Q耐性ダウン＠水着アビゲイルイベント2022",
+    "Chinese": "Quick Performance Up + Arts & Buster Resist Up & Quick Resist Down@Swimsuit Abigail Event 2022"
+  },
+  "CE08033": {
+    "Japanese": "A性能アップ + QB耐性アップ＆A耐性ダウン＠水着アビゲイルイベント2022",
+    "Chinese": "Arts Performance Up + Quick & Buster Resist Up & Arts Resist Down@Swimsuit Abigail Event 2022"
+  },
+  "CE08034": {
+    "Japanese": "B性能アップ + QA耐性アップ＆B耐性ダウン＠水着アビゲイルイベント2022",
+    "Chinese": "Buster Performance Up + Quick & Arts Resist Up & Buster Resist Down@Swimsuit Abigail Event 2022"
+  },
+  "CE08035": {
+    "Japanese": "死亡時強化解除＠マーリン＠2022夏イベ",
+    "Chinese": "On-Death Buff Removal@Merlin@Summer Event 2022"
+  },
+  "CE08036": {
+    "Japanese": "死亡時強化解除＠プロトマーリン＠2022夏イベ",
+    "Chinese": "On-Death Buff Removal@Merlin (Prototype)@Summer Event 2022"
+  },
+  "CE08037": {
+    "Japanese": "防御アップ解除＠2022スカディイベ",
+    "Chinese": "Remove DEF Up@Skadi Event 2022"
+  },
+  "CE08038": {
+    "Japanese": "攻撃力＆宝具威力アップ解除＠2022スカディイベ",
+    "Chinese": "Remove ATK & NP Strength Up@Skadi Event 2022"
+  },
+  "CE08039": {
+    "Japanese": "最大HPアップ解除＠2022スカディイベ",
+    "Chinese": "Remove Max HP Up@Skadi Event 2022"
+  },
+  "CE08040": {
+    "Japanese": "一定時間ごとスター獲得＆スター発生率アップ付与＠2022スカディイベ",
+    "Chinese": "Periodic Star Gain & C. Star Drop Rate Up Grant@Skadi Event 2022"
+  },
+  "CE08041": {
+    "Japanese": "スカディバフ解除＠2022スカディイベ",
+    "Chinese": "Remove Skadi Buff@Skadi Event 2022"
+  },
+  "CE08042": {
+    "Japanese": "キャスニキ強化解除＠2023村正イベント",
+    "Chinese": "Cú Chulainn (Caster) Buff Removal@Muramasa Event 2023"
+  },
+  "CE08043": {
+    "Japanese": "エレシュキガル強化解除＠2023村正イベント",
+    "Chinese": "Ereshkigal Buff Removal@Muramasa Event 2023"
+  },
+  "CE09001": {
+    "Japanese": "攻撃力アップ＠6章テスト用",
+    "Chinese": "ATK Up@Chapter 6 Test"
+  },
+  "CE00187": {
+    "Japanese": "スノーマンの贈り物",
+    "Chinese": "The Snowman's Gift"
+  },
+  "CE00195": {
+    "Japanese": "スノーマンの贈り物＠共闘",
+    "Chinese": "The Snowman's Gift (Co-op)"
   }
 }

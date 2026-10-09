@@ -1,9 +1,9 @@
 {
   "CE00001": {
-    "Normal": "Begin battle with your NP charged at 40%",
-    "NormalJapanese": "自身のNPを40％チャージした状態でバトルを開始",
-    "Maximum": "Begin battle with your NP charged at 50% [MAX]",
-    "MaximumJapanese": "自身のNPを50％チャージした状態でバトルを開始[最大解放]"
+    "Normal": "Start the battle with own NP Gauge charged by 35%",
+    "NormalJapanese": "自身のNPを35％チャージした状態でバトルを開始",
+    "Maximum": "Start the battle with own NP Gauge charged by 40% [MAX]",
+    "MaximumJapanese": "自身のNPを40％チャージした状態でバトルを開始[最大解放]"
   },
   "CE00002": {
     "Normal": "Every 10s, gain 8% NP",
@@ -138,10 +138,10 @@
     "MaximumJapanese": "自身のBusterカード性能を15%アップ＆NPを30%チャージした状態で戦闘を開始[最大解放]"
   },
   "CE00066": {
-    "Normal": "Apply Debuff Immunity to yourself (2 times) & increase NP gain by 15%",
-    "NormalJapanese": "自身に弱体無効状態(2回)を付与＆NP獲得量を15％アップする",
-    "Maximum": "Apply Debuff Immunity to yourself (2 times) & increase NP gain by 20% [MAX]",
-    "MaximumJapanese": "自身に弱体無効状態(2回)を付与＆NP獲得量を20％アップする[最大解放]"
+    "Normal": "Grant self Debuff Immunity (3 times) & Increase own NP Gain by 15%",
+    "NormalJapanese": "自身に弱体無効状態(3回)を付与＆NP獲得量を15％アップする",
+    "Maximum": "Grant self Debuff Immunity (3 times) & Increase own NP Gain by 20% [MAX]",
+    "MaximumJapanese": "自身に弱体無効状態(3回)を付与＆NP獲得量を20％アップする[最大解放]"
   },
   "CE00067": {
     "Normal": "Begin battle with your NP charged at 25% & increase Overcharge level by 2 when using your Noble Phantasm (1 time)",
@@ -468,10 +468,10 @@
     "MaximumJapanese": "自身のBusterカード性能を20%アップ＆NP獲得量を20%アップ[最大解放]"
   },
   "CE01056": {
-    "Normal": "Begin battle with your NP charged at 40%",
-    "NormalJapanese": "自身のNPを40%チャージした状態でバトルを開始する",
-    "Maximum": "Begin battle with your NP charged at 50% [MAX]",
-    "MaximumJapanese": "自身のNPを50%チャージした状態でバトルを開始する[最大解放]"
+    "Normal": "Start the battle with own NP Gauge charged by 35%",
+    "NormalJapanese": "自身のNPを35%チャージした状態でバトルを開始する",
+    "Maximum": "Start the battle with own NP Gauge charged by 40% [MAX]",
+    "MaximumJapanese": "自身のNPを40%チャージした状態でバトルを開始する[最大解放]"
   },
   "CE01064": {
     "Normal": "Increase your Buster Card effectiveness by 10% & Buster Card Critical Strength by 15% & begin battle with your NP charged at 20%",
@@ -630,10 +630,10 @@
     "MaximumJapanese": "自身の攻撃力と防御力を30％アップ(30秒)[最大解放]"
   },
   "CE00040": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase your Quick Card effectiveness by 8%",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆自身のQuickカード性能を8％アップ",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase your Quick Card effectiveness by 10% [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆自身のQuickカード性能を10％アップ[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Increase own Quick Card Performance by 8%",
+    "NormalJapanese": "自身に必中状態を付与(15秒)＆自身のQuickカード性能を8％アップ",
+    "Maximum": "Grant self Sure Hit (15s) & Increase own Quick Card Performance by 10% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)＆自身のQuickカード性能を10％アップ[最大解放]"
   },
   "CE00041": {
     "Normal": "Increase your Max HP (every 10s +200, up to +3000)",
@@ -726,10 +726,10 @@
     "MaximumJapanese": "自身に10秒ごとにNP獲得状態を5%付与＆Quickカードの性能を12%アップ[最大解放]"
   },
   "CE00063": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase Buster Card effectiveness by 8%",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆Busterカード性能を8%アップ",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase Buster Card effectiveness by 10% [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆Busterカード性能を10%アップ[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Increase own Buster Card Performance by 8%",
+    "NormalJapanese": "自身に必中状態を付与(15秒)＆Busterカード性能を8%アップ",
+    "Maximum": "Grant self Sure Hit (15s) & Increase own Buster Card Performance by 10% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)＆Busterカード性能を10%アップ[最大解放]"
   },
   "CE00073": {
     "Normal": "Increase your Arts Card effectiveness by 10% & NP gain by 5%",
@@ -762,10 +762,10 @@
     "MaximumJapanese": "自身に弱体無効状態(1回)を付与＆防御力を10％アップ[最大解放]"
   },
   "CE00092": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase your Arts Card effectiveness by 8%",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆自身のArtsカードの性能を8%アップ",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase your Arts Card effectiveness by 10% [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆自身のArtsカードの性能を10%アップ[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Increase own Arts Card Performance by 8%",
+    "NormalJapanese": "自身に必中状態を付与(15秒)＆自身のArtsカードの性能を8%アップ",
+    "Maximum": "Grant self Sure Hit (15s) & Increase own Arts Card Performance by 10% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)＆自身のArtsカードの性能を10%アップ[最大解放]"
   },
   "CE00095": {
     "Normal": "Every 10s, chance to recover 1050 HP",
@@ -798,10 +798,10 @@
     "MaximumJapanese": "自身のNP獲得量を15%アップ＆スター発生率を15%アップ＆10秒ごとにHP750回復状態を付与[最大解放]"
   },
   "CE00117": {
-    "Normal": "Apply Sure Hit to yourself (25s) & apply Damage Plus 200 & apply Damage Cut 100",
-    "NormalJapanese": "自身に必中状態付与(25秒)＆与ダメージプラス200状態を付与＆ダメージを100カットする状態を付与",
-    "Maximum": "Apply Sure Hit to yourself (25s) & apply Damage Plus 300 & apply Damage Cut 200 [MAX]",
-    "MaximumJapanese": "自身に必中状態付与(25秒)＆与ダメージプラス300状態を付与＆ダメージを200カットする状態を付与[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Grant self Damage Plus (200) & Grant self Damage Cut (100)",
+    "NormalJapanese": "自身に必中状態付与(15秒)＆与ダメージプラス200状態を付与＆ダメージを100カットする状態を付与",
+    "Maximum": "Grant self Sure Hit (15s) & Grant self Damage Plus (300) & Grant self Damage Cut (200) [MAX]",
+    "MaximumJapanese": "自身に必中状態付与(15秒)＆与ダメージプラス300状態を付与＆ダメージを200カットする状態を付与[最大解放]"
   },
   "CE00118": {
     "Normal": "Increase your Critical Strength by 15% & NP Strength by 15% & Charm success rate by 17%",
@@ -1074,10 +1074,10 @@
     "MaximumJapanese": "自身のArtsカード性能を5%アップ＆NP獲得量を10%アップ＆宝具使用時にチャージ段階を1段階分上げる(1回)[最大解放]"
   },
   "CE01078": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase Arts Card effectiveness by 5% & Buster Card effectiveness by 5%",
-    "NormalJapanese": "自身に必中状態を付与(25秒)&Artsカード性能を5%アップ＆Busterカード性能を5%アップ",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase Arts Card effectiveness by 8% & Buster Card effectiveness by 8% [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)&Artsカード性能を8%アップ＆Busterカード性能を8%アップ[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Increase own Arts Card Performance by 5% & Buster Card Performance by 5%",
+    "NormalJapanese": "自身に必中状態を付与(15秒)&Artsカード性能を5%アップ＆Busterカード性能を5%アップ",
+    "Maximum": "Grant self Sure Hit (15s) & Increase own Arts Card Performance by 8% & Buster Card Performance by 8% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)&Artsカード性能を8%アップ＆Busterカード性能を8%アップ[最大解放]"
   },
   "CE01079": {
     "Normal": "Every 10s, gain 3% NP & increase Buster Card effectiveness by 3% & increase NP Strength by 10%",
@@ -1098,10 +1098,10 @@
     "MaximumJapanese": "自身の宝具威力を20%アップ＆宝具使用時にチャージ段階を1段階分上げる(1回)[最大解放]"
   },
   "CE01121": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase Quick Card effectiveness by 5% & NP gain by 5%",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆Quickカード性能を5%アップ＆NP獲得量を5%アップ",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase Quick Card effectiveness by 8% & NP gain by 10% [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆Quickカード性能を8%アップ＆NP獲得量を10%アップ[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Increase own Quick Card Performance by 5% & NP Gain by 5%",
+    "NormalJapanese": "自身に必中状態を付与(15秒)＆Quickカード性能を5%アップ＆NP獲得量を5%アップ",
+    "Maximum": "Grant self Sure Hit (15s) & Increase own Quick Card Performance by 8% & NP Gain by 10% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)＆Quickカード性能を8%アップ＆NP獲得量を10%アップ[最大解放]"
   },
   "CE01133": {
     "Normal": "Gain 20 Critical Stars on entry (1 time) & increase your Buster Card effectiveness by 3% & NP gain by 5%",
@@ -1122,16 +1122,16 @@
     "MaximumJapanese": "自身に10秒ごとにHP750回復状態を付与＆宝具威力を20%アップ[最大解放]"
   },
   "CE01281": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase Critical Strength by 15%",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆クリティカル威力を15%アップ",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase Critical Strength by 20% [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆クリティカル威力を20%アップ[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Increase own Critical Strength by 15%",
+    "NormalJapanese": "自身に必中状態を付与(15秒)＆クリティカル威力を15%アップ",
+    "Maximum": "Grant self Sure Hit (15s) & Increase own Critical Strength by 20% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)＆クリティカル威力を20%アップ[最大解放]"
   },
   "CE00006": {
-    "Normal": "Apply Sure Hit to yourself (25s) & every 10s gain 3% NP & decrease Charm Resistance by 10% [Demerit]",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆10秒ごとにNP3%獲得状態を付与＆魅了耐性が10%ダウン【デメリット】",
-    "Maximum": "Apply Sure Hit to yourself (25s) & every 10s gain 5% NP & decrease Charm Resistance by 10% [Demerit] [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆10秒ごとにNP5%獲得状態を付与[最大解放]＆魅了耐性が10%ダウン【デメリット】"
+    "Normal": "Grant self Sure Hit (15s) & Grant self NP Gain (3％ every 10s) & Decrease own Charm Resist by 10% [Demerit]",
+    "NormalJapanese": "自身に必中状態を付与(15秒)＆10秒ごとにNP3%獲得状態を付与＆魅了耐性が10%ダウン【デメリット】",
+    "Maximum": "Grant self Sure Hit (15s) & Grant self NP Gain (5％ every 10s) [MAX] & Decrease own Charm Resist by 10% [Demerit]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)＆10秒ごとにNP5%獲得状態を付与[最大解放]＆魅了耐性が10%ダウン【デメリット】"
   },
   "CE00012": {
     "Normal": "Increase your Quick Card effectiveness & Arts Card effectiveness & Buster Card effectiveness & Critical Star drop rate & Critical Star gather rate & Critical Strength & NP gain & NP Strength & debuff success rate & Debuff Resistance & HP recovery amount by 1% each",
@@ -1230,10 +1230,10 @@
     "MaximumJapanese": "クエストクリアで得られるQPを2017増やす ＋ 自身に与ダメージプラス17状態を付与[最大解放]"
   },
   "CE00096": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase Critical Strength by 3%",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆クリティカル威力を3%アップ",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase Critical Strength by 5% [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆クリティカル威力を5%アップ[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Increase own Critical Strength by 3%",
+    "NormalJapanese": "自身に必中状態を付与(15秒)＆クリティカル威力を3%アップ",
+    "Maximum": "Grant self Sure Hit (15s) & Increase own Critical Strength by 5% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)＆クリティカル威力を5%アップ[最大解放]"
   },
   "CE00105": {
     "Normal": "Increase your Buster Card effectiveness by 10% & decrease Debuff Resistance by 20% [Demerit]",
@@ -1302,10 +1302,10 @@
     "MaximumJapanese": "自身にダメージを200カットする状態を付与＆弱体耐性を10%アップ[最大解放]"
   },
   "CE00156": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase Critical Star drop rate by 2% & Critical Strength by 2%",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆スター発生率を2%アップ＆クリティカル威力を2%アップ",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase Critical Star drop rate by 3% & Critical Strength by 3% [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆スター発生率を3%アップ＆クリティカル威力を3%アップ[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Increase own C. Star Drop Rate by 2% & Critical Strength by 2%",
+    "NormalJapanese": "自身に必中状態を付与(15秒)＆スター発生率を2%アップ＆クリティカル威力を2%アップ",
+    "Maximum": "Grant self Sure Hit (15s) & Increase own C. Star Drop Rate by 3% & Critical Strength by 3% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)＆スター発生率を3%アップ＆クリティカル威力を3%アップ[最大解放]"
   },
   "CE00157": {
     "Normal": "Increase your DEF by 3% & Quick Card effectiveness by 3%",
@@ -1656,10 +1656,10 @@
     "MaximumJapanese": "自身のQuickカード性能を8%アップ＆Artsカード性能を8%アップ＆Busterカード性能を8%アップ＆NPを25%チャージした状態でバトルを開始する[最大解放]"
   },
   "CE01220": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase Critical Strength by 10% & begin battle with your NP charged at 15%",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆クリティカル威力を10%アップ＆NPを15%チャージした状態でバトルを開始する",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase Critical Strength by 15% & begin battle with your NP charged at 25% [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆クリティカル威力を15%アップ＆NPを25%チャージした状態でバトルを開始する[最大解放]"
+    "Normal": "Grant self Sure Hit (20s) & Increase own Critical Strength by 10% & Start the battle with own NP Gauge charged by 15%",
+    "NormalJapanese": "自身に必中状態を付与(20秒)＆クリティカル威力を10%アップ＆NPを15%チャージした状態でバトルを開始する",
+    "Maximum": "Grant self Sure Hit (20s) & Increase own Critical Strength by 15% & Start the battle with own NP Gauge charged by 25% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(20秒)＆クリティカル威力を15%アップ＆NPを25%チャージした状態でバトルを開始する[最大解放]"
   },
   "CE01263": {
     "Normal": "Increase your Arts Card effectiveness by 8% & damage against [Demonic] by 15% & begin battle with your NP charged at 15%",
@@ -1866,10 +1866,10 @@
     "MaximumJapanese": "自身に〔神性〕特攻状態を30%付与＆NPを25%チャージした状態でバトルを開始する[最大解放]"
   },
   "CE00295": {
-    "Normal": "Apply Sure Hit to yourself (25s) & increase Critical Strength by 15% & every 10s gain 6 Critical Stars",
-    "NormalJapanese": "自身に必中状態を付与(25秒)&クリティカル威力を15%アップ&10秒ごとにスター6個獲得状態を付与",
-    "Maximum": "Apply Sure Hit to yourself (25s) & increase Critical Strength by 20% & every 10s gain 8 Critical Stars [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)&クリティカル威力を20%アップ&10秒ごとにスター8個獲得状態を付与[最大解放]"
+    "Normal": "Grant self Sure Hit (20s) & Increase own Critical Strength by 15% & Grant self a state that gains 6 Critical Stars every 10s",
+    "NormalJapanese": "自身に必中状態を付与(20秒)&クリティカル威力を15%アップ&10秒ごとにスター6個獲得状態を付与",
+    "Maximum": "Grant self Sure Hit (20s) & Increase own Critical Strength by 20% & Grant self a state that gains 8 Critical Stars every 10s [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(20秒)&クリティカル威力を20%アップ&10秒ごとにスター8個獲得状態を付与[最大解放]"
   },
   "CE00296": {
     "Normal": "Every 10s, gain 4% NP & increase NP Strength by 15% & reduce damage taken by 100",
@@ -1914,22 +1914,22 @@
     "MaximumJapanese": "自身のQuickカード性能を15%アップ＆Busterカード性能を15%アップ＆宝具威力を15%アップ[最大解放]"
   },
   "CE01135": {
-    "Normal": "[Single Mode only] Increase Bond Points you earn when you clear a quest by 2%",
-    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を2%増やす",
-    "Maximum": "[Single Mode only] Increase Bond Points you earn when you clear a quest by 5% [MAX]",
-    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を5%増やす[最大解放]"
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 10%",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を10%増やす",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 20% [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を20%増やす[最大解放]"
   },
   "CE01136": {
-    "Normal": "[Single Mode only] Increase Bond Points earned by all allies except yourself by 1.5%",
-    "NormalJapanese": "【シングルモード限定】自身を除くパーティ全体の得られる絆を1.5%増やす",
-    "Maximum": "[Single Mode only] Increase Bond Points earned by all allies except yourself by 3%",
-    "MaximumJapanese": "【シングルモード限定】自身を除くパーティ全体の得られる絆を3%増やす"
+    "Normal": "[Single Mode Only] Increase Bond gained by the entire party, excluding self, by 6%",
+    "NormalJapanese": "【シングルモード限定】自身を除くパーティ全体の得られる絆を6%増やす",
+    "Maximum": "[Single Mode Only] Increase Bond gained by the entire party, excluding self, by 12%",
+    "MaximumJapanese": "【シングルモード限定】自身を除くパーティ全体の得られる絆を12%増やす"
   },
   "CE01137": {
-    "Normal": "[Single Mode only] Increase Bond Points earned by all allies by 1%",
-    "NormalJapanese": "【シングルモード限定】パーティ全体の得られる絆を1%増やす",
-    "Maximum": "[Single Mode only] Increase Bond Points earned by all allies by 2%",
-    "MaximumJapanese": "【シングルモード限定】パーティ全体の得られる絆を2%増やす"
+    "Normal": "[Single Mode Only] Increase Bond gained by the entire party by 4%",
+    "NormalJapanese": "【シングルモード限定】パーティ全体の得られる絆を4%増やす",
+    "Maximum": "[Single Mode Only] Increase Bond gained by the entire party by 8%",
+    "MaximumJapanese": "【シングルモード限定】パーティ全体の得られる絆を8%増やす"
   },
   "CE01188": {
     "Normal": "Increase your Buster Card effectiveness by 8% & NP Strength by 10% & increase Overcharge level by 2 when using your Noble Phantasm (1 time)",
@@ -7560,10 +7560,10 @@
     "MaximumJapanese": "自身に10秒ごとにスターを4個獲得状態を付与＆NP獲得量を10%アップ[最大解放]"
   },
   "CE01209": {
-    "Normal": "Apply Sure Hit to yourself (25s) & every 10s gain 2 Critical Stars",
-    "NormalJapanese": "自身に必中状態を付与(25秒)＆10秒ごとにスターを2個獲得する状態を付与",
-    "Maximum": "Apply Sure Hit to yourself (25s) & every 10s gain 4 Critical Stars [MAX]",
-    "MaximumJapanese": "自身に必中状態を付与(25秒)＆10秒ごとにスターを4個獲得する状態を付与[最大解放]"
+    "Normal": "Grant self Sure Hit (15s) & Grant self a state that gains 2 Critical Stars every 10s",
+    "NormalJapanese": "自身に必中状態を付与(15秒)＆10秒ごとにスターを2個獲得する状態を付与",
+    "Maximum": "Grant self Sure Hit (15s) & Grant self a state that gains 4 Critical Stars every 10s [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(15秒)＆10秒ごとにスターを4個獲得する状態を付与[最大解放]"
   },
   "CE01262": {
     "Normal": "Increase your NP Strength by 5% & HP recovery amount by 5%",
@@ -7582,5 +7582,1193 @@
     "NormalJapanese": "自身のArtsカード性能を2%アップ＆NP獲得量を3%アップ＆10秒ごとにスター2個獲得状態を付与",
     "Maximum": "Increase your Arts Card effectiveness by 3% & NP gain by 5% & every 10s gain 4 Critical Stars [MAX]",
     "MaximumJapanese": "自身のArtsカード性能を3%アップ＆NP獲得量を5%アップ＆10秒ごとにスター4個獲得状態を付与[最大解放]"
+  },
+  "CE01033": {
+    "Normal": "Increase own Debuff Success Rate by 15% & Increase own ATK by 50% & Increase own DEF by 50% & Shorten own Command Card Draw Time by 0.5 sec. + When deployed to the Seventh Singularity: Increase own Debuff Success Rate by 5% & Grant self NP Gain status (2％ every 10 sec.)",
+    "NormalJapanese": "自身の弱体付与成功率を15%アップ＆攻撃力を50%アップ＆防御力を50%アップ＆コマンドカードドロー時間を0.5秒短縮 ＋ 「第七特異点」に出撃した際、弱体付与成功率を5%アップ＆10秒ごとにNP2%獲得状態を付与",
+    "Maximum": "Increase own Debuff Success Rate by 20% & Increase own ATK by 100% & Increase own DEF by 80% & Shorten own Command Card Draw Time by 0.5 sec. + When deployed to the Seventh Singularity: Increase own Debuff Success Rate by 5% & Grant self NP Gain status (3％ every 10 sec.) [MAX]",
+    "MaximumJapanese": "自身の弱体付与成功率を20%アップ＆攻撃力を100%アップ＆防御力を80%アップ＆コマンドカードドロー時間を0.5秒短縮 ＋ 「第七特異点」に出撃した際、弱体付与成功率を5%アップ＆10秒ごとにNP3%獲得状態を付与[最大解放]"
+  },
+  "CE01285": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01286": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01287": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01288": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01289": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01290": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01291": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01292": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01293": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01294": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01295": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01296": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01297": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01298": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01299": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01300": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01301": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01302": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01303": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01304": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01305": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01306": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01307": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01308": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01309": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01310": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01311": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01312": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01313": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01314": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01315": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01316": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01317": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01318": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01319": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01320": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01321": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01322": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01323": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01324": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01325": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01326": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01327": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01328": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01329": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01330": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01331": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01332": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01333": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01334": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01335": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01336": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01337": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01338": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01339": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01340": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01341": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01342": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01343": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01344": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01345": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01346": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01347": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01348": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01349": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01350": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01351": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01352": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01353": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01354": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01355": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01356": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01357": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01358": {
+    "Normal": "Grant self Guts (1 time, restore 1000 HP) & Increase own Arts Card Performance by 8%",
+    "NormalJapanese": "自身にガッツ状態を付与(1回・HP1000回復)＆Artsカード性能を8%アップ",
+    "Maximum": "Grant self Guts (1 time, restore 1000 HP) & Increase own Arts Card Performance by 10% [MAX]",
+    "MaximumJapanese": "自身にガッツ状態を付与(1回・HP1000回復)＆Artsカード性能を10%アップ[最大解放]"
+  },
+  "CE01359": {
+    "Normal": "Grant self Ignore DEF & Increase own Buster Card Performance by 8% & Critical Strength by 15%",
+    "NormalJapanese": "自身に防御無視状態を付与＆Busterカード性能を8%アップ＆クリティカル威力を15%アップ",
+    "Maximum": "Grant self Ignore DEF & Increase own Buster Card Performance by 10% & Critical Strength by 20% [MAX]",
+    "MaximumJapanese": "自身に防御無視状態を付与＆Busterカード性能を10%アップ＆クリティカル威力を20%アップ[最大解放]"
+  },
+  "CE01360": {
+    "Normal": "Grant self Sure Hit (20s) & Increase own Arts Card Performance by 4% & Buster Card Performance by 4% & Start the battle with own NP Gauge charged by 15%",
+    "NormalJapanese": "自身に必中状態を付与(20秒)＆Artsカード性能を4%アップ＆Busterカード性能を4%アップ＆NPを15%チャージした状態でバトルを開始する",
+    "Maximum": "Grant self Sure Hit (20s) & Increase own Arts Card Performance by 6% & Buster Card Performance by 6% & Start the battle with own NP Gauge charged by 25% [MAX]",
+    "MaximumJapanese": "自身に必中状態を付与(20秒)＆Artsカード性能を6%アップ＆Busterカード性能を6%アップ＆NPを25%チャージした状態でバトルを開始する[最大解放]"
+  },
+  "CE01361": {
+    "Normal": "Increase own Buster Card Performance by 8% & Critical Strength by 10% & Increase own Overcharge level by 2 when using a Noble Phantasm (1 time)",
+    "NormalJapanese": "自身のBusterカード性能を8%アップ＆クリティカル威力を10%アップ＆宝具使用時にチャージ段階を2段階分上げる(1回)",
+    "Maximum": "Increase own Buster Card Performance by 10% & Critical Strength by 15% & Increase own Overcharge level by 2 when using a Noble Phantasm (1 time) [MAX]",
+    "MaximumJapanese": "自身のBusterカード性能を10%アップ＆クリティカル威力を15%アップ＆宝具使用時にチャージ段階を2段階分上げる(1回)[最大解放]"
+  },
+  "CE01362": {
+    "Normal": "Increase own Arts Card Performance by 8% & NP Gain by 10% & Grant self Damage Cut (100)",
+    "NormalJapanese": "自身のArtsカード性能を8%アップ＆NP獲得量を10%アップ＆被ダメージを100カットする状態を付与",
+    "Maximum": "Increase own Arts Card Performance by 10% & NP Gain by 15% & Grant self Damage Cut (200) [MAX]",
+    "MaximumJapanese": "自身のArtsカード性能を10%アップ＆NP獲得量を15%アップ＆被ダメージを200カットする状態を付与[最大解放]"
+  },
+  "CE01363": {
+    "Normal": "Grant self Ignore DEF & Increase own Quick Card Performance by 8% & Buster Card Performance by 8%",
+    "NormalJapanese": "自身に防御無視状態を付与＆Quickカード性能を8%アップ＆Busterカード性能を8%アップ",
+    "Maximum": "Grant self Ignore DEF & Increase own Quick Card Performance by 10% & Buster Card Performance by 10% [MAX]",
+    "MaximumJapanese": "自身に防御無視状態を付与＆Quickカード性能を10%アップ＆Busterカード性能を10%アップ[最大解放]"
+  },
+  "CE01364": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01365": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01366": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01367": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01368": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01369": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01370": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01371": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01372": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01373": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01374": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01375": {
+    "Normal": "No Effect",
+    "NormalJapanese": "効果なし",
+    "Maximum": "No Effect",
+    "MaximumJapanese": "効果なし"
+  },
+  "CE01376": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01377": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01378": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01379": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01380": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01381": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01382": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01383": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01384": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01385": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01386": {
+    "Normal": "Grant self Ignore Invincible (90s) & Increase own Arts Card Performance by 3% & NP Strength by 15%",
+    "NormalJapanese": "自身に無敵貫通状態を付与(90秒)＆Artsカード性能を3%アップ＆宝具威力を15%アップ",
+    "Maximum": "Grant self Ignore Invincible (90s) & Increase own Arts Card Performance by 5% & NP Strength by 20% [MAX]",
+    "MaximumJapanese": "自身に無敵貫通状態を付与(90秒)＆Artsカード性能を5%アップ＆宝具威力を20%アップ[最大解放]"
+  },
+  "CE01387": {
+    "Normal": "Grant self Ignore DEF & Increase own Arts Card Performance by 8% & Buster Card Performance by 8%",
+    "NormalJapanese": "自身に防御無視状態を付与＆Artsカード性能を8%アップ＆Busterカード性能を8%アップ",
+    "Maximum": "Grant self Ignore DEF & Increase own Arts Card Performance by 10% & Buster Card Performance by 10% [MAX]",
+    "MaximumJapanese": "自身に防御無視状態を付与＆Artsカード性能を10%アップ＆Busterカード性能を10%アップ[最大解放]"
+  },
+  "CE01388": {
+    "Normal": "Grant self Ignore Invincible (90s) & Increase own Buster Card Performance by 3% & NP Strength by 15%",
+    "NormalJapanese": "自身に無敵貫通状態を付与(90秒)＆Busterカードの性能を3%アップ＆宝具威力を15%アップ",
+    "Maximum": "Grant self Ignore Invincible (90s) & Increase own Buster Card Performance by 5% & NP Strength by 20% [MAX]",
+    "MaximumJapanese": "自身に無敵貫通状態を付与(90秒)＆Busterカードの性能を5%アップ＆宝具威力を20%アップ[最大解放]"
+  },
+  "CE01389": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01390": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01391": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01392": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01393": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01394": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01395": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01396": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01397": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01398": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01399": {
+    "Normal": "Increase own Buster Card Performance by 10% & NP Gain by 10% & Increase own Overcharge level by 2 when using a Noble Phantasm (1 time)",
+    "NormalJapanese": "自身のBusterカード性能を10%アップ＆NP獲得量を10%アップ＆宝具使用時にチャージ段階を2段階分上げる(1回)",
+    "Maximum": "Increase own Buster Card Performance by 15% & NP Gain by 15% & Increase own Overcharge level by 2 when using a Noble Phantasm (1 time) [MAX]",
+    "MaximumJapanese": "自身のBusterカード性能を15%アップ＆NP獲得量を15%アップ＆宝具使用時にチャージ段階を2段階分上げる(1回)[最大解放]"
+  },
+  "CE01400": {
+    "Normal": "Grant self NP Gain (3％ every 10s) & Increase own HP recovery received by 15%",
+    "NormalJapanese": "自身に10秒ごとにNPを3%獲得状態を付与＆HP回復量を15%アップ",
+    "Maximum": "Grant self NP Gain (4％ every 10s) & Increase own HP recovery received by 20% [MAX]",
+    "MaximumJapanese": "自身に10秒ごとにNPを4%獲得状態を付与＆HP回復量を20%アップ[最大解放]"
+  },
+  "CE01401": {
+    "Normal": "Increase own Arts Card Performance by 2% & Buster Card Performance by 2% & Grant self a state that gains 2 Critical Stars every 10s",
+    "NormalJapanese": "自身のArtsカード性能を2%アップ＆Busterカード性能を2%アップ＆10秒ごとにスターを2個獲得する状態を付与",
+    "Maximum": "Increase own Arts Card Performance by 3% & Buster Card Performance by 3% & Grant self a state that gains 4 Critical Stars every 10s [MAX]",
+    "MaximumJapanese": "自身のArtsカード性能を3%アップ＆Busterカード性能を3%アップ＆10秒ごとにスターを4個獲得する状態を付与[最大解放]"
+  },
+  "CE01402": {
+    "Normal": "Increase own Arts Card Performance by 8% & Buster Card Performance by 8% & NP Gain by 5% & Start the battle with own NP Gauge charged by 15%",
+    "NormalJapanese": "自身のArtsカード性能を8%アップ＆Busterカード性能を8%アップ＆NP獲得量を5%アップ＆NPを15%チャージした状態でバトルを開始する",
+    "Maximum": "Increase own Arts Card Performance by 10% & Buster Card Performance by 10% & NP Gain by 8% & Start the battle with own NP Gauge charged by 25% [MAX]",
+    "MaximumJapanese": "自身のArtsカード性能を10%アップ＆Busterカード性能を10%アップ＆NP獲得量を8%アップ＆NPを25%チャージした状態でバトルを開始する[最大解放]"
+  },
+  "CE01403": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01404": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01405": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01406": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01407": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01408": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01409": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01410": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01411": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01412": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01413": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01414": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01415": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01416": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01417": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01418": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01419": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01420": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01421": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01422": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01423": {
+    "Normal": "[Single Mode Only] Increase own Bond gained on quest clear by 15% + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を15%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "[Single Mode Only] Increase own Bond gained on quest clear by 30% + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "【シングルモード限定】自身のクエストクリア時に得られる絆を30%増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01424": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01425": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01426": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01427": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01428": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01429": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01430": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01431": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01432": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01433": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE01434": {
+    "Normal": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated",
+    "NormalJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない",
+    "Maximum": "Increase Master EXP earned on quest clear by 30 + Does not affect the Break Gauge increase when this unit is defeated [MAX]",
+    "MaximumJapanese": "クエストクリア時に得られるマスターEXPを30増やす＋自身が撃破された時の撃破ゲージ増加量に影響しない[最大解放]"
+  },
+  "CE08000": {
+    "Normal": "Grant self Guts (1 time, Restore 1,000,000 HP)",
+    "NormalJapanese": "ガッツ状態を付与(1回・1000000）",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08001": {
+    "Normal": "Grant self Guts (1 time, Restore 300,000 HP)",
+    "NormalJapanese": "ガッツ状態を付与(1回・300000）",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08002": {
+    "Normal": "Grant self Guts (1 time, Restore 20,000 HP)",
+    "NormalJapanese": "ガッツ状態を付与(1回・20000）",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08003": {
+    "Normal": "Decrease own DEF by 50%",
+    "NormalJapanese": "自身の防御力を50％ダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08004": {
+    "Normal": "Reduce Quick Resist by 100%",
+    "NormalJapanese": "Quick攻撃耐性を100%ダウン",
+    "Maximum": "Reduce Quick Resist by 100%",
+    "MaximumJapanese": "Quick攻撃耐性を100%ダウン"
+  },
+  "CE08005": {
+    "Normal": "Reduce Arts Resist by 100%",
+    "NormalJapanese": "Arts攻撃耐性を100%ダウン",
+    "Maximum": "Reduce Arts Resist by 100%",
+    "MaximumJapanese": "Arts攻撃耐性を100%ダウン"
+  },
+  "CE08006": {
+    "Normal": "Reduce Buster Resist by 100%",
+    "NormalJapanese": "Buster攻撃耐性を100%ダウン",
+    "Maximum": "Reduce Buster Resist by 100%",
+    "MaximumJapanese": "Buster攻撃耐性を100%ダウン"
+  },
+  "CE08007": {
+    "Normal": "Grant self Guts (480s)",
+    "NormalJapanese": "ガッツ状態を付与(480秒）",
+    "Maximum": "Grant self Guts (480s)",
+    "MaximumJapanese": "ガッツ状態を付与(480秒）"
+  },
+  "CE08008": {
+    "Normal": "Grant self Guts (480s)",
+    "NormalJapanese": "ガッツ状態を付与(480秒）",
+    "Maximum": "Grant self Guts (480s)",
+    "MaximumJapanese": "ガッツ状態を付与(480秒）"
+  },
+  "CE08009": {
+    "Normal": "Grant self Guts (480s)",
+    "NormalJapanese": "ガッツ状態を付与(480秒）",
+    "Maximum": "Grant self Guts (480s)",
+    "MaximumJapanese": "ガッツ状態を付与(480秒）"
+  },
+  "CE08010": {
+    "Normal": "Grant self Target Focus",
+    "NormalJapanese": "ターゲット集中を付与",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08011": {
+    "Normal": "Grant self Guts (1 time, Restore 400,000 HP)",
+    "NormalJapanese": "ガッツ状態を付与(1回・400000）",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08012": {
+    "Normal": "Grant self Guts (1 time, Restore 100,000 HP)",
+    "NormalJapanese": "ガッツ状態を付与(1回・100000）",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08013": {
+    "Normal": "When defeated, grant Ignore Invincible to all enemies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の敵全体に無敵貫通状態を付与する状態を付与",
+    "Maximum": "When defeated, grant Ignore Invincible to all enemies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の敵全体に無敵貫通状態を付与する状態を付与[最大解放]"
+  },
+  "CE08014": {
+    "Normal": "Increase own Stun Resist & Increase own Buff Removal Resist",
+    "NormalJapanese": "自身の行動不能の耐性をアップ＆強化解除耐性をアップ",
+    "Maximum": "Increase own Stun Resist & Increase own Buff Removal Resist [MAX]",
+    "MaximumJapanese": "自身の行動不能の耐性をアップ＆強化解除耐性をアップ[最大解放]"
+  },
+  "CE08015": {
+    "Normal": "Grant self Target Focus & starts the battle with own NP Gauge 80％ charged",
+    "NormalJapanese": "ターゲット集中を付与＆NPを80%チャージした状態でバトルを開始",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08016": {
+    "Normal": "Fully charges own NP Gauge & grant a status that gains NP 100％ every 15 seconds",
+    "NormalJapanese": "自身のNPを100％チャージ＆15秒ごとにNP100%獲得状態を付与",
+    "Maximum": "Fully charges own NP Gauge & grant a status that gains NP 100％ every 15 seconds [MAX]",
+    "MaximumJapanese": "自身のNPを100％チャージ＆15秒ごとにNP100%獲得状態を付与[最大開放]"
+  },
+  "CE08017": {
+    "Normal": "When defeated, increase Quick Card Performance for all enemies by 50% (30 seconds)",
+    "NormalJapanese": "自身がやられた時に敵全体のQuickカードの性能を50%アップ(30秒)",
+    "Maximum": "When defeated, increase Quick Card Performance for all enemies by 50% (30 seconds)",
+    "MaximumJapanese": "自身がやられた時に敵全体のQuickカードの性能を50%アップ(30秒)"
+  },
+  "CE08018": {
+    "Normal": "When defeated, increase Arts Card Performance for all enemies by 50% (30 seconds)",
+    "NormalJapanese": "自身がやられた時に敵全体のArtsカードの性能を50%アップ(30秒)",
+    "Maximum": "When defeated, increase Arts Card Performance for all enemies by 50% (30 seconds)",
+    "MaximumJapanese": "自身がやられた時に敵全体のArtsカードの性能を50%アップ(30秒)"
+  },
+  "CE08019": {
+    "Normal": "When defeated, increase Buster Card Performance for all enemies by 50% (30 seconds)",
+    "NormalJapanese": "自身がやられた時に敵全体のBusterカードの性能を50%アップ(30秒)",
+    "Maximum": "When defeated, increase Quick Card Performance for all enemies by 50% (30 seconds)",
+    "MaximumJapanese": "自身がやられた時に敵全体のQuickカードの性能を50%アップ(30秒)"
+  },
+  "CE08020": {
+    "Normal": "Increase own Buff Removal Resist",
+    "NormalJapanese": "自身の強化解除耐性をアップ",
+    "Maximum": "Increase own Buff Removal Resist [MAX]",
+    "MaximumJapanese": "自身の強化解除耐性をアップ[最大解放]"
+  },
+  "CE08021": {
+    "Normal": "Decrease own DEF",
+    "NormalJapanese": "自身の防御力をダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08022": {
+    "Normal": "Decrease own DEF",
+    "NormalJapanese": "自身の防御力をダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08023": {
+    "Normal": "Decrease own DEF",
+    "NormalJapanese": "自身の防御力をダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08024": {
+    "Normal": "Decrease own DEF",
+    "NormalJapanese": "自身の防御力をダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08025": {
+    "Normal": "Grant Guts",
+    "NormalJapanese": "ガッツ状態を付与",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08026": {
+    "Normal": "Grant Guts",
+    "NormalJapanese": "ガッツ状態を付与",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08027": {
+    "Normal": "Grant Guts",
+    "NormalJapanese": "ガッツ状態を付与",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08028": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE08029": {
+    "Normal": "Increase Resistance to Arts and Buster & Decrease Resistance to Quick",
+    "NormalJapanese": "ArtsとBuster耐性アップ＆Quick耐性ダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08030": {
+    "Normal": "Increase Resistance to Quick and Buster & Decrease Resistance to Arts",
+    "NormalJapanese": "QuickとBuster耐性アップ＆Arts耐性ダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08031": {
+    "Normal": "Increase Resistance to Quick and Arts & Decrease Resistance to Buster",
+    "NormalJapanese": "QuickとArts耐性アップ＆Buster耐性ダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08032": {
+    "Normal": "On appearance, increase Quick Performance of all enemies + On appearance, increase all allies' Resistance to Arts and Buster & decrease Resistance to Quick",
+    "NormalJapanese": "登場時に敵全体のQuick性能アップ + 登場時に味方全体のArtsとBuster耐性アップ＆Quick耐性ダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08033": {
+    "Normal": "On appearance, increase Quick Performance of all enemies + On appearance, increase all allies' Resistance to Quick and Buster & decrease Resistance to Arts",
+    "NormalJapanese": "登場時に敵全体のAuick性能アップ + 登場時に味方全体のQuickとBuster耐性アップ＆Arts耐性ダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08034": {
+    "Normal": "On appearance, increase Buster Performance of all enemies + On appearance, increase all allies' Resistance to Quick and Arts & decrease Resistance to Quick",
+    "NormalJapanese": "登場時に敵全体のBuster性能アップ + 登場時に味方全体のQuickとArts耐性アップ＆Quick耐性ダウン",
+    "Maximum": "",
+    "MaximumJapanese": ""
+  },
+  "CE08035": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE08036": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE08037": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE08038": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE08039": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE08040": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE08041": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE08042": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE08043": {
+    "Normal": "Upon your death, remove buffs from all allies in range",
+    "NormalJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除",
+    "Maximum": "Upon your death, remove buffs from all allies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の味方全体の強化状態を解除[最大解放]"
+  },
+  "CE09001": {
+    "Normal": "Increase own party's ATK by 50% & Shorten Command Card Draw Time by 0.5s (minimum 0.5s)",
+    "NormalJapanese": "自パーティの攻撃力を50％アップ＆コマンドカードドロー時間を0.5秒短くする（最短0.5秒）",
+    "Maximum": "Increase own party's ATK by 100% & Shorten Command Card Draw Time by 0.5s (minimum 0.5s) [MAX]",
+    "MaximumJapanese": "自パーティの攻撃力を100％アップ＆コマンドカードドロー時間を0.5秒短くする（最短0.5秒）[最大解放]"
+  },
+  "CE00187": {
+    "Normal": "Grant self a state that grants ATK Up [{0}] to all enemies in range when defeated",
+    "NormalJapanese": "自身に死亡時に範囲内の敵全体に攻撃力アップ[{0}]を付与する状態を付与",
+    "Maximum": "When defeated, grant ATK Up[{0}] to all enemies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の敵全体に攻撃力アップ[{0}]を付与する状態を付与[最大解放]"
+  },
+  "CE00195": {
+    "Normal": "Grant self a state that grants ATK Up [{0}] to all enemies in range when defeated",
+    "NormalJapanese": "自身に死亡時に範囲内の敵全体に攻撃力アップ[{0}]を付与する状態を付与",
+    "Maximum": "When defeated, grant ATK Up[{0}] to all enemies in range [MAX]",
+    "MaximumJapanese": "自身に死亡時に範囲内の敵全体に攻撃力アップ[{0}]を付与する状態を付与[最大解放]"
   }
 }

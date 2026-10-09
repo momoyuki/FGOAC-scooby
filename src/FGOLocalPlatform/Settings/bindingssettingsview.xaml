@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="FGOLocalPlatform.BindingsSettingsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:FGOLocalPlatform">
+  <StackPanel Margin="28" MaxWidth="900" HorizontalAlignment="Left">
+    <WrapPanel>
+      <TextBlock Text="Profile" VerticalAlignment="Center" Margin="0,0,12,0" Foreground="{StaticResource TextSoftBrush}" />
+      <ComboBox Name="ProfileSelector" Width="320" SelectedIndex="0" AutomationProperties.Name="Bindings profile" SelectionChanged="Profile_OnChanged">
+        <ComboBoxItem Content="Keyboard and mouse" Tag="keyboard+mouse" />
+        <ComboBoxItem Content="Controller" Tag="pad" />
+      </ComboBox>
+    </WrapPanel>
+    <TextBlock Text="Each row is a button on the game's screen. Bind a key, a controller button or a chord to it, and pressing it taps that button while the game window is in front. Click a box, then press: hold Ctrl, Shift or Alt first for a chord, or press several controller buttons together. Esc cancels. Keys and buttons the Input card already uses cannot be bound here. The profile picks which column works. Changes save at once and apply the next time you press Play." Style="{StaticResource HelpTextStyle}" Margin="3,8,0,16" />
+    <Grid Name="BindingRows">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="250" />
+        <ColumnDefinition Width="220" />
+        <ColumnDefinition Width="80" />
+        <ColumnDefinition Width="220" />
+        <ColumnDefinition Width="80" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="34" />
+      </Grid.RowDefinitions>
+      <TextBlock Text="Button" VerticalAlignment="Center" Foreground="{StaticResource TextSoftBrush}" />
+      <TextBlock Grid.Column="1" Text="Keyboard and mouse" VerticalAlignment="Center" Foreground="{StaticResource TextSoftBrush}" />
+      <TextBlock Grid.Column="3" Text="Controller" VerticalAlignment="Center" Foreground="{StaticResource TextSoftBrush}" />
+    </Grid>
+    <TextBlock Name="StatusText" TextWrapping="Wrap" Margin="3,8,0,0" Foreground="{StaticResource IceBrush}" />
+  </StackPanel>
+</UserControl>

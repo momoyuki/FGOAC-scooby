@@ -18,6 +18,13 @@ internal static class UpdateSettings
 
 	public const string LatestReleaseApiUrl = "https://api.github.com/repos/" + Owner + "/" + Repo + "/releases/latest";
 
+	/// <summary>Release signing keys, ECDSA P-256 as base64 SubjectPublicKeyInfo: primary, then backup.</summary>
+	public static readonly string[] ReleaseKeys =
+	{
+		"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkmEiUuGCGZ6irnecUpAOx+2lN2rQrxwP9nFoax9/fSNSGXhmK3ceRhXF8MkHZuDBBEZRufdge9TWCxcySpJt2A==",
+		"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXfotfzDzGlDQneNSzT5Bd0a6lo1hL3S5Z2pUYFUUmMUUSO3xyghuLg7dVvJ2rVj8cDsdUIVdITUtWaxQsKbrRw=="
+	};
+
 	/// <summary>The running version as three numbers, for example 1.1.0.</summary>
 	public static string Version { get; } = Read();
 

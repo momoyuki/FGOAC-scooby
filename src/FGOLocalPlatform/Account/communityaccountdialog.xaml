@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="FGOLocalPlatform.CommunityAccountDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="New Account" Width="480" SizeToContent="Height" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Background="{StaticResource GroundBrush}" Foreground="{StaticResource TextBrush}" FontFamily="{StaticResource UiFont}" Closing="Window_OnClosing">
+  <Border Background="{StaticResource PlateBrush}" BorderBrush="{StaticResource LineBrush}" BorderThickness="1" Padding="20" Margin="10">
+    <StackPanel>
+      <TextBlock Name="LabelText" FontSize="14" TextWrapping="Wrap" Foreground="{StaticResource TextSoftBrush}" Margin="0,0,0,14" />
+      <TextBlock Text="Master name" FontSize="14" Foreground="{StaticResource TextBrush}" />
+      <TextBox Name="NameTextBox" MaxLength="16" Margin="0,6,0,6" AutomationProperties.Name="Master name" />
+      <TextBlock Name="NameProblemText" Visibility="Collapsed" Style="{StaticResource HelpTextStyle}" Foreground="{StaticResource WarnBrush}" Margin="0,0,0,6" />
+      <TextBlock Style="{StaticResource HelpTextStyle}" Margin="0,0,0,16" Text="Other players see this name. It cannot be changed later. Up to 16 letters A to Z, digits, spaces, _ or -." />
+      <CheckBox Name="MachineIdCheckBox" Content="Send this PC's machine id" IsChecked="True" Margin="0,0,0,6" />
+      <TextBlock Style="{StaticResource HelpTextStyle}" Margin="0,0,0,16" Text="The machine id is a one-way hash of this PC's Windows machine GUID and the serial number of its system drive: neither can be read back from it, and nothing else about this PC is sent. The server stores it with the account so that its operator can ban a PC, not only an account, that breaks the server's rules. Untick the box to send no machine id." />
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button Name="CreateButton" Content="Create" Style="{StaticResource AccentButtonStyle}" Width="96" IsDefault="True" Click="CreateButton_OnClick" />
+        <Button Name="CancelButton" Content="Cancel" Width="96" IsCancel="True" />
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</Window>

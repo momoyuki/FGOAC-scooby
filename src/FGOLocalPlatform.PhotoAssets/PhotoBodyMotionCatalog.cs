@@ -1,12 +1,36 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace FGOLocalPlatform.PhotoAssets;
 
 public static class PhotoBodyMotionCatalog
 {
+	private static readonly Regex Variant = new Regex("_S\\d{2}(?=_|\\.|$)", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
+	private static bool MatchesModel(string entry, string model, IEnumerable<string> names)
+	{
+		Match match = Variant.Match(model);
+		Match match2 = Variant.Match(entry);
+		if (!match.Success || !match2.Success)
+		{
+			return true;
+		}
+		if (match2.Value.Equals(match.Value, StringComparison.OrdinalIgnoreCase))
+		{
+			return true;
+		}
+		if (!match2.Value.Equals("_S01", StringComparison.OrdinalIgnoreCase))
+		{
+			return false;
+		}
+		string value = entry.Substring(0, match2.Index) + match.Value + entry.Substring(match2.Index + match2.Length);
+		return !names.Contains<string>(value, StringComparer.OrdinalIgnoreCase);
+	}
+
 	public static bool IsCompatible(FgoMotion motion, int jointType, IReadOnlyList<PhotoRigBone> bones)
 	{
 		bool flag = ((jointType < 0 || jointType > 11) ? true : false);
@@ -55,7 +79,21 @@ public static class PhotoBodyMotionCatalog
 		return value - 6;
 	}
 
-	public static IReadOnlyList<PhotoBodyMotionEntry> List(string archivePath, int jointType, IReadOnlyList<PhotoRigBone> bones)
+	public static IReadOnlyList<PhotoBodyMotionEntry> ListActor(string archivePath, int jointType, IReadOnlyList<PhotoRigBone> bones, string modelResource = "")
+	{
+		string directoryName = Path.GetDirectoryName(archivePath);
+		string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(archivePath);
+		Match actor = Regex.Match(fileNameWithoutExtension, "^mot_svt_\\d{4}(?=_|$)", RegexOptions.IgnoreCase);
+		if (!actor.Success)
+		{
+			return List(archivePath, jointType, bones, modelResource);
+		}
+		return (from p in Directory.EnumerateFiles(directoryName, actor.Value + "*.farc")
+			where Path.GetFileNameWithoutExtension(p).Equals(actor.Value, StringComparison.OrdinalIgnoreCase) || Path.GetFileNameWithoutExtension(p).StartsWith(actor.Value + "_", StringComparison.OrdinalIgnoreCase)
+			select p).OrderBy<string, string>((string p) => p, StringComparer.OrdinalIgnoreCase).SelectMany((string p) => List(p, jointType, bones, modelResource)).ToArray();
+	}
+
+	public static IReadOnlyList<PhotoBodyMotionEntry> List(string archivePath, int jointType, IReadOnlyList<PhotoRigBone> bones, string modelResource = "")
 	{
 		FarcArchive farcArchive = new FarcArchive(archivePath);
 		List<PhotoBodyMotionEntry> list = new List<PhotoBodyMotionEntry>();
@@ -64,7 +102,7 @@ public static class PhotoBodyMotionCatalog
 			try
 			{
 				FgoMotion fgoMotion = new FgoMotionParser().Parse(farcArchive.Read(item), item.Name);
-				bool flag = IsCompatible(fgoMotion, jointType, bones);
+				bool flag = IsCompatible(fgoMotion, jointType, bones) && MatchesModel(item.Name, modelResource, farcArchive.Entries.Select((FarcEntry e) => e.Name));
 				list.Add(new PhotoBodyMotionEntry(farcArchive.Path, item.Name, fgoMotion.SkeletonName, fgoMotion.FrameCount, flag, flag ? "Skeleton matches" : "Skeleton does not match"));
 			}
 			catch (FgoFormatException ex)
@@ -75,12 +113,12 @@ public static class PhotoBodyMotionCatalog
 		return list;
 	}
 
-	public static FgoMotion Load(PhotoBodyMotionEntry entry, int jointType, IReadOnlyList<PhotoRigBone> bones)
+	public static FgoMotion Load(PhotoBodyMotionEntry entry, int jointType, IReadOnlyList<PhotoRigBone> bones, string modelResource = "")
 	{
 		FarcArchive farcArchive = new FarcArchive(entry.ArchivePath);
 		FarcEntry farcEntry = farcArchive.Entries.SingleOrDefault((FarcEntry e) => e.Name == entry.EntryName) ?? throw new FgoFormatException("That motion is no longer in the archive.");
 		FgoMotion fgoMotion = new FgoMotionParser().Parse(farcArchive.Read(farcEntry), farcEntry.Name);
-		if (!IsCompatible(fgoMotion, jointType, bones))
+		if (!IsCompatible(fgoMotion, jointType, bones) || !MatchesModel(farcEntry.Name, modelResource, farcArchive.Entries.Select((FarcEntry e) => e.Name)))
 		{
 			throw new FgoFormatException("This motion does not fit the character's skeleton.");
 		}
