@@ -89,7 +89,7 @@ if ([string]::IsNullOrWhiteSpace($ServerHost)) {
 }
 
 if ($ServerHost -in @('auto','local','localhost','127.0.0.1')) { $ServerHost = '192.168.100.1' }
-. (Join-Path (Split-Path -Parent $serverRoot) 'App\FGO_StartupChecks.ps1')
+. (Join-Path (Split-Path -Parent $serverRoot) 'App\FGOAC_StartupChecks.ps1')
 Test-FgoWritableLayout -InstallRoot (Split-Path -Parent $serverRoot)
 
 $encoding = New-Object System.Text.UTF8Encoding($false)

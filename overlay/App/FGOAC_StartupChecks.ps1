@@ -1,9 +1,10 @@
 ﻿function Test-FgoWritableLayout {
-    param([Parameter(Mandatory=$true)][string]$InstallRoot)
+    param([Parameter(Mandatory=$true)][string]$InstallRoot,[switch]$CommunityServer)
     $root = [IO.Path]::GetFullPath($InstallRoot)
     # These are application data folders, never a drive root or Windows folder.
-    $folders = @('App','AMFS','GameData','DEVICE','DEVICE\runtime','DEVICE\print',
-        'logs','Server\state','Server\artemis\config','Server\data\mariadb')
+    $folders = @('App','AMFS','GameData','DEVICE','DEVICE\runtime','DEVICE\print','logs')
+    # The local server's folders; an Online launch leaves Server\ untouched.
+    if (!$CommunityServer) { $folders += @('Server\state','Server\artemis\config','Server\data\mariadb') }
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent().User.Value
     foreach ($relative in $folders) {
         $path = Join-Path $root $relative
@@ -22,8 +23,8 @@
             throw "[FGO-LAUNCHER:4] Cannot write to $path. Run the launcher as administrator and make sure the drive is not full, write-protected, or blocked by your security software. Original error: $($_.Exception.Message)"
         }
     }
-    $files = @('App\fgo-launcher.json','App\deck.json','App\segatools.ini',
-        'Server\mariadb.ini','Server\artemis\config\core.yaml')
+    $files = @('App\fgo-launcher.json','App\deck.json','App\segatools.ini')
+    if (!$CommunityServer) { $files += @('Server\mariadb.ini','Server\artemis\config\core.yaml') }
     foreach ($relative in $files) {
         $path = Join-Path $root $relative
         if ([IO.File]::Exists($path)) {
@@ -36,7 +37,9 @@
         }
     }
     # Extracted archives sometimes mark existing runtime/save files read-only.
-    foreach ($relative in @('AMFS','GameData','DEVICE','Server\state','Server\data\mariadb')) {
+    $saves = @('AMFS','GameData','DEVICE')
+    if (!$CommunityServer) { $saves += @('Server\state','Server\data\mariadb') }
+    foreach ($relative in $saves) {
         Get-ChildItem -LiteralPath (Join-Path $root $relative) -File -Recurse -ErrorAction Stop |
             Where-Object { $_.IsReadOnly } | ForEach-Object { $_.IsReadOnly = $false }
     }

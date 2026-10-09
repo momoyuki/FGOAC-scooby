@@ -4,9 +4,12 @@ Applies the FGOAC scooby English patch to an FGO Arcade local-platform install.
 The script is shipped at the root of the release package, next to "FGOAC scooby.exe",
 manifest.json and the payload folder. Unzipping the package into the game folder already puts
 every file beside the install, so a normal run copies the payload into place, checks every file
-against manifest.json and writes the marker App\zh\en-patch.json. Re-running the same version
-does nothing, unless a platform update has since put its own scripts and text over the patched
-ones; then the files that differ are copied back.
+against manifest.json and writes the marker App\fgoac-patch.json. Re-running the same version
+does nothing, unless a file of the payload has since been replaced or removed; then the files that
+differ are copied back. Two parts of the payload are copied only onto game 11.00, read from the build
+of App\ago.exe: its English set App\zh, and English copies of Cloud23333's 1.02 server and account
+scripts. On any other build, such as the one his 1.10 update installs, those are left out and no file
+of his package is written.
 
 Usage
   .\Apply-EN-Patch.ps1
@@ -18,8 +21,22 @@ The script asks Windows for administrator rights only when the game folder canno
 as it stands, so a normal install on a data drive applies the patch without a prompt.
 
 What it never touches: accounts, decks, Server\state, the database, and App\fgo-launcher.json
-apart from setting chineseEnabled to true, which is the switch that makes the game load the
-App\zh folder the patch fills with English.
+apart from the English switches. A first install sets gameLanguage to "en-fgoac", which makes
+Cloud23333's launch scripts from his 1.10 update on load App\Localization\en-fgoac, and on game 11.00
+chineseEnabled to true, which makes the game load App\zh. An update leaves both as they are, and
+gives a settings file without gameLanguage the language its chineseEnabled meant.
+
+An earlier FGOAC scooby replaced some of Cloud23333's scripts with copies of its own. Every run puts back each one that
+still holds such a copy, from the backup that install took of his file; on a build other than 11.00 it also moves the
+11.00 English set App\zh, which his update removes, into a backup.
+
+On a build other than 11.00, -Rollback turns the English text off instead: gameLanguage "ja", the English set
+App\Localization\en-fgoac moved into a backup, none of his files changed.
+
+-Rollback also puts back the launcher's own files - the deck file, the loadouts, the settings file
+and the runtime ini - as the update backup holds them: backup\pre-<version>, which the launcher
+takes before the first start of the version rolled back. Each file it replaces is kept as .bak, and
+the backup is renamed pre-<version>-rolled-back-<time> so the next install takes a new one.
 
 Exit codes
   0  the patch was applied, was already up to date, or the rollback finished
@@ -50,8 +67,8 @@ $scriptHost = [IO.Path]::Combine($PSHOME, 'pwsh.exe')
 if (!(Test-Path -LiteralPath $scriptHost -PathType Leaf)) { $scriptHost = [IO.Path]::Combine($PSHOME, 'powershell.exe') }
 if ([string]::IsNullOrWhiteSpace($PackageRoot)) { $PackageRoot = $PSScriptRoot }
 
-$ProtectedPrefixes = @('Server\state\', 'Server\data\', 'DEVICE\', 'AMFS\', 'GameData\', '_en-patch-backup\', '_update-backup\', 'App\deck-loadouts\', 'Server\artemis\config\summon-presets\')
-$ProtectedFiles = @('App\fgo-launcher.json', 'App\deck.json', 'App\deck.json.bak')
+$ProtectedPrefixes = @('Server\state\', 'Server\data\', 'DEVICE\', 'AMFS\', 'GameData\', '_en-patch-backup\', '_update-backup\', 'backup\', 'App\deck-loadouts\', 'Server\artemis\config\summon-presets\', 'App\1_MOD\')
+$ProtectedFiles = @('App\fgo-launcher.json', 'App\fgo-launcher.json.bak', 'App\deck.json', 'App\deck.json.bak')
 # "FGOA scooby.exe" is the name this launcher shipped under before 1.1.0. It stays in the list so an
 # upgrade still refuses to run while the old build is open.
 $RunningNames = @('ago.exe', 'amdaemon.exe', 'inject.exe', 'FGOLocalPlatform.exe', 'FGOAC scooby.exe', 'FGOA scooby.exe')
@@ -61,8 +78,94 @@ function Test-FgoInstallRoot {
     param([string]$Path)
     if ([string]::IsNullOrWhiteSpace($Path)) { return $false }
     return ([IO.File]::Exists([IO.Path]::Combine($Path, 'App\ago.exe')) -and
-        [IO.File]::Exists([IO.Path]::Combine($Path, 'App\fgo-launcher.json')) -and
-        [IO.Directory]::Exists([IO.Path]::Combine($Path, 'Server')))
+        [IO.File]::Exists([IO.Path]::Combine($Path, 'App\fgo-launcher.json')))
+}
+
+function Test-FgoGame1100 {
+    param([string]$Root)
+    if ([IO.File]::Exists([IO.Path]::Combine($Root, 'update-1.10.json'))) { return $false }
+    try {
+        $stream = [IO.File]::OpenRead([IO.Path]::Combine($Root, 'App\ago.exe'))
+        try {
+            $header = [byte[]]::new(4096)
+            $read = 0
+            while ($read -lt $header.Length -and ($count = $stream.Read($header, $read, $header.Length - $read)) -gt 0) { $read += $count }
+        } finally { $stream.Dispose() }
+    } catch { return $false }
+    if ($read -lt 0x40 -or $header[0] -ne 0x4D -or $header[1] -ne 0x5A) { return $false }
+    $pe = [BitConverter]::ToInt32($header, 0x3C)
+    if ($pe -lt 0x40 -or $pe + 24 + 60 -gt $read -or [BitConverter]::ToUInt32($header, $pe) -ne 0x00004550) { return $false }
+    return ([BitConverter]::ToUInt32($header, $pe + 8) -eq 0x643F4ECD -and [BitConverter]::ToUInt32($header, $pe + 24 + 56) -eq 0x2034000)
+}
+
+# What is installed only on game 11.00: its English set, and English copies of Cloud23333's 1.02 server and account
+# scripts, which his 1.10 update replaces with his own. A name ending in \ is a folder. Mirrors GameBuild.Only1100Files.
+$Game1100Only = @('App\zh\', 'Server\Start-FGOLocalServer.ps1', 'Server\Stop-FGOLocalServerWhenIdle.ps1', 'Server\tools\fgo_account.py',
+    'Server\tools\fgo_server_config.py', 'Server\artemis\titles\fgo\data\summon_candidates.json')
+
+function Test-FgoGame1100Only {
+    param([string]$Relative)
+    foreach ($name in $Game1100Only) {
+        if ($name.EndsWith('\')) { if ($Relative.StartsWith($name, [StringComparison]::OrdinalIgnoreCase)) { return $true } }
+        elseif ($Relative.Equals($name, [StringComparison]::OrdinalIgnoreCase)) { return $true }
+    }
+    return $false
+}
+
+# Cloud23333's scripts that FGOAC scooby releases replaced with their own copies, and the SHA-256 of every copy they
+# installed. A file that still holds one of these is ours, not his. On game 11.00 the server and account scripts among
+# them are the English copies this package installs there.
+$RetiredCopies = @{
+    'App\FGO_EnvironmentCheck.ps1' = @('8d0dd9c4a7938c39e7a98dce1c67722e6ca10867ae00caff4c6f0c2d2353bd95', 'e73df3f89e3d366c0332deb256ec04ee162cd073e8b3389a7565c7037d368dbd')
+    'App\FGO_Launcher.ps1' = @('7be7444fb5bbd870776076e1af2cf1bb79cfd1787f40a269a395555eeb26d479', 'c0ffabe279c69c3b65a0632d1695dfa86cb2df4b024d666666681a78e40e7590', 'ec2859f408387b974afd7e289ff99d21502e3afb8033b02aec5da627abbc02f0')
+    'App\FGO_StartupChecks.ps1' = @('6351cb573fe9ede2fee72cc5f8320ae39d90f9671e2fbf0d6d56575ac8f17c4a', '6eb208996f094c9dff1a277caf4173436629e9f8818244e827d46b08d48f701f')
+    'Server\Start-FGOLocalServer.ps1' = @('818d5e41989b24ec16314e04db9eb8c27bd852026c90af6abd794fa37963f18c', 'd3f4e123561fb4c1768bea63cdce842aaad6675fae7f247976610b7c6fd6cc06')
+    'Server\Stop-FGOLocalServerWhenIdle.ps1' = @('3b5de60a1f562c5c40cbf2d7a166a833e87e4faa984e21418d06099cb177f3f5', '4d650d52b30d08fb01fe0cdb6811183986d6d1b259f3d77cc840469ef21de691', '5b9f4081def47493f59fc709982e81594fe8bac511d95508cf5d414665460799')
+    'Server\artemis\titles\fgo\data\summon_candidates.json' = @('10e5128293f4a8f7f97708503adbc0b9f6cffba896e841457585f4d340b637e1')
+    'Server\tools\fgo_account.py' = @('8d9d410618207b01ded1f390adc80f983de7b35da88ed70c0733365e387818eb', 'bb6db19d51e0421c7806029ae860e25eee834201ee02c6955ff83db407ad7cfa', 'e6e0aeb28dd8963e98154a37a492a327d6e792586cae78fe178855566b185e17')
+    'Server\tools\fgo_server_config.py' = @('052f4551fe506788259bdcfafa461f7225a5500fdbd8c5f03e75dbe85c49ce65')
+}
+
+# Puts back each of Cloud23333's scripts that still holds a copy an earlier FGOAC scooby installed, from the backup that
+# earlier install took of his file: the newest copy that is not one of ours, taken after his last update on a build
+# other than 11.00. The copy of ours goes into a new backup first. On 11.00 the files installed only there stay ours. On a
+# build other than 11.00, the 11.00 English set App\zh, which his update removes, is moved into that backup too. Returns
+# the sentence for a script left as it is.
+function Repair-FgoCopies {
+    param([string]$Root, [string]$BackupRoot, [bool]$Game1100)
+    $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
+    $aside = [IO.Path]::Combine($BackupRoot, $stamp + '-set-aside')
+    $updated = [IO.Path]::Combine($Root, 'update-1.10.json')
+    $since = if (!$Game1100 -and [IO.File]::Exists($updated)) { [IO.File]::GetLastWriteTime($updated) } else { [DateTime]::MinValue }
+    # Backup folders are named to the second.
+    $since = $since.AddTicks(-($since.Ticks % [TimeSpan]::TicksPerSecond))
+    $backups = @(if ([IO.Directory]::Exists($BackupRoot)) { Get-ChildItem -LiteralPath $BackupRoot -Directory | Where-Object { $_.Name -match '^\d{8}-\d{6}$' } | Sort-Object -Property Name -Descending })
+    $left = New-Object 'System.Collections.Generic.List[string]'
+    foreach ($relative in $RetiredCopies.Keys) {
+        if ($Game1100 -and (Test-FgoGame1100Only -Relative $relative)) { continue }
+        $path = [IO.Path]::Combine($Root, $relative)
+        if (!([IO.File]::Exists($path)) -or $RetiredCopies[$relative] -notcontains (Get-FgoFileHash -Path $path)) { continue }
+        $his = $null
+        foreach ($backup in $backups) {
+            $taken = [DateTime]::ParseExact($backup.Name, 'yyyyMMdd-HHmmss', [Globalization.CultureInfo]::InvariantCulture)
+            if ($taken -lt $since) { break }
+            $saved = [IO.Path]::Combine($backup.FullName, $relative)
+            if ([IO.File]::Exists($saved) -and $RetiredCopies[$relative] -notcontains (Get-FgoFileHash -Path $saved)) { $his = $saved; break }
+        }
+        if (!$his) { $left.Add($relative); continue }
+        Copy-FgoFile -Source $path -Destination ([IO.Path]::Combine($aside, $relative))
+        Copy-FgoFile -Source $his -Destination $path
+        Write-Host "Put back Cloud23333's $relative from $(Split-Path -Parent ($his.Substring(0, $his.Length - $relative.Length)))."
+    }
+    $stale = [IO.Path]::Combine($Root, 'App\zh')
+    if (!$Game1100 -and [IO.Directory]::Exists($stale)) {
+        $target = [IO.Path]::Combine($aside, 'App\zh')
+        [void][IO.Directory]::CreateDirectory((Split-Path -Parent $target))
+        [IO.Directory]::Move($stale, $target)
+        Write-Host "Moved App\zh, the English files made for the earlier game, to $target."
+    }
+    if ($left.Count -eq 0) { return '' }
+    return "These files of Cloud23333's still hold an older FGOAC scooby's copy, and no backup of his was found: $($left -join ', '). Run his updater again to put them back."
 }
 
 function Find-FgoInstallRoot {
@@ -91,13 +194,13 @@ function Select-FgoInstallRoot {
     Add-Type -AssemblyName System.Windows.Forms
     [Windows.Forms.Application]::EnableVisualStyles()
     $picker = New-Object Windows.Forms.FolderBrowserDialog
-    $picker.Description = 'Select your FGO Arcade folder - the one that holds the App and Server folders.'
+    $picker.Description = 'Select your FGO Arcade folder - the one that holds the App folder.'
     $picker.ShowNewFolderButton = $false
     try {
         while ($picker.ShowDialog() -eq [Windows.Forms.DialogResult]::OK) {
             if (Test-FgoInstallRoot -Path $picker.SelectedPath) { return $picker.SelectedPath }
             [void][Windows.Forms.MessageBox]::Show(
-                "That folder is not an FGO Arcade install. Choose the folder that holds App\ago.exe and the Server folder." + [Environment]::NewLine + [Environment]::NewLine + "You chose: " + $picker.SelectedPath,
+                "That folder is not an FGO Arcade install. Choose the folder that holds App\ago.exe and App\fgo-launcher.json." + [Environment]::NewLine + [Environment]::NewLine + "You chose: " + $picker.SelectedPath,
                 'FGOAC scooby - English patch', [Windows.Forms.MessageBoxButtons]::OK, [Windows.Forms.MessageBoxIcon]::Warning)
         }
         return ''
@@ -174,6 +277,24 @@ function Write-FgoJson {
     [IO.File]::WriteAllText($Path, ($Value | ConvertTo-Json -Depth 50), [Text.UTF8Encoding]::new($false))
 }
 
+# Writes one of the launcher's own files the way the launcher does: into a temporary file beside it,
+# then swapped in with the file it replaces kept as .bak.
+function Write-FgoOwnFile {
+    param([string]$Path, [byte[]]$Bytes)
+    $parent = Split-Path -Parent $Path
+    if (!([IO.Directory]::Exists($parent))) { [void][IO.Directory]::CreateDirectory($parent) }
+    $temporary = $Path + '.' + [guid]::NewGuid().ToString('N') + '.tmp'
+    try {
+        $stream = [IO.FileStream]::new($temporary, [IO.FileMode]::CreateNew, [IO.FileAccess]::Write, [IO.FileShare]::None, 4096, [IO.FileOptions]::WriteThrough)
+        try { $stream.Write($Bytes, 0, $Bytes.Length); $stream.Flush($true) } finally { $stream.Dispose() }
+        Clear-FgoReadOnly -Path $Path
+        if ([IO.File]::Exists($Path)) { [IO.File]::Replace($temporary, $Path, $Path + '.bak', $true) }
+        else { [IO.File]::Move($temporary, $Path) }
+    } finally {
+        if ([IO.File]::Exists($temporary)) { [IO.File]::Delete($temporary) }
+    }
+}
+
 function Test-FgoWritable {
     param([string]$Path)
     if (!([IO.Directory]::Exists($Path))) { return $false }
@@ -211,7 +332,7 @@ if ([string]::IsNullOrWhiteSpace($InstallRoot)) {
     }
 }
 if (!(Test-FgoInstallRoot -Path $InstallRoot)) {
-    Stop-WithMessage "That folder is not an FGO Arcade install: $InstallRoot. Choose the folder that holds App\ago.exe, App\fgo-launcher.json and the Server folder." 2
+    Stop-WithMessage "That folder is not an FGO Arcade install: $InstallRoot. Choose the folder that holds App\ago.exe and App\fgo-launcher.json." 2
 }
 $InstallRoot = (Resolve-Path -LiteralPath $InstallRoot).Path.TrimEnd('\')
 $PackageRoot = (Resolve-Path -LiteralPath $PackageRoot).Path.TrimEnd('\')
@@ -239,20 +360,44 @@ if ($elevationNeeded -and ![Security.Principal.WindowsPrincipal]::new($identity)
     exit $elevated.ExitCode
 }
 
+# Anything running from Server\ is the local server: its database, its services or the account tool.
 $running = @(Get-CimInstance Win32_Process | Where-Object {
-    $RunningNames -contains $_.Name -and $_.ProcessId -ne $IgnoreProcessId -and
-    $_.ExecutablePath -and $_.ExecutablePath.StartsWith($rootPrefix, [StringComparison]::OrdinalIgnoreCase)
+    $_.ProcessId -ne $IgnoreProcessId -and $_.ExecutablePath -and
+    $_.ExecutablePath.StartsWith($rootPrefix, [StringComparison]::OrdinalIgnoreCase) -and
+    ($RunningNames -contains $_.Name -or $_.ExecutablePath.StartsWith($rootPrefix + 'Server\', [StringComparison]::OrdinalIgnoreCase))
 })
 if ($running) {
-    Stop-WithMessage ("Close the game and the launcher in $InstallRoot first, then run the patch again. Still running: " + (($running | ForEach-Object { $_.Name }) -join ', ')) 4
+    Stop-WithMessage ("Close the game, the launcher and the local server in $InstallRoot first, then run the patch again. Still running: " + (($running | ForEach-Object { $_.Name }) -join ', ')) 4
 }
 
 $backupRoot = [IO.Path]::Combine($InstallRoot, '_en-patch-backup')
-$markerPath = [IO.Path]::Combine($InstallRoot, 'App\zh\en-patch.json')
+$markerPath = [IO.Path]::Combine($InstallRoot, 'App\fgoac-patch.json')
+# Where launchers up to 1.3.0 kept the marker; his 1.10 updater deletes App\zh with it.
+$legacyMarkerPath = [IO.Path]::Combine($InstallRoot, 'App\zh\en-patch.json')
+# No marker yet: this run is the first install, not an update.
+$firstInstall = !([IO.File]::Exists($markerPath) -or [IO.File]::Exists($legacyMarkerPath))
+$game1100 = Test-FgoGame1100 -Root $InstallRoot
 
 if ($Rollback) {
+    # The backups hold 11.00 files; putting them back over a newer build mixes the two. On that build the rollback
+    # turns English off instead: Japanese in the settings, the launcher's English set moved into a backup.
+    if (!$game1100) {
+        $english = [IO.Path]::Combine($InstallRoot, 'App\Localization\en-fgoac')
+        if ([IO.Directory]::Exists($english)) {
+            $target = [IO.Path]::Combine($backupRoot, (Get-Date -Format 'yyyyMMdd-HHmmss') + '-set-aside', 'App\Localization\en-fgoac')
+            [void][IO.Directory]::CreateDirectory((Split-Path -Parent $target))
+            [IO.Directory]::Move($english, $target)
+        }
+        if ([IO.File]::Exists($markerPath)) { [IO.File]::Delete($markerPath) }
+        $configurationPath = [IO.Path]::Combine($InstallRoot, 'App\fgo-launcher.json')
+        $configuration = Get-Content -LiteralPath $configurationPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        $configuration | Add-Member -NotePropertyName 'gameLanguage' -NotePropertyValue 'ja' -Force
+        Write-FgoOwnFile -Path $configurationPath -Bytes ([Text.UTF8Encoding]::new($false).GetBytes(($configuration | ConvertTo-Json -Depth 50)))
+        Write-Host "This game folder has Cloud23333's latest update, so the rollback turned the English text off and moved the English files of FGOAC scooby into $backupRoot. None of his files were changed."
+        exit 0
+    }
     if (!([IO.Directory]::Exists($backupRoot))) { Stop-WithMessage "There is no patch backup to restore in $backupRoot." 7 }
-    $backup = Get-ChildItem -LiteralPath $backupRoot -Directory | Sort-Object -Property Name | Select-Object -Last 1
+    $backup = Get-ChildItem -LiteralPath $backupRoot -Directory | Where-Object { $_.Name -match '^\d{8}-\d{6}$' } | Sort-Object -Property Name | Select-Object -Last 1
     if (!$backup) { Stop-WithMessage "There is no patch backup to restore in $backupRoot." 7 }
     $recordPath = [IO.Path]::Combine($backup.FullName, 'en-patch-restore.json')
     if (!([IO.File]::Exists($recordPath))) {
@@ -277,11 +422,39 @@ if ($Rollback) {
             $removed++
         }
     }
-    $savedMarker = [IO.Path]::Combine($backup.FullName, 'App\zh\en-patch.json')
-    if ([IO.File]::Exists($savedMarker)) { Copy-FgoFile -Source $savedMarker -Destination $markerPath }
-    elseif ([IO.File]::Exists($markerPath)) { [IO.File]::Delete($markerPath) }
+    foreach ($marked in @($markerPath, $legacyMarkerPath)) {
+        $savedMarker = [IO.Path]::Combine($backup.FullName, $marked.Substring($rootPrefix.Length))
+        if ([IO.File]::Exists($savedMarker)) { Copy-FgoFile -Source $savedMarker -Destination $marked }
+        elseif ([IO.File]::Exists($marked)) { [IO.File]::Delete($marked) }
+    }
     Write-Host "Rollback finished: $restored files restored, $removed files removed."
-    Write-Host 'The launcher settings were left as they are; turn English Text off in the launcher if you want the Chinese set back.'
+    # The launcher's own files as the update backup holds them, taken before the first start of the
+    # version rolled back. Cards, accounts, prints and the server's state are left as they are.
+    $updateBackup = [IO.Path]::Combine($InstallRoot, 'backup', 'pre-' + [string]$record.version)
+    $updateManifestPath = [IO.Path]::Combine($updateBackup, 'manifest.json')
+    if (!([IO.File]::Exists($updateManifestPath))) {
+        Write-Host 'The launcher settings were left as they are; turn English Text off in the launcher if you want the Chinese set back.'
+        exit 0
+    }
+    $updateManifest = Get-Content -LiteralPath $updateManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    $put = 0
+    foreach ($entry in @($updateManifest.files | Where-Object { $_.restore -eq $true })) {
+        $relative = [string]$entry.path
+        $saved = [IO.Path]::Combine($updateBackup, 'files', $relative)
+        $target = [IO.Path]::GetFullPath([IO.Path]::Combine($InstallRoot, $relative))
+        if (!$target.StartsWith($rootPrefix, [StringComparison]::OrdinalIgnoreCase)) { continue }
+        if (!([IO.File]::Exists($saved)) -or (Get-FgoFileHash -Path $saved) -ne [string]$entry.sha256) {
+            Write-Host "$relative in $updateBackup does not match its manifest, so it was not put back."
+            continue
+        }
+        if ([IO.File]::Exists($target) -and (Get-FgoFileHash -Path $target) -eq [string]$entry.sha256) { continue }
+        Write-FgoOwnFile -Path $target -Bytes ([IO.File]::ReadAllBytes($saved))
+        $put++
+    }
+    # Set aside, so the next install of this version takes a new update backup.
+    $setAside = $updateBackup + '-rolled-back-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
+    [IO.Directory]::Move($updateBackup, $setAside)
+    Write-Host "Put back $put of the launcher's own files from $setAside; each file it replaced is kept as .bak."
     exit 0
 }
 
@@ -292,6 +465,9 @@ if (!([IO.File]::Exists([IO.Path]::Combine($InstallRoot, 'App\FGO_Runtime.dll'))
     Stop-WithMessage "This game folder has not had Cloud23333's V1.01 update yet: App\FGO_Runtime.dll is missing, and the English patch needs it. Apply his V1.01 or V1.02 update to $InstallRoot first, then run FGOAC scooby again." 9
 }
 
+$left = Repair-FgoCopies -Root $InstallRoot -BackupRoot $backupRoot -Game1100 $game1100
+if ($left) { Write-Host $left }
+
 $manifestPath = [IO.Path]::Combine($PackageRoot, 'manifest.json')
 if (!([IO.File]::Exists($manifestPath))) {
     Stop-WithMessage "The patch package is incomplete: manifest.json is missing from $PackageRoot. Unzip the whole package again." 5
@@ -301,18 +477,27 @@ $version = [string]$manifest.version
 $manifestHash = [string]$manifest.manifestHash
 $entries = @($manifest.files.PSObject.Properties)
 if ($entries.Count -eq 0) { Stop-WithMessage 'The patch package is incomplete: manifest.json lists no files.' 5 }
+# Server\ files are the local server's; an install without the Server folder gets none of them.
+if (!([IO.Directory]::Exists([IO.Path]::Combine($InstallRoot, 'Server')))) {
+    $entries = @($entries | Where-Object { !$_.Name.StartsWith('Server\', [StringComparison]::OrdinalIgnoreCase) })
+}
+# The files for game 11.00 only. Cloud23333's 1.10 update moves the game to 11.51, deletes App\zh and ships his own
+# server and account scripts; on that build or any other they are left out.
+if (!$game1100) {
+    $entries = @($entries | Where-Object { !(Test-FgoGame1100Only -Relative $_.Name) })
+    Write-Host 'This game folder has Cloud23333''s latest update, so the English files made for the earlier game are left out.'
+}
 
 if (!$Force -and [IO.File]::Exists($markerPath)) {
     try {
         $marker = Get-Content -LiteralPath $markerPath -Raw -Encoding UTF8 | ConvertFrom-Json
         if ([string]$marker.version -eq $version -and [string]$marker.manifestHash -eq $manifestHash) {
-            # A platform update copies its own launch scripts, server tools and Chinese text over
-            # the patched ones and leaves the marker alone, so the marker on its own is not proof.
-            # The files outside App\zh\rom are few and small, and an update overwrites those too,
-            # so checking them on every run is cheap and enough.
+            # The marker on its own is not proof: a file can be replaced or removed after it was
+            # written. The files outside the rom folders are few and small, so checking them on
+            # every run is cheap and enough.
             $replaced = ''
             foreach ($entry in $entries) {
-                if ($entry.Name.StartsWith('App\zh\rom\', [StringComparison]::OrdinalIgnoreCase) -or $entry.Name -eq 'FGOAC scooby.exe') { continue }
+                if ($entry.Name.StartsWith('App\zh\rom\', [StringComparison]::OrdinalIgnoreCase) -or $entry.Name.StartsWith('App\Localization\en-fgoac\rom\', [StringComparison]::OrdinalIgnoreCase) -or $entry.Name -eq 'FGOAC scooby.exe') { continue }
                 $installed = [IO.Path]::Combine($InstallRoot, $entry.Name)
                 if (!([IO.File]::Exists($installed)) -or (Get-FgoFileHash -Path $installed) -ne [string]$entry.Value) { $replaced = $entry.Name; break }
             }
@@ -373,6 +558,9 @@ foreach ($item in $plan) {
     if (($checked % 400) -eq 0) { Write-Host "  checked $checked of $($plan.Count) files" }
     if ($item.InPlace) { continue }
     if ([IO.File]::Exists($item.Destination) -and (Get-FgoFileHash -Path $item.Destination) -eq $item.Expected) { continue }
+    # An English override the launcher turned off because its game file changed stays off.
+    $off = $item.Destination + '.fgoac-off'
+    if (!([IO.File]::Exists($item.Destination)) -and [IO.File]::Exists($off) -and (Get-FgoFileHash -Path $off) -eq $item.Expected) { continue }
     $toCopy.Add($item)
 }
 
@@ -387,7 +575,7 @@ if ($toCopy.Count -eq 0) {
         $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
         $backup = [IO.Path]::Combine($backupRoot, $stamp)
         [void][IO.Directory]::CreateDirectory($backup)
-        Copy-FgoFile -Source $markerPath -Destination ([IO.Path]::Combine($backup, 'App\zh\en-patch.json'))
+        Copy-FgoFile -Source $markerPath -Destination ([IO.Path]::Combine($backup, 'App\fgoac-patch.json'))
         Write-FgoJson -Path ([IO.Path]::Combine($backup, 'en-patch-restore.json')) -Value ([ordered]@{
             version  = $version
             savedUtc = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ssZ')
@@ -412,7 +600,7 @@ if ($toCopy.Count -eq 0) {
         }
     }
     if ([IO.File]::Exists($markerPath)) {
-        Copy-FgoFile -Source $markerPath -Destination ([IO.Path]::Combine($backup, 'App\zh\en-patch.json'))
+        Copy-FgoFile -Source $markerPath -Destination ([IO.Path]::Combine($backup, 'App\fgoac-patch.json'))
     }
     Write-FgoJson -Path ([IO.Path]::Combine($backup, 'en-patch-restore.json')) -Value ([ordered]@{
         version  = $version
@@ -469,14 +657,28 @@ if ([IO.File]::Exists($retiredLauncher) -and [IO.File]::Exists([IO.Path]::Combin
     }
 }
 
-# chineseEnabled is the switch that makes the game read App\zh, which now holds the English set.
+# The English switches. gameLanguage "en-fgoac" makes Cloud23333's launch scripts from his 1.10 update on load
+# App\Localization\en-fgoac; chineseEnabled makes game 11.00 read App\zh, and his 1.10 scripts read it as Chinese.
+# A first install turns English on, chineseEnabled only on 11.00; an update leaves the player's choice and gives a
+# settings file without gameLanguage the language its chineseEnabled meant.
 $configurationPath = [IO.Path]::Combine($InstallRoot, 'App\fgo-launcher.json')
 try {
     $configuration = Get-Content -LiteralPath $configurationPath -Raw -Encoding UTF8 | ConvertFrom-Json
-    if ($configuration.chineseEnabled -ne $true) {
+    $changed = $false
+    if ($firstInstall -and $game1100 -and $configuration.chineseEnabled -ne $true) {
         $configuration | Add-Member -NotePropertyName 'chineseEnabled' -NotePropertyValue $true -Force
-        Write-FgoJson -Path $configurationPath -Value $configuration
-        Write-Host 'Turned the English text on in the launcher settings.'
+        $changed = $true
+    }
+    if ($firstInstall -and [string]$configuration.gameLanguage -cne 'en-fgoac') {
+        $configuration | Add-Member -NotePropertyName 'gameLanguage' -NotePropertyValue 'en-fgoac' -Force
+        $changed = $true
+    } elseif ($null -eq $configuration.gameLanguage) {
+        $configuration | Add-Member -NotePropertyName 'gameLanguage' -NotePropertyValue $(if ($configuration.chineseEnabled -eq $true) { 'en-fgoac' } else { 'ja' }) -Force
+        $changed = $true
+    }
+    if ($changed) {
+        Write-FgoOwnFile -Path $configurationPath -Bytes ([Text.UTF8Encoding]::new($false).GetBytes(($configuration | ConvertTo-Json -Depth 50)))
+        if ($firstInstall) { Write-Host 'Turned the English text on in the launcher settings.' }
     }
 } catch {
     Write-Host "The English text switch could not be set in App\fgo-launcher.json: $($_.Exception.Message)"

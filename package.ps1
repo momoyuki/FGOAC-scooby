@@ -5,10 +5,14 @@ Builds the release package for FGOAC scooby.
   .\package.ps1 -GameRoot D:\games\FGOA -Version 1.1.1  # override it
   .\package.ps1 -GameRoot D:\games\FGOA -Publish        # run publish.cmd first
   .\package.ps1 -GameRoot D:\games\FGOA -SkipZip        # leave the folder, do not zip it
+  .\package.ps1 -GameRoot D:\games\FGOA -AddOnDll <build>\fgoacaddon.dll  # ship the add-on
 
 -GameRoot is the FGO Arcade install the English game files are taken from: the folder that
-holds App and Server. The package is written to release\ beside this script unless
--OutputRoot says otherwise.
+holds App and Server. The package carries two English sets: App\zh for game 11.00 and
+App\Localization\en-fgoac for the build Cloud23333's 1.10 update installs; -English1151 names the
+folder the second is taken from, App\Localization\en-fgoac under -GameRoot unless given. The package is written to release\ beside this script unless
+-OutputRoot says otherwise. -AddOnDll puts that file in the payload as App\fgoacaddon.dll;
+without it the package holds no add-on. The repository never holds the add-on.
 
 The run is repeatable: the payload is mirrored, so a second run only copies what changed and
 removes what is no longer part of the package.
@@ -21,7 +25,9 @@ param(
     [Parameter(Mandatory)][string]$GameRoot,
     [string]$OutputRoot = '',
     [switch]$Publish,
-    [switch]$SkipZip
+    [switch]$SkipZip,
+    [string]$AddOnDll = '',
+    [string]$English1151 = ''
 )
 $ErrorActionPreference = 'Stop'
 [Console]::OutputEncoding = [Text.UTF8Encoding]::new($false)
@@ -54,9 +60,17 @@ try {
     if (!(Test-Path -LiteralPath $englishSet -PathType Container)) {
         Stop-WithMessage "The English game files are missing: $englishSet" 2
     }
+    if ([string]::IsNullOrWhiteSpace($English1151)) { $English1151 = [IO.Path]::Combine($GameRoot, 'App\Localization\en-fgoac') }
+    if (!(Test-Path -LiteralPath $English1151 -PathType Container)) {
+        Stop-WithMessage "The English game files for the new build are missing: $English1151" 2
+    }
     $overlay = [IO.Path]::Combine($repository, 'overlay')
     if (!(Test-Path -LiteralPath $overlay -PathType Container)) {
         Stop-WithMessage "The overlay folder is missing: $overlay" 2
+    }
+    $addOnRelative = 'App\fgoacaddon.dll'
+    if ($AddOnDll -and !(Test-Path -LiteralPath $AddOnDll -PathType Leaf)) {
+        Stop-WithMessage "The add-on is missing: $AddOnDll" 2
     }
 
     $packageName = "FGOAC-scooby-v$Version"
@@ -69,6 +83,9 @@ try {
     Write-Host "Mirroring the English game files into $payloadRoot\App\zh"
     $robocopy = & "$env:SystemRoot\System32\robocopy.exe" $englishSet ([IO.Path]::Combine($payloadRoot, 'App\zh')) /MIR /NJH /NJS /NP /NDL /NFL /R:2 /W:2 /XF 'file-trace.enabled' '*.v101' '*.bak' 'en-patch.json'
     if ($LASTEXITCODE -ge 8) { Stop-WithMessage "Copying the English game files failed: $robocopy" 1 }
+    Write-Host "Mirroring the English game files for the new build into $payloadRoot\App\Localization\en-fgoac"
+    $robocopy = & "$env:SystemRoot\System32\robocopy.exe" $English1151 ([IO.Path]::Combine($payloadRoot, 'App\Localization\en-fgoac')) /MIR /NJH /NJS /NP /NDL /NFL /R:2 /W:2 /XF '*.bak'
+    if ($LASTEXITCODE -ge 8) { Stop-WithMessage "Copying the English game files for the new build failed: $robocopy" 1 }
 
     Write-Host 'Copying the English replacements for the scripts and data outside the launcher'
     $overlayPrefix = $overlay.TrimEnd('\') + '\'
@@ -80,13 +97,21 @@ try {
     }
 
     # Anything left over from an earlier run with a different overlay.
-    $keptPrefix = [IO.Path]::Combine($payloadRoot, 'App\zh').TrimEnd('\') + '\'
+    $keptPrefixes = @('App\zh', 'App\Localization\en-fgoac') | ForEach-Object { [IO.Path]::Combine($payloadRoot, $_).TrimEnd('\') + '\' }
     $payloadPrefix = $payloadRoot.TrimEnd('\') + '\'
     foreach ($file in (Get-ChildItem -LiteralPath $payloadRoot -File -Recurse)) {
-        if ($file.FullName.StartsWith($keptPrefix, [StringComparison]::OrdinalIgnoreCase)) { continue }
+        if (@($keptPrefixes | Where-Object { $file.FullName.StartsWith($_, [StringComparison]::OrdinalIgnoreCase) }).Count -gt 0) { continue }
         if ($overlayFiles -contains $file.FullName.Substring($payloadPrefix.Length)) { continue }
+        if ($AddOnDll -and $file.FullName.Substring($payloadPrefix.Length) -eq $addOnRelative) { continue }
         Write-Host "  removing a file that is no longer part of the package: $($file.FullName.Substring($payloadPrefix.Length))"
         Remove-Item -LiteralPath $file.FullName -Force
+    }
+
+    if ($AddOnDll) {
+        Write-Host "Copying the add-on from $AddOnDll"
+        Copy-Item -LiteralPath $AddOnDll -Destination ([IO.Path]::Combine($payloadRoot, $addOnRelative)) -Force
+    } else {
+        Write-Host 'The add-on is not included: pass -AddOnDll with the path of fgoacaddon.dll to include it.'
     }
 
     Write-Host 'Copying the launcher, the installer and the release notes'
@@ -97,7 +122,7 @@ try {
         if (!(Test-Path -LiteralPath $source -PathType Leaf)) { Stop-WithMessage "The user guide is missing: $source" 2 }
         Copy-Item -LiteralPath $source -Destination ([IO.Path]::Combine($packageRoot, $guide)) -Force
     }
-    $shimFiles = @('compat\amd-shim\opengl32.dll', 'compat\amd-shim\amdcfg\amdOglpSettings.cfg', 'compat\amd-shim\LICENSE', 'compat\fgoglcompat.dll')
+    $shimFiles = @('compat\amd-shim\opengl32.dll', 'compat\amd-shim\amdcfg\amdOglpSettings.cfg', 'compat\amd-shim\LICENSE', 'compat\fgoglcompat.dll', 'compat\fgoglcompat-1.1.0.dll')
     foreach ($relative in $shimFiles) {
         $source = [IO.Path]::Combine($repository, $relative)
         if (!(Test-Path -LiteralPath $source -PathType Leaf)) { Stop-WithMessage "The graphics compatibility layer is missing: $source" 2 }

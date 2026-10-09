@@ -24,7 +24,8 @@ param(
     [switch]$SkipServerCheck,
     [switch]$Chinese,
     [switch]$EnableExperimentalAudio,
-    [switch]$CheckOnly
+    [switch]$CheckOnly,
+    [switch]$CommunityServer
 )
 
 $ErrorActionPreference = "Stop"
@@ -44,6 +45,7 @@ $amdaemonPath = Join-Path $gameRoot "am\amdaemon.exe"
 $localeHookPath = Join-Path $gameRoot "Tools\Locale_Remulator\LRHookx64.dll"
 $audioHookPath = Join-Path $gameRoot "FGOAudio.dll"
 $chineseHookPath = Join-Path $gameRoot "zh\fgozh.dll"
+$addOnPath = Join-Path $gameRoot "fgoacaddon.dll"
 $pendingChineseHookPath = Join-Path $gameRoot "zh\fgozh.pending.dll"
 $agoPath = Join-Path $gameRoot "ago.exe"
 $deviceRoot = Join-Path $installRoot "DEVICE"
@@ -69,6 +71,19 @@ function Stop-WithMessage {
     exit $ExitCode
 }
 
+function Write-RuntimeFile {
+    param(
+        [string]$Path,
+        [string]$Text,
+        [System.Text.Encoding]$Encoding
+    )
+
+    # Written beside the target and moved over it, so a stopped launch never leaves part of a file.
+    $temporary = "$Path.tmp"
+    [System.IO.File]::WriteAllText($temporary, $Text, $Encoding)
+    Move-Item -LiteralPath $temporary -Destination $Path -Force
+}
+
 function Set-IniValue {
     param(
         [string]$Path,
@@ -84,7 +99,7 @@ function Set-IniValue {
 
     if (-not $header.Success) {
         $text = $text.TrimEnd() + "`r`n`r`n[$Section]`r`n$Key=$Value`r`n"
-        [System.IO.File]::WriteAllText($Path, $text, $encoding)
+        Write-RuntimeFile $Path $text $encoding
         return
     }
 
@@ -105,7 +120,7 @@ function Set-IniValue {
     }
 
     $text = $text.Substring(0, $sectionStart) + $sectionBody + $text.Substring($sectionEnd)
-    [System.IO.File]::WriteAllText($Path, $text, $encoding)
+    Write-RuntimeFile $Path $text $encoding
 }
 
 function ConvertTo-WindowsCommandLineArgument {
@@ -234,8 +249,8 @@ Write-Host "Windows locale will not be changed. Segatools will provide JST and U
 
 $requiredFiles = @(
     (Join-Path $gameRoot "FGO_LocalNetwork.ps1"),
-    (Join-Path $gameRoot "FGO_StartupChecks.ps1"),
-    (Join-Path $gameRoot "FGO_EnvironmentCheck.ps1"),
+    (Join-Path $gameRoot "FGOAC_StartupChecks.ps1"),
+    (Join-Path $gameRoot "FGOAC_EnvironmentCheck.ps1"),
     $baseIni,
     $launcherConfigPath,
     $injectPath,
@@ -276,19 +291,48 @@ try {
     $mainConfig = Get-Content -LiteralPath (Join-Path $gameRoot 'config.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 } catch { Stop-WithMessage "Configuration JSON is invalid: $($_.Exception.Message)" 13 }
 try {
-    . (Join-Path $gameRoot 'FGO_StartupChecks.ps1')
-    Test-FgoWritableLayout -InstallRoot $installRoot
+    . (Join-Path $gameRoot 'FGOAC_StartupChecks.ps1')
+    Test-FgoWritableLayout -InstallRoot $installRoot -CommunityServer:$CommunityServer
 } catch { Stop-WithMessage $_.Exception.Message 4 }
 
 try {
-    $environmentChecks = & (Join-Path $gameRoot 'FGO_EnvironmentCheck.ps1') -AsJson | ConvertFrom-Json
+    $environmentChecks = & (Join-Path $gameRoot 'FGOAC_EnvironmentCheck.ps1') -AsJson -CommunityServer:$CommunityServer | ConvertFrom-Json
     $environmentFailures = @($environmentChecks | Where-Object { -not $_.Passed })
     if ($environmentFailures.Count -gt 0) {
         Stop-WithMessage (($environmentFailures | ForEach-Object { "$($_.Name): $($_.Detail)" }) -join "`r`n") 15
     }
 } catch { Stop-WithMessage ("Environment check failed: "+$_.Exception.Message) 15 }
 . (Join-Path $gameRoot 'FGO_LocalNetwork.ps1')
-$network = Get-FgoNetworkPlan -ServerHost ([string]$launcherConfig.serverHost)
+# The community server has its own address, ports and card; the local server settings stay as they are.
+# The launcher passes -CommunityServer exactly in Online mode; the saved block gives only the address, ports and card.
+$useCommunityServer = [bool]$CommunityServer
+if ($useCommunityServer) {
+    $communityHost = [string]$launcherConfig.communityServer.host
+    if ([string][Uri]::CheckHostName($communityHost) -notin @('Dns', 'IPv4')) {
+        Stop-WithMessage "The community server address '$communityHost' is not a host name or an IPv4 address. Enter it again on the Online page." 13
+    }
+    if ((Get-FgoNetworkPlan -ServerHost $communityHost).Local) {
+        Stop-WithMessage "The community server address '$communityHost' is this PC. Press Play on the Play page to play on the local server." 13
+    }
+    # The game reaches the launcher's TLS tunnel on this PC the way it reaches the local server.
+    $network = Get-FgoNetworkPlan -ServerHost 'auto'
+    $serverPorts = $launcherConfig.communityServer.ports
+    $requiredPorts = @($serverPorts.http, $serverPorts.billing, $serverPorts.aime)
+    $aimePath = Join-Path $deviceRoot "community\$communityHost\aime.txt"
+    $communityCode = if (Test-Path -LiteralPath $aimePath -PathType Leaf) { [IO.File]::ReadAllText($aimePath).Trim() } else { '' }
+    if ($communityCode -notmatch '^\d{20}$') {
+        Stop-WithMessage "This PC has no account on the community server $communityHost ($aimePath). Choose New account on the Online page, or Recover account if you have a recovery key, then press Play Online again." 16
+    }
+}
+else {
+    $network = Get-FgoNetworkPlan -ServerHost ([string]$launcherConfig.serverHost)
+    $serverPorts = $launcherConfig.serverPorts
+    $requiredPorts = @($launcherConfig.requiredPorts)
+    $aimePath = Join-Path $deviceRoot "aime.txt"
+    if (-not (Test-Path -LiteralPath $aimePath -PathType Leaf)) {
+        Stop-WithMessage "No account is selected: $aimePath is missing. Pick a Master in the Master menu on Play, then press Play again." 16
+    }
+}
 $localIp = $network.Cabinet
 $subnet = $network.Subnet
 $addrSuffix = $network.AddressSuffix
@@ -297,10 +341,10 @@ $broadcast = $network.Broadcast
 $serverHost = $network.Server
 $env:FGO_LOCAL_NETWORK = if ($network.Local) { '1' } else { '0' }
 $env:FGO_INSTALL_ROOT = $installRoot
-$env:FGO_LOCAL_HTTP_PORT = [string]$launcherConfig.serverPorts.http
-$env:FGO_LOCAL_BILLING_PORT = [string]$launcherConfig.serverPorts.billing
-$env:FGO_LOCAL_AIME_PORT = [string]$launcherConfig.serverPorts.aime
-$shouldStartLocalServer = [bool]$launcherConfig.autoStartLocalServer -and $network.Local
+$env:FGO_LOCAL_HTTP_PORT = [string]$serverPorts.http
+$env:FGO_LOCAL_BILLING_PORT = [string]$serverPorts.billing
+$env:FGO_LOCAL_AIME_PORT = [string]$serverPorts.aime
+$shouldStartLocalServer = [bool]$launcherConfig.autoStartLocalServer -and $network.Local -and -not $useCommunityServer
 
 if ($shouldStartLocalServer -and -not $SkipServerCheck) {
     $localServerSetting = [string]$launcherConfig.localServerLauncher
@@ -331,12 +375,15 @@ if ($shouldStartLocalServer -and -not $SkipServerCheck) {
 
 if (-not $SkipServerCheck) {
     $closedPorts = New-Object System.Collections.Generic.List[int]
-    foreach ($port in @($launcherConfig.requiredPorts)) {
+    foreach ($port in $requiredPorts) {
         if (-not (Test-TcpPort -HostName $network.ProbeHost -Port ([int]$port))) {
             $closedPorts.Add([int]$port)
         }
     }
 
+    if ($closedPorts.Count -gt 0 -and $useCommunityServer) {
+        Stop-WithMessage "The launcher's tunnel to the community server $communityHost is not listening on port(s): $($closedPorts -join ', '). Start the game with Play in the launcher." 11
+    }
     if ($closedPorts.Count -gt 0) {
         Stop-WithMessage "The configured server $serverHost is not reachable on required port(s): $($closedPorts -join ', ')." 11
     }
@@ -419,7 +466,6 @@ $useAudioHook = [bool]$EnableExperimentalAudio
 if ($launcherConfig.audioHook -and -not $EnableExperimentalAudio) { Write-Warning "Ignored legacy audioHook setting; using built-in shared audio for 11.00." }
 $useProcessJapaneseLocale = [bool]$launcherConfig.processJapaneseLocale
 $useWasapiShared = [bool]$launcherConfig.wasapiShared
-$preferHighPerformanceGpu = $null -eq $launcherConfig.preferHighPerformanceGpu -or [bool]$launcherConfig.preferHighPerformanceGpu
 $enableDiagnostics = [bool]$launcherConfig.diagnostics
 $enableCryptoDiagnostics = [bool]$launcherConfig.cryptoDiagnostics
 $enableProtocolDiagnostics = if ($null -ne $launcherConfig.protocolDiagnostics) {
@@ -448,7 +494,8 @@ $launchLogPath = Join-Path $logDirectory "fgo-last-launch.log"
 )
 Start-Transcript -LiteralPath $launchLogPath -Force | Out-Null
 $script:transcriptActive = $true
-Copy-Item -LiteralPath $baseIni -Destination $runtimeIni -Force
+Copy-Item -LiteralPath $baseIni -Destination "$runtimeIni.tmp" -Force
+Move-Item -LiteralPath "$runtimeIni.tmp" -Destination $runtimeIni -Force
 
 # The public setup package currently provides 10.80 ICF files, while this
 # ago.exe was built from the 11.00 source snapshot.  AMDaemon supports an
@@ -461,16 +508,12 @@ $amdaemonRuntimeConfig = [ordered]@{
     }
 }
 $amdaemonRuntimeJson = $amdaemonRuntimeConfig | ConvertTo-Json -Depth 4
-[System.IO.File]::WriteAllText(
-    $amdaemonMainConfig,
-    $amdaemonRuntimeJson + "`r`n",
-    (New-Object System.Text.UTF8Encoding($false))
-)
+Write-RuntimeFile $amdaemonMainConfig ($amdaemonRuntimeJson + "`r`n") (New-Object System.Text.UTF8Encoding($false))
 
 Set-IniValue -Path $runtimeIni -Section "vfs" -Key "amfs" -Value $amfsRoot
 Set-IniValue -Path $runtimeIni -Section "vfs" -Key "option" -Value (Join-Path $gameRoot "option")
 Set-IniValue -Path $runtimeIni -Section "vfs" -Key "appdata" -Value (Join-Path $installRoot "GameData")
-Set-IniValue -Path $runtimeIni -Section "aime" -Key "aimePath" -Value (Join-Path $deviceRoot "aime.txt")
+Set-IniValue -Path $runtimeIni -Section "aime" -Key "aimePath" -Value $aimePath
 Set-IniValue -Path $runtimeIni -Section "printer" -Key "mainFwPath" -Value (Join-Path $deviceRoot "printer_main_fw.bin")
 Set-IniValue -Path $runtimeIni -Section "printer" -Key "paramFwPath" -Value (Join-Path $deviceRoot "printer_param_fw.bin")
 Set-IniValue -Path $runtimeIni -Section "printer" -Key "dspFwPath" -Value (Join-Path $deviceRoot "printer_dsp_fw.bin")
@@ -479,15 +522,21 @@ Set-IniValue -Path $runtimeIni -Section "keychip" -Key "billingPub" -Value (Join
 Set-IniValue -Path $runtimeIni -Section "misc" -Key "nextProcessFilePath" -Value (Join-Path $deviceRoot "NextProcess.txt")
 $printAccount = 'unassigned'
 $printName = ''
-$aimeCode = [IO.File]::ReadAllText((Join-Path $deviceRoot 'aime.txt')).Trim()
-$playerFile = Join-Path $installRoot 'Server\state\fgo-players.json'
-if (Test-Path -LiteralPath $playerFile) {
-    $players = Get-Content -LiteralPath $playerFile -Raw -Encoding UTF8 | ConvertFrom-Json
-    foreach ($player in $players.PSObject.Properties) {
-        if ($player.Name -match '^aime:(\d+)$' -and ([string]$player.Value.auth_access_code -eq $aimeCode -or [string]$player.Value.access_code -eq $aimeCode)) {
-            $printAccount = 'aime-' + $Matches[1]
-            $printName = [string]$player.Value.master_name
-            break
+if ($useCommunityServer) {
+    # The access code is the account's credential, so the folder carries only its last four digits.
+    $printAccount = "community-$communityHost-" + $communityCode.Substring(16)
+}
+else {
+    $aimeCode = [IO.File]::ReadAllText($aimePath).Trim()
+    $playerFile = Join-Path $installRoot 'Server\state\fgo-players.json'
+    if (Test-Path -LiteralPath $playerFile) {
+        $players = Get-Content -LiteralPath $playerFile -Raw -Encoding UTF8 | ConvertFrom-Json
+        foreach ($player in $players.PSObject.Properties) {
+            if ($player.Name -match '^aime:(\d+)$' -and ([string]$player.Value.auth_access_code -eq $aimeCode -or [string]$player.Value.access_code -eq $aimeCode)) {
+                $printAccount = 'aime-' + $Matches[1]
+                $printName = [string]$player.Value.master_name
+                break
+            }
         }
     }
 }
@@ -497,10 +546,10 @@ New-Item -ItemType Directory -Path $printDirectory -Force | Out-Null
 Set-IniValue -Path $runtimeIni -Section "printer" -Key "printerOutPath" -Value $printDirectory
 $env:FGO_PRINT_METADATA_ONLY = '1'
 Set-IniValue -Path $runtimeIni -Section "dns" -Key "default" -Value $serverHost
-if ($launcherConfig.serverPorts) {
-    Set-IniValue -Path $runtimeIni -Section "dns" -Key "startupPort" -Value ([string]$launcherConfig.serverPorts.http)
-    Set-IniValue -Path $runtimeIni -Section "dns" -Key "billingPort" -Value ([string]$launcherConfig.serverPorts.billing)
-    Set-IniValue -Path $runtimeIni -Section "dns" -Key "aimedbPort" -Value ([string]$launcherConfig.serverPorts.aime)
+if ($serverPorts) {
+    Set-IniValue -Path $runtimeIni -Section "dns" -Key "startupPort" -Value ([string]$serverPorts.http)
+    Set-IniValue -Path $runtimeIni -Section "dns" -Key "billingPort" -Value ([string]$serverPorts.billing)
+    Set-IniValue -Path $runtimeIni -Section "dns" -Key "aimedbPort" -Value ([string]$serverPorts.aime)
 }
 Set-IniValue -Path $runtimeIni -Section "netenv" -Key "enable" -Value "1"
 Set-IniValue -Path $runtimeIni -Section "netenv" -Key "routerSuffix" -Value ([string]$routerSuffix)
@@ -519,6 +568,11 @@ Set-IniValue -Path $runtimeIni -Section "gfx" -Key "monitorDevice" -Value $effec
 Set-IniValue -Path $runtimeIni -Section "amvideo" -Key "resolutionWidth" -Value ([string]$nativeRenderWidth)
 Set-IniValue -Path $runtimeIni -Section "amvideo" -Key "resolutionHeight" -Value ([string]$nativeRenderHeight)
 Set-IniValue -Path $runtimeIni -Section "io4" -Key "mode" -Value $effectiveInputMode
+# The operator menu keys (F1, F2) stay unbound unless the Controls page turns them on; 0 is no key.
+if (-not [bool]$launcherConfig.operatorMenuKeys) {
+    Set-IniValue -Path $runtimeIni -Section "io4" -Key "test" -Value "0x0"
+    Set-IniValue -Path $runtimeIni -Section "io4" -Key "service" -Value "0x0"
+}
 Set-IniValue -Path $runtimeIni -Section "touch" -Key "remap" -Value "1"
 # Lock both mouse emulation and real WM_TOUCH to the one 16:9 UI rectangle.
 # Accepted pixels use the exact inverse of r47808's fixed 1920x1080-to-native-
@@ -535,10 +589,67 @@ Set-IniValue -Path $runtimeIni -Section "clock" -Key "startHour" -Value "0"
 Set-IniValue -Path $runtimeIni -Section "clock" -Key "startMinute" -Value "0"
 Set-IniValue -Path $runtimeIni -Section "clock" -Key "timewarp" -Value "0"
 Set-IniValue -Path $runtimeIni -Section "clock" -Key "writeable" -Value "0"
+# PC play switches (Settings > PC play). The launcher patches the running game for all but noStoryTimer and
+# records them here; the hook reads noStoryTimer. A switch not saved has its default.
+foreach ($pcPortSwitch in @(@('noContinueTimer', $true), @('noPopupTimers', $true), @('noGpPurchase', $false), @('noStoryTimer', $false), @('noMenuTimer', $false))) {
+    $pcPortOn = $pcPortSwitch[1]
+    if ($null -ne $launcherConfig.pcport -and $null -ne $launcherConfig.pcport.($pcPortSwitch[0])) {
+        $pcPortOn = [bool]$launcherConfig.pcport.($pcPortSwitch[0])
+    }
+    Set-IniValue -Path $runtimeIni -Section "pcport" -Key $pcPortSwitch[0] -Value $(if ($pcPortOn) { "1" } else { "0" })
+}
+# Widescreen (Settings > Display), read by the hook. anchors names a file beside the runtime ini; a missing one
+# gets the empty template once and is never written again, so the player's lines stay.
+$widescreenConfig = $launcherConfig.widescreen
+$widescreenValues = [ordered]@{ enable = "1"; vertPlus = "1"; hudAnchor = "0" }
+foreach ($widescreenKey in @($widescreenValues.Keys)) {
+    if ($null -ne $widescreenConfig -and $null -ne $widescreenConfig.$widescreenKey) {
+        $widescreenValues[$widescreenKey] = if ([bool]$widescreenConfig.$widescreenKey) { "1" } else { "0" }
+    }
+}
+$widescreenAnchors = if ($null -ne $widescreenConfig -and $widescreenConfig.anchors) { [string]$widescreenConfig.anchors -replace '[\r\n]', '' } else { "widescreen-anchors.txt" }
+$widescreenAnchorFix = if ($null -ne $widescreenConfig -and $null -ne $widescreenConfig.anchorFix) { [string]$widescreenConfig.anchorFix -replace '[\r\n]', '' } else { "" }
+foreach ($widescreenKey in $widescreenValues.Keys) {
+    Set-IniValue -Path $runtimeIni -Section "widescreen" -Key $widescreenKey -Value $widescreenValues[$widescreenKey]
+}
+Set-IniValue -Path $runtimeIni -Section "widescreen" -Key "anchors" -Value $widescreenAnchors
+Set-IniValue -Path $runtimeIni -Section "widescreen" -Key "anchorFix" -Value $widescreenAnchorFix
+$widescreenAnchorsPath = Join-Path $runtimeDirectory $widescreenAnchors
+if ([IO.Path]::GetFileName($widescreenAnchors) -eq $widescreenAnchors -and -not (Test-Path -LiteralPath $widescreenAnchorsPath)) {
+    Write-RuntimeFile $widescreenAnchorsPath ((@(
+                "# Widescreen HUD and menu anchors, read by the hook when [widescreen] hudAnchor=1 in the runtime ini.",
+                "# Lines add to the hook's built-in table; a line here replaces the built-in line of the same name in the",
+                "# same section. Sections: [battle] (also lines before any section), [menu] for every menu screen, and one",
+                "# per screen: [logo] [title] [main_selector] [terminal] [formation] [quest_list] [summon_menu] [summon]",
+                "# [shop] [my_room] [card_list] [online_lobby] [game_main] [result] [game_over] [loading] [card_login].",
+                "# One line per layer or per point of a layer, as the game names them:",
+                "#   SCENE/LAYER = SIDE GROUP [overhang=N]",
+                "#   SCENE/LAYER/POINT = SIDE GROUP [overhang=N]",
+                "# LAYER may end in * to match every layer starting with it. SCENE may be * on a SCENE/LAYER line: with",
+                "# any side in a screen section, only with side F under [battle]. A point line overrides its layer's side.",
+                "# SIDE: L, R, T or B moves toward that edge of the screen; TL, TR, BL or BR toward that corner; C holds",
+                "# still; F stretches the 16:9 box over the whole screen; W stretches it across only (a bar at the box width).",
+                "# GROUP names the panels that move together (up to 15 characters); every side but C needs one.",
+                "# overhang=N (1 to 1920): the art already reaches N design units past the 16:9 edge, so it moves only",
+                "# until that end meets the screen edge.",
+                "# Example: gam_qst_main/info_quest_ui = TR quest",
+                "# Lines starting with # or ; are ignored. The launcher writes this file only when it is missing."
+            ) -join "`r`n") + "`r`n") (New-Object System.Text.UTF8Encoding($false))
+}
+# With the HUD at the screen edges, the stock hook's touch canvas is the whole surface, so every press lands where
+# it was made; otherwise the 16:9 canvas above stays.
+if ($widescreenValues.hudAnchor -eq "1") {
+    Set-IniValue -Path $runtimeIni -Section "touch" -Key "inputWidth" -Value ([string]$effectiveResolutionWidth)
+    Set-IniValue -Path $runtimeIni -Section "touch" -Key "inputHeight" -Value ([string]$effectiveResolutionHeight)
+    Set-IniValue -Path $runtimeIni -Section "gfx" -Key "preserveAspect" -Value "1"
+}
+# Cursor lock (Controls page), read by the add-on: 1 when saved as a JSON true, else 0.
+$cursorConfine = if ($null -ne $launcherConfig -and $null -ne $launcherConfig.cursor) { $launcherConfig.cursor.confine } else { $null }
+Set-IniValue -Path $runtimeIni -Section 'cursor' -Key 'confine' -Value $(if ($cursorConfine -is [bool] -and $cursorConfine) { '1' } else { '0' })
 
 # GetPrivateProfileStringW accepts UTF-16 INI files; UTF-8 absolute paths
 # otherwise turn Chinese install directories into mojibake in native hooks.
-[IO.File]::WriteAllText($runtimeIni, [IO.File]::ReadAllText($runtimeIni), [Text.Encoding]::Unicode)
+Write-RuntimeFile $runtimeIni ([IO.File]::ReadAllText($runtimeIni)) ([Text.Encoding]::Unicode)
 $env:SEGATOOLS_CONFIG_PATH = $runtimeIni
 $env:FGO_TARGET_FPS = [string]$effectiveTargetFps
 Remove-Item Env:FGO_DISABLE_FRAME_PACING -ErrorAction SilentlyContinue
@@ -563,27 +674,6 @@ if ($enableCryptoDiagnostics) {
 }
 else {
     Remove-Item Env:BCRYPT_DUMP_ENABLED -ErrorAction SilentlyContinue
-}
-
-if ($preferHighPerformanceGpu) {
-    # FGO 11.00 uses NVIDIA bindless-buffer OpenGL extensions.  On hybrid-GPU
-    # laptops Windows can otherwise select the Intel adapter, leaving required
-    # function pointers null.  This is the same per-app preference exposed by
-    # Windows Settings > System > Display > Graphics.
-    $gpuPreferenceKey = "HKCU:\Software\Microsoft\DirectX\UserGpuPreferences"
-    New-Item -Path $gpuPreferenceKey -Force | Out-Null
-    New-ItemProperty `
-        -LiteralPath $gpuPreferenceKey `
-        -Name $agoPath `
-        -Value "GpuPreference=2;" `
-        -PropertyType String `
-        -Force | Out-Null
-    New-ItemProperty `
-        -LiteralPath $gpuPreferenceKey `
-        -Name $injectPath `
-        -Value "GpuPreference=2;" `
-        -PropertyType String `
-        -Force | Out-Null
 }
 
 if ($useProcessJapaneseLocale) {
@@ -626,6 +716,13 @@ if ($useAudioHook) {
     $launchArguments.Add("-k")
     $launchArguments.Add($audioHookPath)
 }
+# The add-on chains its detours after the stock hook's, so it loads after every other hook.
+if (Test-Path -LiteralPath $addOnPath -PathType Leaf) {
+    $launchArguments.Add("-k")
+    $launchArguments.Add($addOnPath)
+    $loadOrder = @(for ($index = 1; $index -lt $launchArguments.Count; $index++) { if ($launchArguments[$index - 1] -eq "-k") { Split-Path -Leaf $launchArguments[$index] } })
+    Write-Output "[add-on] Hooks in load order: $($loadOrder -join ', '), then ago.exe"
+}
 $launchArguments.Add($agoPath)
 $launchArguments.Add($nativeRenderArgument)
 if ($effectiveCabinetMode -ne "saved") {
@@ -656,7 +753,6 @@ Write-Host "WASAPI     : $useWasapiShared"
 if ($audioEndpointInspectionSucceeded) {
     Write-Host "Audio out  : $($activeAudioEndpoints.Name -join ', ')"
 }
-Write-Host "High GPU   : $preferHighPerformanceGpu"
 Write-Host "GL compat  : $(if (Test-Path -LiteralPath $glCompatPath -PathType Leaf) { 'fgoglcompat.dll (before fgohook)' } elseif (Test-Path -LiteralPath (Join-Path $gameRoot 'opengl32.dll') -PathType Leaf) { 'opengl32.dll shim in App' } else { 'not installed' })"
 Write-Host "GP lock    : 2333 (consumption disabled)"
 Write-Host "Diagnostics: $enableDiagnostics"
