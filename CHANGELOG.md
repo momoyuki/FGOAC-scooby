@@ -7,7 +7,7 @@ All notable changes to this project are documented here. The format follows
 Version numbers cover the whole release: the launcher, the English game files it installs, and the
 installer that puts them there.
 
-## [Unreleased]
+## [1.3.0] - 2026-10-09
 
 Works on Cloud23333's V1.01 and V1.02, with or without his latest update. Unzip this release over
 your game folder and run the launcher, or take it through Install on Play. Your accounts, decks,
