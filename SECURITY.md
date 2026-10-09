@@ -1,20 +1,33 @@
 # Security
 
-FGOAC scooby runs with administrator rights, because the game it launches requires them - without
-them the game stops with ERROR 4105 about ninety seconds after boot. That is the only reason.
+FGOAC scooby runs with administrator rights because the game requires them; without them the game
+stops with ERROR 4105 shortly after boot.
 
-What the launcher touches: its own folder and the FGO Arcade install it sits in - the game's
-configuration file `App\fgo-launcher.json`, the English files under `App\zh`, the local server under
-`Server\`, and the log folder. It adds three program-scoped inbound Windows Firewall rules for the
-local server, the game and the cabinet service so that Windows does not interrupt the first launch
-with a prompt that opens behind the game window. It contacts the internet for exactly one thing: the
-GitHub Releases API, to see whether a newer version exists.
+What the launcher changes:
 
-The installer (`patch\Apply-EN-Patch.ps1`) backs up every file it replaces, checks every file it
-copies against a SHA-256 manifest, refuses any manifest entry that points at accounts, decks, the
-server state folder or the database, and can undo itself with `-Rollback`.
+- files in the FGO Arcade install it sits in: `App\fgo-launcher.json`, the English files, the local
+  server under `Server\` and the log folder;
+- three inbound Windows Firewall rules, for the local server, the game and the cabinet service;
+- `HKCU\Software\Microsoft\DirectX\UserGpuPreferences`, for the graphics card pick on the game
+  without Cloud23333's latest update;
+- the running game's memory, for the Settings > PC play switches that are on: only on the game build
+  they were written for and only where the game's bytes are the expected ones. Game files on disk are
+  not changed.
 
-If you find something that lets this do more than the above - a path that escapes the install root,
-a manifest entry that gets written where it should not, an update that is fetched or applied without
-the checks - please open an issue and say what you found and how to reproduce it. There is no private
-disclosure channel and no bounty; this is a fan project with no users' data in it.
+It loads `App\fgoacaddon.dll` into the game for the widescreen picture and the story pages that wait
+for a press.
+
+Network: the launcher contacts the GitHub Releases API to check for updates, and nothing else.
+
+Updates: a release is installed only when its signature, ECDSA P-256 over
+`FGOAC-scooby <version> <SHA-256 of the zip>`, verifies under a release key built into the launcher.
+An unsigned or changed zip is refused before anything is unpacked.
+
+The installer (`patch\Apply-EN-Patch.ps1`) backs up every file it replaces, checks every file it copies
+against a SHA-256 manifest, refuses any entry that points at accounts, decks, the server state or the
+database, and undoes itself with `-Rollback`.
+
+## Reporting
+
+Open an issue, or post on the project's Discord, with what you found and how to reproduce it. There is
+no private disclosure channel and no bounty.

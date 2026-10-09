@@ -6,8 +6,8 @@ English one called **FGOAC scooby**, which starts the server, manages your accou
 card deck.
 
 This is not a game download. It does nothing on its own: you need an existing FGO Arcade local
-platform install (Cloud23333's package at V1.01 or V1.02; V1.02 is the one to be on), and the patch
-is applied on top of it.
+platform install (Cloud23333's package at V1.01 or V1.02, with or without his latest update; V1.02 is
+the one to be on), and the patch is applied on top of it.
 
 ## Install
 
@@ -48,31 +48,71 @@ but keep them if you may want to roll back later.
 
 ## What works
 
-- The game text: 65,266 translated lines - story, quests, Servant profiles, skills, items, menus.
-- The game artwork: 240 rebuilt sprite archives - title, tutorial, terminal, formation, battle HUD,
-  results, shops, synthesis, present box, master missions, rankings, help pages, title editor.
-- The launcher: Play, Account, Cards and Deck, Settings and Advanced, all in English, with the
-  official English card names and Craft Essence effects in the card library.
+- The game text: over 65,000 translated lines - story, quests, Servant profiles, skills, items, menus.
+- The game artwork: over 220 rebuilt sprite archives - title, tutorial, terminal, formation, battle
+  HUD, results, shops, synthesis, present box, master missions, rankings, help pages, title editor.
+- The launcher: Play, Cards, Photo Mode, Mods, Events, Accounts, Battle Debug, Controls, Settings and
+  About, all in English, with the official English card names and Craft Essence effects in the card
+  library.
 - Offline single player: the tutorial, solo sorties, the terminal, the exchange shops, synthesis,
   My Room, rankings and the title editor.
 - The in-game summon, drawing from the local server with the weights set on the launcher's Draw
   Rates page. The Account page can also grant a full roster in one click.
 
+## Using the launcher
+
+- **Play.** Play plays on the server on this PC. The Status sentence says where things stand -
+  whether the local server is running - or, in one sentence, why Play cannot start yet.
+- **The Master menu.** Click the Master line on Play: it lists your local accounts to switch between,
+  with New account at the bottom; Manage beside the line opens the accounts page.
+- **Deck codes.** Copy code on Cards puts the deck on the clipboard as one line of text to paste in
+  chat. Paste a code into the box beside it and press Import code: the deck loads and is saved as a
+  new loadout, never over one you have.
+- **Save a report.** Open the Status menu, the button at the end of the Status line on Play, and
+  choose Save a report. It saves one zip, on the Desktop unless you pick another place, with your
+  card number taken out. Nothing is uploaded: you attach the file yourself.
+- **Controls.** Input picks keyboard, an Xbox or other controller, or a PlayStation 5 controller,
+  with dead zone, rumble and a controller test. Bindings ties a key, a controller button or a
+  combination such as Ctrl+F5 to a button on the game's screen: click a box and press what you want.
+  Cursor sets the pointer and the mouse button that taps the screen. With Cloud23333's latest update
+  the camera is his: Battles in free camera turns the view with the mouse in battle, and Controller
+  camera turns it with the right stick, with a lock-on button. The controller methods of his update
+  hide the mouse pointer in battle, story scenes included; choose Keyboard and mouse to use the mouse
+  there. Changes count from the next Play.
+- **PC play.** Settings > PC play: after a lost quest Continue and Withdraw wait for you, and popups
+  stay open until you answer them; both are on. No GP purchase screen, Story pages wait for you and
+  No menu countdown are off until they have been tried in the game; turn them on to try them.
+  Changes count from the next Play.
+- **Widescreen.** Settings > Display > Widescreen: Widescreen picture fits the picture to screens
+  that are not 16:9, and Full width on taller screens keeps the whole width on 16:10 and 4:3; both
+  are on. HUD and menus at the screen edges is off while it is being tried.
+- **The other Settings cards.** Display also has a graphics card pick. Battle effects hides the dark
+  or white screen during Noble Phantasms, hides the white screen flash, and has an Effect opacity
+  slider for how strongly the game's own battle effects are drawn. Audio. Local server has the local
+  server and its settings. Diagnostics and Help lists every game error code with its fix. The
+  Operator menu keys (F1, F2) switch for ERROR 8404 is on the Controls page.
+- **Pages of their own.** Photo Mode, Mods (the MOD folder of Cloud23333's latest update), Events
+  (which limited-time events the server on this PC offers), Accounts and Battle Debug (battle test
+  switches for local play, including Stop the battle timer) each have a page in the sidebar.
+- **Logs.** Logs on Play opens the drawer, which shows one log at a time: Launcher, Game or Server.
+  It remembers your choice.
+
 ## What does not work
 
-- **No online play.** Everything runs against the local server; there is no matchmaking and no
-  official service to connect to.
-- **A few event screens are still Japanese**: the co-op event banners, the co-op result screens and
-  the later event shops. They are artwork, not text, and the rest of the game is unaffected.
+- **No online service.** Everything runs against the local server on your PC.
+- **Some artwork is still Japanese**: event and boss banners, parts of the event screens and shops,
+  and some buttons and labels. They are pictures, not text; the game's text is English.
 - The game is built for NVIDIA cards and wants a current driver; a black screen usually means the
-  driver, not the patch. On AMD and Intel graphics the launcher turns on the bundled compatibility
-  layer by fluphus by itself (Settings > Display, "AMD and Intel compatibility layer"); he tested it
-  on an RX 7900 XTX at 1920x1080 only, with a 60 fps cap.
+  driver, not the patch. AMD and Intel graphics run through a compatibility layer, picked under
+  Settings > Display, "Graphics layer". Cloud23333's layer from his latest update is the default, on
+  his update and without it (the launcher puts it in by itself on a PC with no NVIDIA card); the layer
+  FGOAC scooby shipped with 1.1.0 and fluphus's AMD layer are there to choose. fluphus's layer holds
+  the game at 60 FPS; set AMD Wait for Vertical Refresh to Off, Unless Application Specifies.
 
 ## Reporting a problem
 
-Say which screen you were on and what you expected, and attach the log files from the `logs` folder
-next to `App`:
+Say which screen you were on and what you expected, and attach the zip from **Save a report** in
+the Status menu on Play. It holds the logs from the `logs` folder next to `App`, among them:
 
 | File | What it shows |
 | --- | --- |
@@ -81,7 +121,7 @@ next to `App`:
 | `server-control.log`, `artemis-stderr.log`, `mariadb.log` | the local server and its database |
 | `environment-check.txt` | the environment check, written by the Diagnostics and Help page |
 
-**Advanced > Diagnostics and Help** in the launcher lists the game's error codes with the fix for
+**Settings > Diagnostics and Help** in the launcher lists the game's error codes with the fix for
 each one; check it first, the answer is usually there.
 
 ## Credits

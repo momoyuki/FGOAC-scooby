@@ -28,17 +28,18 @@ The launcher needs administrator rights because the game does.
 | `patch\` | the installer players run, and the manifest builder it checks against |
 | `docs\` | player guide, developer notes, release steps |
 | `package\` | the README that ships inside the release zip |
+| `tools\` | developer checks, such as `Test-CommunityServer.ps1` |
 
 `docs\DEVELOPING.md` says where `src\` comes from, the compile fixes the decompile needs and what
 the translation must never change. Read it before your first change to `src\`.
 
 If you are changing how something looks, keep to the existing palette and controls: one accent
-colour, flat surfaces, Segoe UI throughout.
+colour, flat surfaces, Geist throughout.
 
 ## Report a problem
 
 Open an issue with the bug report template. The two things that make a report usable are the screen
-you were on and the log files; the template lists which ones.
+you were on and the Save a report zip the template asks you to attach.
 
 ## House style
 
